@@ -5,7 +5,7 @@ const articles = [
     date: "Jan 24, 2023",
     excerpt:
       "Looking for an awesome LMS WordPress Theme? LearnPress is the best choice for you.",
-    image: "/assets/images/article-01.png",
+    image: "assets/images/article-01.png",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const articles = [
     date: "Jan 24, 2023",
     excerpt:
       "Looking for an awesome LMS WordPress Theme? LearnPress is the best choice for you.",
-    image: "/assets/images/article-02.png",
+    image: "assets/images/article-02.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const articles = [
     date: "Jan 24, 2023",
     excerpt:
       "Looking for an awesome LMS WordPress Theme? LearnPress is the best choice for you.",
-    image: "/assets/images/article-03.png",
+    image: "assets/images/article-03.png",
   },
 ];
 

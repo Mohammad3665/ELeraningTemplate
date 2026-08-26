@@ -5,7 +5,7 @@ const articles = [
     date: "۴ بهمن ۱۴۰۱",
     excerpt:
       "به دنبال یک قالب فوق‌العاده برای سایت آموزشی خود هستید؟ لرن‌پرس بهترین انتخاب برای شماست.",
-    image: "/assets/images/article-01.png",
+    image: "assets/images/article-01.png",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const articles = [
     date: "۴ بهمن ۱۴۰۱",
     excerpt:
       "به دنبال یک قالب فوق‌العاده برای سایت آموزشی خود هستید؟ لرن‌پرس بهترین انتخاب برای شماست.",
-    image: "/assets/images/article-02.png",
+    image: "assets/images/article-02.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const articles = [
     date: "۴ بهمن ۱۴۰۱",
     excerpt:
       "به دنبال یک قالب فوق‌العاده برای سایت آموزشی خود هستید؟ لرن‌پرس بهترین انتخاب برای شماست.",
-    image: "/assets/images/article-03.png",
+    image: "assets/images/article-03.png",
   },
 ];
 

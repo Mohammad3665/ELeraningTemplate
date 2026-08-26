@@ -190,7 +190,7 @@ if (coursesGrid) {
               <!-- Weeks -->
               <div class="flex items-center gap-1.5">
                 <img
-                  src="/assets/icons/times.svg"
+                  src="assets/icons/times.svg"
                   alt=""
                   aria-hidden="true"
                   class="size-4 object-contain"
@@ -201,7 +201,7 @@ if (coursesGrid) {
               <!-- Students -->
               <div class="flex items-center gap-1.5">
                 <img
-                  src="/assets/icons/students.svg"
+                  src="assets/icons/students.svg"
                   alt=""
                   aria-hidden="true"
                   class="size-4 object-contain"
@@ -329,7 +329,7 @@ if (testimonialsGrid) {
             <!-- Quote Icon -->
             <div class="mb-4 text-primary">
               <img
-                src="/assets/images/quote.svg"
+                src="assets/images/quote.svg"
                 alt="آیکون نقل قول"
                 class="size-8 object-contain"
               />
@@ -415,7 +415,7 @@ if (articlesGrid) {
               <!-- Date -->
               <div class="mt-2.5 flex items-center gap-1.5 text-xs text-body">
                 <img
-                  src="/assets/icons/calendar.svg"
+                  src="assets/icons/calendar.svg"
                   alt="تاریخ"
                   class="size-4 object-contain"
                 />

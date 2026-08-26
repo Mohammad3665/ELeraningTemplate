@@ -1,7 +1,7 @@
 const courses = [
   {
     id: 1,
-    image: "/assets/images/course-01.png",
+    image: "assets/images/course-01.png",
     title:
       "Introduction to LearnPress: Building your Learning Management System",
     author: "Thomas",
@@ -13,7 +13,7 @@ const courses = [
   },
   {
     id: 2,
-    image: "/assets/images/course-02.png",
+    image: "assets/images/course-02.png",
     title: "Create and Manage Engaging LMS Websites with LearnPress",
     author: "ThimPress",
     category: "Teaching Online",
@@ -24,7 +24,7 @@ const courses = [
   },
   {
     id: 3,
-    image: "/assets/images/course-03.png",
+    image: "assets/images/course-03.png",
     title: "How To Sell In-Person Course With LearnPress",
     author: "Thomas",
     category: "Marketing",
@@ -35,7 +35,7 @@ const courses = [
   },
   {
     id: 4,
-    image: "/assets/images/course-04.png",
+    image: "assets/images/course-04.png",
     title: "Create an LMS Website with LearnPress",
     author: "Thomas",
     category: "Photography",
@@ -46,7 +46,7 @@ const courses = [
   },
   {
     id: 5,
-    image: "/assets/images/course-05.png",
+    image: "assets/images/course-05.png",
     title: "Introduction LearnPress – LMS plugin",
     author: "Thomas",
     category: "Marketing",
@@ -57,7 +57,7 @@ const courses = [
   },
   {
     id: 6,
-    image: "/assets/images/course-06.png",
+    image: "assets/images/course-06.png",
     title: "How to teach an online course",
     author: "Thomas",
     category: "Content Writing",
