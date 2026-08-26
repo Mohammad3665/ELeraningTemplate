@@ -1,7 +1,7 @@
 const courses = [
   {
     id: 1,
-    image: "../public/assets/images/course-01.png",
+    image: "/assets/images/course-01.png",
     title: "مقدمه‌ای بر لرن‌پرس: ساخت سیستم مدیریت آموزش آنلاین",
     author: "توماس",
     category: "تدریس آنلاین",
@@ -12,7 +12,7 @@ const courses = [
   },
   {
     id: 2,
-    image: "../public/assets/images/course-02.png",
+    image: "/assets/images/course-02.png",
     title: "ایجاد و مدیریت وب‌سایت‌های LMS با لرن‌پرس",
     author: "تیم‌پرس",
     category: "تدریس آنلاین",
@@ -23,7 +23,7 @@ const courses = [
   },
   {
     id: 3,
-    image: "../public/assets/images/course-03.png",
+    image: "/assets/images/course-03.png",
     title: "نحوه فروش دوره‌های حضوری با لرن‌پرس",
     author: "توماس",
     category: "بازاریابی",
@@ -34,7 +34,7 @@ const courses = [
   },
   {
     id: 4,
-    image: "../public/assets/images/course-04.png",
+    image: "/assets/images/course-04.png",
     title: "ساخت وب‌سایت LMS با افزونه لرن‌پرس",
     author: "توماس",
     category: "عکاسی",
@@ -45,7 +45,7 @@ const courses = [
   },
   {
     id: 5,
-    image: "../public/assets/images/course-05.png",
+    image: "/assets/images/course-05.png",
     title: "مقدمه‌ای بر افزونه آموزش آنلاین لرن‌پرس",
     author: "توماس",
     category: "بازاریابی",
@@ -56,7 +56,7 @@ const courses = [
   },
   {
     id: 6,
-    image: "../public/assets/images/course-06.png",
+    image: "/assets/images/course-06.png",
     title: "چگونه یک دوره آنلاین تدریس کنیم؟",
     author: "توماس",
     category: "تولید محتوا",

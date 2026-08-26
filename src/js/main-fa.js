@@ -1,3 +1,6 @@
+// ============================================
+// Mobile Menu Toggle
+// ============================================
 const mobileMenuButton = document.querySelector("#mobile-menu-button");
 const mobileMenu = document.querySelector("#mobile-menu");
 
@@ -11,6 +14,9 @@ if (mobileMenuButton && mobileMenu) {
   });
 }
 
+// ============================================
+// Scroll to Top Button
+// ============================================
 const scrollTopBtn = document.querySelector("#scroll-to-top");
 
 if (scrollTopBtn) {
@@ -22,6 +28,9 @@ if (scrollTopBtn) {
   });
 }
 
+// ============================================
+// Categories Section
+// ============================================
 import categories from "../data/categories-fa.js";
 
 const categoriesGrid = document.querySelector("#categories-grid");
@@ -52,7 +61,6 @@ if (categoriesGrid) {
             hover:shadow-lg
           "
         >
-
           <!-- Icon -->
           <div
             class="
@@ -91,18 +99,18 @@ if (categoriesGrid) {
           </h3>
 
           <!-- Course Count -->
-          <p
-            class="mt-1 text-xs text-body"
-          >
+          <p class="mt-1 text-xs text-body">
             ${category.courses}
           </p>
-
         </a>
       `,
     )
     .join("");
 }
 
+// ============================================
+// Courses Section
+// ============================================
 import courses from "../data/courses-fa.js";
 
 const coursesGrid = document.querySelector("#courses-grid");
@@ -124,13 +132,11 @@ if (coursesGrid) {
             hover:shadow-lg
           "
         >
-
           <!-- Course Image -->
           <a
             href="#"
             class="relative block overflow-hidden h-48"
           >
-
             <img
               src="${course.image}"
               alt="${course.title}"
@@ -145,7 +151,7 @@ if (coursesGrid) {
               "
             >
 
-            <!-- Category Badge (Changed left-3 to right-3 for RTL) -->
+            <!-- Category Badge (RTL - positioned right) -->
             <span
               class="
                 absolute
@@ -163,118 +169,59 @@ if (coursesGrid) {
             >
               ${course.category}
             </span>
-
           </a>
-
 
           <!-- Course Content -->
           <div class="p-5">
-
             <!-- Author -->
-            <p
-              class="
-                mb-1.5
-                text-sm
-                text-gray-400
-              "
-            >
+            <p class="mb-1.5 text-sm text-gray-400">
               توسط <span class="font-bold text-gray-700">${course.author}</span>
             </p>
 
             <!-- Course Title -->
-            <h3
-              class="
-                text-base
-                font-semibold
-                leading-6
-                text-dark
-              "
-            >
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-              >
+            <h3 class="text-base font-semibold leading-6 text-dark">
+              <a href="#" class="transition-colors hover:text-primary">
                 ${course.title}
               </a>
             </h3>
 
-
             <!-- Course Meta -->
-            <div
-              class="
-                mt-2
-                flex
-                items-center
-                gap-5
-                text-xs
-                text-body
-              "
-            >
-
-              <!-- Lessons -->
+            <div class="mt-2 flex items-center gap-5 text-xs text-body">
+              <!-- Weeks -->
               <div class="flex items-center gap-1.5">
                 <img
-                  src="../public/assets/icons/times.svg"
+                  src="/assets/icons/times.svg"
                   alt=""
                   aria-hidden="true"
                   class="size-4 object-contain"
                 >
-
-                <span>
-                  ${course.weeks} هفته
-                </span>
-
+                <span>${course.weeks} هفته</span>
               </div>
-
 
               <!-- Students -->
               <div class="flex items-center gap-1.5">
                 <img
-                  src="../public/assets/icons/students.svg"
+                  src="/assets/icons/students.svg"
                   alt=""
                   aria-hidden="true"
                   class="size-4 object-contain"
                 >
-                <span>
-                  ${course.students} دانشجو
-                </span>
-
+                <span>${course.students} دانشجو</span>
               </div>
-
             </div>
 
-
             <!-- Price & Action -->
-            <div
-              class="
-                mt-6
-                flex
-                items-center
-                justify-between
-                border-t
-                border-gray-100
-                pt-4
-              "
-            >
-
+            <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
               <div class="flex items-center gap-2">
-
                 ${
                   course.oldPrice
                     ? `
-                      <span
-                        class="
-                          text-base
-                          text-gray-400
-                          line-through
-                        "
-                      >
+                      <span class="text-base text-gray-400 line-through">
                         ${course.oldPrice}
                       </span>
                     `
                     : ""
                 }
-
                 <span
                   class="
                     text-base
@@ -284,33 +231,22 @@ if (coursesGrid) {
                 >
                   ${course.price}
                 </span>
-
               </div>
 
-
-              <a
-                href="#"
-                class="
-                  text-sm
-                  font-semibold
-                  text-dark
-                  transition-colors
-                  hover:text-primary
-                "
-              >
+              <a href="#" class="text-sm font-semibold text-dark transition-colors hover:text-primary">
                 مشاهده بیشتر
               </a>
-
             </div>
-
           </div>
-
         </article>
       `,
     )
     .join("");
 }
 
+// ============================================
+// Stats Section
+// ============================================
 import stats from "../data/stats-fa.js";
 
 const statsGrid = document.querySelector("#stats-grid");
@@ -353,16 +289,7 @@ if (statsGrid) {
           </span>
 
           <!-- Label -->
-          <span
-            class="
-              mt-3
-              text-xs
-              font-semibold
-              text-dark
-              sm:text-sm
-              lg:text-base
-            "
-          >
+          <span class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base">
             ${stat.label}
           </span>
         </div>
@@ -371,6 +298,9 @@ if (statsGrid) {
     .join("");
 }
 
+// ============================================
+// Testimonials Section
+// ============================================
 import testimonials from "../data/testimonials-fa.js";
 
 const testimonialsGrid = document.querySelector("#testimonials-grid");
@@ -396,22 +326,22 @@ if (testimonialsGrid) {
           "
         >
           <div>
-            <!-- آیکون SVG بالای کارت -->
+            <!-- Quote Icon -->
             <div class="mb-4 text-primary">
               <img
-                src="../public/assets/images/quote.svg"
+                src="/assets/images/quote.svg"
                 alt="آیکون نقل قول"
                 class="size-8 object-contain"
               />
             </div>
 
-            <!-- متن نظر -->
+            <!-- Testimonial Content -->
             <p class="text-xs leading-relaxed text-body sm:text-sm">
               ${item.content}
             </p>
           </div>
 
-          <!-- نام و نقش -->
+          <!-- Author Info -->
           <div class="mt-6 border-t border-gray-100 pt-4">
             <h4 class="text-sm font-bold text-dark">
               ${item.name}
@@ -426,6 +356,9 @@ if (testimonialsGrid) {
     .join("");
 }
 
+// ============================================
+// Articles Section
+// ============================================
 import articles from "../data/articles-fa.js";
 
 const articlesGrid = document.querySelector("#articles-grid");
@@ -451,7 +384,7 @@ if (articlesGrid) {
             hover:shadow-lg
           "
         >
-          <!-- Full Width Header Image -->
+          <!-- Article Image -->
           <a
             href="#"
             class="relative block aspect-16/10 w-full overflow-hidden bg-gray-100"
@@ -471,7 +404,7 @@ if (articlesGrid) {
             />
           </a>
 
-          <!-- Content Padding -->
+          <!-- Content -->
           <div class="flex flex-1 flex-col justify-between p-5">
             <div>
               <!-- Title -->
@@ -479,10 +412,10 @@ if (articlesGrid) {
                 <a href="#">${article.title}</a>
               </h3>
 
-              <!-- Date with Icon Below Title -->
+              <!-- Date -->
               <div class="mt-2.5 flex items-center gap-1.5 text-xs text-body">
                 <img
-                  src="../public/assets/icons/calendar.svg"
+                  src="/assets/icons/calendar.svg"
                   alt="تاریخ"
                   class="size-4 object-contain"
                 />
