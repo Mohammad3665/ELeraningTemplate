@@ -1,22 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edu Press</title>
+    <title>ادوپرس | سامانه یادگیری آنلاین</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../src/tailwind/output.css" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Vazirmatn for Persian) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-white text-dark antialiased">
+  <body class="bg-white text-dark antialiased font-['Vazirmatn']">
     <!-- ==================== HEADER ==================== -->
     <header
       id="site-header"
@@ -25,7 +25,7 @@
       <div class="container-edupress">
         <div class="flex min-h-16 items-center justify-between sm:min-h-20">
           <!-- Site Logo -->
-          <a href="/" class="shrink-0" aria-label="EduPress Home">
+          <a href="/" class="shrink-0" aria-label="صفحه اصلی ادوپرس">
             <img
               src="../public/assets/images/logo.svg"
               alt="EduPress"
@@ -36,41 +36,41 @@
           <!-- Desktop Navigation -->
           <nav
             class="hidden items-center gap-6 lg:flex xl:gap-8"
-            aria-label="Main navigation"
+            aria-label="منوی اصلی"
           >
             <a
               href="/"
               class="text-sm font-medium text-primary transition-colors hover:text-primary"
             >
-              Home
+              صفحه اصلی
             </a>
 
             <a
               href="#featured-courses"
               class="text-sm font-medium text-dark transition-colors hover:text-primary"
             >
-              Courses
+              دوره‌ها
             </a>
 
             <a
               href="#"
               class="text-sm font-medium text-dark transition-colors hover:text-primary"
             >
-              Pages
+              صفحات
             </a>
 
             <a
               href="#"
               class="text-sm font-medium text-dark transition-colors hover:text-primary"
             >
-              LearnPress Add-Ons
+              افزونه‌های لرن‌پرس
             </a>
 
             <a
               href="#"
               class="text-sm font-medium text-dark transition-colors hover:text-primary"
             >
-              Premium Themes
+              قالب‌های ویژه
             </a>
           </nav>
 
@@ -80,7 +80,7 @@
               href="#"
               class="text-sm font-medium text-dark transition-colors hover:text-primary"
             >
-              Login / Register
+              ورود / ثبت‌نام
             </a>
 
             <!-- Search Toggle Button -->
@@ -88,7 +88,7 @@
               type="button"
               id="search-button"
               class="flex size-9 items-center justify-center rounded-full border border-primary text-primary transition-colors hover:bg-primary hover:text-white"
-              aria-label="Search"
+              aria-label="جستجو"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
             type="button"
             id="mobile-menu-button"
             class="flex size-10 items-center justify-center rounded-md border border-gray-200 lg:hidden"
-            aria-label="Open menu"
+            aria-label="باز کردن منو"
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
@@ -135,44 +135,44 @@
           id="mobile-menu"
           class="hidden border-t border-gray-100 pb-4 lg:hidden"
         >
-          <nav class="flex flex-col pt-2" aria-label="Mobile navigation">
+          <nav class="flex flex-col pt-2" aria-label="منوی موبایل">
             <a
               href="/"
               class="border-b border-gray-100 py-3 text-sm font-medium text-primary"
             >
-              Home
+              صفحه اصلی
             </a>
 
             <a
               href="#featured-courses"
               class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
             >
-              Courses
+              دوره‌ها
             </a>
 
             <a
               href="#"
               class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
             >
-              Pages
+              صفحات
             </a>
 
             <a
               href="#"
               class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
             >
-              LearnPress Add-Ons
+              افزونه‌های لرن‌پرس
             </a>
 
             <a
               href="#"
               class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
             >
-              Premium Themes
+              قالب‌های ویژه
             </a>
 
             <a href="#" class="pt-3 text-sm font-medium text-dark">
-              Login / Register
+              ورود / ثبت‌نام
             </a>
           </nav>
         </div>
@@ -188,7 +188,7 @@
       >
         <!-- Background Image -->
         <img
-          src="./assets/images/hero.svg"
+          src="./assets/images/hero-desktop-miror.svg"
           alt=""
           aria-hidden="true"
           class="absolute inset-0 h-full w-full object-cover object-center"
@@ -201,29 +201,29 @@
               <p
                 class="mb-3 text-xs font-semibold uppercase tracking-wider text-primary sm:text-sm"
               >
-                Learn From The Best
+                از بهترین‌ها بیاموزید
               </p>
 
               <h1
                 class="text-3xl font-bold leading-tight tracking-tight text-dark sm:text-5xl lg:text-6xl"
               >
-                Build Skill With
+                ارتقای مهارت با
                 <br />
-                Online Course
+                دوره‌های آنلاین
               </h1>
 
               <p
                 class="mt-4 max-w-md text-sm leading-relaxed text-body sm:text-base sm:leading-7"
               >
-                We can help you learn what you want to learn. Start learning
-                today and build your future skills.
+                ما به شما کمک می‌کنیم هر آنچه را می‌خواهید یاد بگیرید. از همین
+                امروز یادگیری را شروع کنید و مهارت‌های آینده خود را بسازید.
               </p>
 
               <a
                 href="#featured-courses"
                 class="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition hover:scale-105 sm:mt-8"
               >
-                Start Course
+                شروع دوره
               </a>
             </div>
           </div>
@@ -241,27 +241,27 @@
             <p
               class="mb-2 text-xs font-semibold uppercase tracking-wider text-primary sm:text-sm"
             >
-              Learn From The Best
+              از بهترین‌ها بیاموزید
             </p>
 
             <h1
               class="text-2xl font-bold leading-tight text-gray-900 sm:text-4xl"
             >
-              Build Skill With Online Course
+              ارتقای مهارت با دوره‌های آنلاین
             </h1>
 
             <p
               class="mt-3 max-w-sm text-xs leading-relaxed text-gray-600 sm:text-sm"
             >
-              We can help you learn what you want to learn. Start learning
-              today.
+              ما به شما کمک می‌کنیم هر آنچه را می‌خواهید یاد بگیرید. از امروز
+              شروع کنید.
             </p>
 
             <a
               href="#featured-courses"
               class="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-xs font-semibold text-white transition hover:scale-105 sm:text-sm"
             >
-              Start Course
+              شروع دوره
             </a>
           </div>
 
@@ -271,8 +271,8 @@
               class="relative flex h-64 w-64 items-center justify-center rounded-full bg-orange-200/60 sm:h-80 sm:w-80"
             >
               <img
-                src="./assets/images/hero-student-mobile.png"
-                alt="Student"
+                src="./assets/images/hero-student-mobile-miror.png"
+                alt="دانشجو"
                 class="absolute bottom-0 h-full w-auto object-contain"
               />
             </div>
@@ -287,26 +287,25 @@
           <div
             class="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between"
           >
-            <div class="text-center sm:text-left">
+            <div class="text-center sm:text-right">
               <h2
                 class="text-2xl font-bold leading-tight text-dark sm:text-3xl"
               >
-                Top Categories
+                دسته‌بندی‌های برتر
               </h2>
 
               <p class="mt-1 text-xs text-body sm:text-sm">
-                Explore our top categories
+                محبوب‌ترین دسته‌بندی‌های ما را بررسی کنید
               </p>
             </div>
             <a
               href="#"
               class="self-center rounded-full border border-gray-200 px-5 py-2 text-xs font-semibold text-dark transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white sm:self-auto sm:text-sm"
             >
-              All Categories
+              همه دسته‌بندی‌ها
             </a>
           </div>
 
-          <!-- Dynamic Categories Grid (Populated via JS) -->
           <div
             id="categories-grid"
             class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"
@@ -321,15 +320,15 @@
           <div
             class="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between"
           >
-            <div class="text-center sm:text-left">
+            <div class="text-center sm:text-right">
               <h2
                 class="text-2xl font-bold leading-tight text-dark sm:text-3xl"
               >
-                Featured Courses
+                دوره‌های ویژه
               </h2>
 
               <p class="mt-1 text-xs text-body sm:text-sm">
-                Explore our most popular courses
+                محبوب‌ترین دوره‌های ما را دنبال کنید
               </p>
             </div>
 
@@ -337,11 +336,10 @@
               href="#"
               class="self-center rounded-full border border-gray-200 px-5 py-2 text-xs font-semibold text-dark transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white sm:self-auto sm:text-sm"
             >
-              All Courses
+              همه دوره‌ها
             </a>
           </div>
 
-          <!-- Dynamic Courses Grid (Populated via JS) -->
           <div
             id="courses-grid"
             class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -355,9 +353,9 @@
           <div class="relative overflow-hidden rounded-2xl bg-gray-50">
             <!-- Background Image -->
             <img
-              src="../public/assets/images/addons-bg.svg"
-              alt="LearnPress Add-Ons"
-              class="absolute inset-0 h-full w-full object-cover object-right sm:object-contain"
+              src="../public/assets/images/addons-bg-miror.svg"
+              alt="افزونه‌های لرن‌پرس"
+              class="absolute inset-0 h-full w-full object-cover object-left sm:object-contain"
             />
 
             <!-- Mobile Overlay (Hidden on Large Screens) -->
@@ -370,27 +368,27 @@
               <p
                 class="text-xs font-bold uppercase tracking-wider text-white lg:text-dark"
               >
-                GET MORE VALUE
+                ارزش بیشتری کسب کنید
               </p>
 
               <h2
                 class="mt-2 text-2xl font-bold text-white sm:text-3xl lg:text-4xl lg:text-dark"
               >
-                LearnPress Add-Ons
+                افزونه‌های لرن‌پرس
               </h2>
 
               <p
                 class="mt-3 text-xs leading-relaxed text-gray-200 sm:text-sm lg:text-body"
               >
-                The power of LearnPress comes from its add-ons. Boost your
-                online academy with ultimate extensions.
+                قدرت واقعی لرن‌پرس با افزونه‌های آن آزاد می‌شود. آکادمی آنلاین
+                خود را با امکانات پیشرفته ارتقا دهید.
               </p>
 
               <a
                 href="#"
                 class="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-xs font-semibold text-white transition-transform duration-300 hover:scale-105 sm:text-sm"
               >
-                Explore Add-ons
+                مشاهده افزونه‌ها
               </a>
             </div>
           </div>
@@ -400,7 +398,6 @@
       <!-- STATISTICS SECTION -->
       <section id="statistics" class="py-10 lg:py-14">
         <div class="container-edupress">
-          <!-- Dynamic Statistics Grid (Populated via JS) -->
           <div
             id="stats-grid"
             class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4"
@@ -411,7 +408,6 @@
       <!-- LMS FEATURES SECTION -->
       <section id="lms" class="py-8 lg:py-14">
         <div class="container-edupress">
-          <!-- Wrapper with Responsive Background and Padding -->
           <div
             class="grid grid-cols-1 items-center gap-10 rounded-2xl bg-orange-50 p-6 sm:p-8 lg:grid-cols-12 lg:gap-16 lg:bg-transparent lg:p-0"
           >
@@ -419,31 +415,31 @@
             <div class="flex justify-center lg:col-span-6">
               <img
                 src="../public/assets/images/lms-illustration.png"
-                alt="Grow Your Skill With LearnPress LMS"
+                alt="رشد مهارت با لرن‌پرس"
                 class="h-auto max-w-full object-contain"
               />
             </div>
 
             <!-- Column 2: Content -->
-            <div class="text-center lg:col-span-6 lg:text-left">
+            <div class="text-center lg:col-span-6 lg:text-right">
               <h2
                 class="text-2xl font-bold leading-tight text-dark sm:text-3xl lg:text-4xl"
               >
-                Grow Your Skill <br class="hidden sm:inline" />
-                With LearnPress LMS
+                رشد مهارت‌های شما <br class="hidden sm:inline" />
+                با LMS لرن‌پرس
               </h2>
 
               <p
                 class="mt-4 text-xs leading-relaxed text-body sm:text-sm lg:text-base"
               >
-                We can help you learn what you want to learn. Start learning
-                today and build your future skills with our comprehensive online
-                learning ecosystem.
+                ما مسیر یادگیری را برای شما آسان می‌کنیم. با زیست‌بوم جامع
+                آموزشی ما، یادگیری را همین امروز آغاز کرده و آینده‌تان را
+                بسازید.
               </p>
 
               <!-- Features Checklist -->
               <ul
-                class="mt-6 inline-block space-y-3.5 text-right lg:block lg:text-left"
+                class="mt-6 inline-block space-y-3.5 text-right lg:block lg:text-right"
               >
                 <li
                   class="flex items-center gap-3 text-xs font-medium text-dark sm:text-sm"
@@ -457,7 +453,7 @@
                       class="size-3"
                     />
                   </span>
-                  <span>Certification & Degrees</span>
+                  <span>گواهینامه‌ها و مدارک معتبر</span>
                 </li>
 
                 <li
@@ -472,7 +468,7 @@
                       class="size-3"
                     />
                   </span>
-                  <span>Learn with Expert Instructors</span>
+                  <span>آموزش تحت نظر اساتید مجرب</span>
                 </li>
 
                 <li
@@ -487,7 +483,7 @@
                       class="size-3"
                     />
                   </span>
-                  <span>Flexible Distance Learning Options</span>
+                  <span>دوره‌های انعطاف‌پذیر و غیرحضوری</span>
                 </li>
               </ul>
 
@@ -497,7 +493,7 @@
                   href="#featured-courses"
                   class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-xs font-semibold text-white transition-transform duration-300 hover:scale-105 sm:text-sm"
                 >
-                  Explore Courses
+                  مشاهده دوره‌ها
                 </a>
               </div>
             </div>
@@ -511,7 +507,6 @@
           <div
             class="relative min-h-55 overflow-hidden rounded-2xl sm:min-h-70"
           >
-            <!-- Responsive Images (Desktop & Mobile) -->
             <picture>
               <source
                 media="(min-width: 1024px)"
@@ -519,12 +514,11 @@
               />
               <img
                 src="../public/assets/images/theme-preview-raw.svg"
-                alt="Education WordPress Theme"
+                alt="قالب وردپرس آموزشی"
                 class="absolute inset-0 h-full w-full object-cover"
               />
             </picture>
 
-            <!-- Centered Text Overlay -->
             <div
               class="relative z-10 flex min-h-55 flex-col items-center justify-center p-6 text-center sm:min-h-70"
             >
@@ -532,18 +526,18 @@
                 <p
                   class="text-xs font-bold uppercase tracking-wider text-dark sm:text-sm"
                 >
-                  PROVIDING AMAZING
+                  ارائه یک تجربه فوق‌العاده
                 </p>
 
                 <h2
                   class="mt-1.5 text-lg font-bold text-dark sm:text-2xl lg:text-3xl"
                 >
-                  Education WordPress Theme
+                  قالب وردپرس آموزشی
                 </h2>
 
                 <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                  The best choice for your school, university, academy, or
-                  online course website.
+                  بهترین انتخاب برای مدرسه، دانشگاه، آکادمی و وب‌سایت‌های آموزش
+                  آنلاین شما.
                 </p>
 
                 <div class="mt-5 flex justify-center">
@@ -551,7 +545,7 @@
                     href="#"
                     class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-xs font-semibold text-white transition-transform duration-300 hover:scale-105 sm:px-7 sm:py-3 sm:text-sm"
                   >
-                    Created By ThimPress
+                    توسعه داده شده توسط تیم‌پرس
                   </a>
                 </div>
               </div>
@@ -563,17 +557,15 @@
       <!-- TESTIMONIALS SECTION -->
       <section id="testimonials" class="py-10 lg:py-14">
         <div class="container-edupress">
-          <!-- Section Header -->
           <div class="text-center">
             <h2 class="text-2xl font-bold text-dark sm:text-3xl lg:text-4xl">
-              Student Feedbacks
+              نظرات دانشجویان
             </h2>
             <p class="mt-1 text-xs text-body sm:text-sm">
-              What Our Students Say About Us
+              دانشجویان ما درباره ما چه می‌گویند
             </p>
           </div>
 
-          <!-- Dynamic Testimonials Grid (Populated via JS) -->
           <div
             id="testimonials-grid"
             class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4"
@@ -587,43 +579,39 @@
           <div
             class="relative flex flex-col items-center justify-between gap-6 overflow-hidden rounded-2xl bg-linear-to-r from-[#e0f2fe] via-[#e0e7ff] to-[#f3e8ff] p-6 sm:p-8 lg:flex-row lg:px-12 lg:py-10"
           >
-            <!-- Left Side: Icon & Title -->
             <div
-              class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left"
+              class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-right"
             >
               <div
                 class="flex size-14 shrink-0 items-center justify-center rounded-full bg-white shadow-sm sm:size-16"
               >
                 <img
                   src="../public/assets/images/academy.svg"
-                  alt="Academy LMS"
+                  alt="آکادمی LMS"
                   class="size-18 object-contain sm:size-20"
                 />
               </div>
 
               <h3 class="text-base font-bold text-dark sm:text-lg lg:text-xl">
-                Let's Start With Academy LMS
+                همین امروز با LMS آکادمی شروع کنید
               </h3>
             </div>
 
-            <!-- Right Side: Action Buttons -->
             <div
               class="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4"
             >
-              <!-- Student Role Button -->
               <a
                 href="#"
                 class="inline-flex items-center justify-center rounded-full border-2 border-primary bg-transparent px-5 py-2 text-xs font-semibold text-primary backdrop-blur-sm transition-all duration-300 hover:bg-primary hover:text-white sm:px-7 sm:py-3 sm:text-sm"
               >
-                I'm A Student
+                دانشجو هستم
               </a>
 
-              <!-- Instructor Role Button -->
               <a
                 href="#"
                 class="inline-flex items-center justify-center rounded-full border-2 border-primary bg-primary px-5 py-2 text-xs font-semibold text-white shadow-md shadow-primary/20 transition-transform duration-300 hover:scale-105 sm:px-7 sm:py-3 sm:text-sm"
               >
-                Become An Instructor
+                مدرس شوید
               </a>
             </div>
           </div>
@@ -633,16 +621,15 @@
       <!-- LATEST ARTICLES SECTION -->
       <section id="articles" class="py-8 lg:py-12">
         <div class="container-edupress">
-          <!-- Section Header -->
           <div
-            class="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left"
+            class="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-right"
           >
             <div>
               <h2 class="text-2xl font-bold text-dark sm:text-3xl lg:text-4xl">
-                Latest Articles
+                آخرین مقالات
               </h2>
               <p class="mt-1 text-xs text-body sm:text-sm">
-                Explore our latest blogs and news
+                جدیدترین مقالات و اخبار ما را بخوانید
               </p>
             </div>
 
@@ -650,11 +637,10 @@
               href="#"
               class="inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2 text-xs font-semibold text-dark transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white sm:text-sm"
             >
-              All Articles
+              همه مقالات
             </a>
           </div>
 
-          <!-- Dynamic Articles Grid (Populated via JS) -->
           <div
             id="articles-grid"
             class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -666,7 +652,6 @@
     <!-- ==================== FOOTER ==================== -->
     <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
       <div class="container-edupress">
-        <!-- Main Footer Navigation -->
         <div
           class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12"
         >
@@ -675,22 +660,22 @@
             <a href="#" class="inline-block">
               <img
                 src="../public/assets/images/logo.svg"
-                alt="EduPress Logo"
+                alt="لوگوی ادوپرس"
                 class="h-8 w-auto object-contain"
               />
             </a>
             <p
               class="mt-4 max-w-sm text-xs leading-relaxed text-body sm:text-sm"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است.
             </p>
           </div>
 
           <!-- Column 2: Help Links -->
           <div class="lg:col-span-2">
             <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              GET HELP
+              راهنما
             </h4>
             <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
               <li>
@@ -698,7 +683,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Contact Us
+                  تماس با ما
                 </a>
               </li>
               <li>
@@ -706,7 +691,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Latest Articles
+                  آخرین مقالات
                 </a>
               </li>
               <li>
@@ -714,7 +699,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  FAQ
+                  سوالات متداول
                 </a>
               </li>
             </ul>
@@ -723,7 +708,7 @@
           <!-- Column 3: Program Links -->
           <div class="lg:col-span-3">
             <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              PROGRAMS
+              برنامه‌های آموزشی
             </h4>
             <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
               <li>
@@ -731,7 +716,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Art & Design
+                  هنر و طراحی
                 </a>
               </li>
               <li>
@@ -739,7 +724,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Business
+                  کسب و کار
                 </a>
               </li>
               <li>
@@ -747,7 +732,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  IT & Software
+                  فناوری اطلاعات و نرم‌افزار
                 </a>
               </li>
               <li>
@@ -755,7 +740,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Languages
+                  زبان‌های خارجی
                 </a>
               </li>
               <li>
@@ -763,7 +748,7 @@
                   href="#"
                   class="transition-colors duration-300 hover:text-primary"
                 >
-                  Programming
+                  برنامه‌نویسی
                 </a>
               </li>
             </ul>
@@ -772,80 +757,20 @@
           <!-- Column 4: Contact & Social Info -->
           <div class="lg:col-span-3">
             <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              CONTACT US
+              ارتباط با ما
             </h4>
             <div class="mt-4 space-y-2 text-xs leading-relaxed sm:text-sm">
               <p>
-                <span class="font-medium text-dark">Address:</span> 2321 New
-                Design Str, Lorem Ipsum10 Hudson Yards, USA
+                <span class="font-medium text-dark">آدرس:</span> تهران، خیابان
+                آزادی، پلاک ۱۲۳
               </p>
               <p>
-                <span class="font-medium text-dark">Tel:</span> + (123)
-                2500-567-8988
+                <span class="font-medium text-dark">تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸
               </p>
               <p>
-                <span class="font-medium text-dark">Mail:</span>
+                <span class="font-medium text-dark">ایمیل:</span>
                 supportlms@gmail.com
               </p>
-            </div>
-
-            <!-- Social Media Icons -->
-            <div class="mt-5 flex items-center gap-3 text-body">
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-                aria-label="Facebook"
-              >
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-                aria-label="Pinterest"
-              >
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-                aria-label="X"
-              >
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-                aria-label="Instagram"
-              >
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="transition-colors hover:text-primary"
-                aria-label="YouTube"
-              >
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                  />
-                </svg>
-              </a>
             </div>
           </div>
         </div>
@@ -854,14 +779,13 @@
         <div class="relative mt-12 border-t border-gray-200/80 pt-6">
           <div class="flex items-center justify-between">
             <p class="w-full text-center text-xs text-body sm:text-sm">
-              Copyright © 2024 LearnPress LMS | Powered by ThimPress
+              توسعه یافته توسط استاد بزرگ محمدمهدی زنگنه
             </p>
 
-            <!-- Scroll to Top Action Button -->
             <button
               id="scroll-to-top"
               class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 hover:scale-110 sm:size-10"
-              aria-label="Scroll to Top"
+              aria-label="بازگشت به بالا"
             >
               ↑
             </button>
@@ -871,6 +795,6 @@
     </footer>
 
     <!-- Entry JavaScript Module -->
-    <script type="module" src="../src/js/main.js"></script>
+    <script type="module" src="../src/js/main-fa.js"></script>
   </body>
 </html>
