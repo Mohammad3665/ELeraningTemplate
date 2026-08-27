@@ -214,7 +214,7 @@ if (coursesGrid) {
                 </p>
 
                 <!-- Course Title -->
-                <h3 class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-[3rem]">
+                <h3 class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12">
                   <a href="#" class="transition-colors hover:text-primary">
                     ${course.title}
                   </a>
@@ -507,7 +507,7 @@ if (articlesGrid) {
             <div class="flex flex-1 flex-col justify-between p-5">
               <div>
                 <!-- Title -->
-                <h3 class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-[3.5rem]">
+                <h3 class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14">
                   <a href="#">${article.title}</a>
                 </h3>
 
