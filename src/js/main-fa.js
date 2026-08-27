@@ -39,6 +39,7 @@ if (categoriesGrid) {
   categoriesGrid.innerHTML = categories
     .map(
       (category) => `
+      <div class="swiper-slide">
         <a
           href="#"
           class="
@@ -57,55 +58,80 @@ if (categoriesGrid) {
             text-center
             transition-all
             duration-300
-            hover:border-gray-200
-            hover:shadow-lg
+            hover:border-primary
+            hover:shadow-md
           "
         >
-          <!-- Icon -->
-          <div
-            class="
-              mb-4
-              flex
-              size-12
-              items-center
-              justify-center
-              text-primary
-              transition-transform
-              duration-300
-              group-hover:scale-105
-            "
-          >
-            <img
-              src="${category.icon}"
-              alt=""
-              aria-hidden="true"
-              class="size-10 object-contain"
+          <div class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5">
+            <!-- Icon -->
+            <div
+              class="
+                mb-4
+                flex
+                size-12
+                items-center
+                justify-center
+                text-primary
+                transition-transform
+                duration-300
+                group-hover:scale-110
+              "
             >
+              <img
+                src="${category.icon}"
+                alt=""
+                aria-hidden="true"
+                class="size-10 object-contain"
+              >
+            </div>
+
+            <!-- Title -->
+            <h3
+              class="
+                text-sm
+                font-semibold
+                leading-5
+                text-dark
+                transition-colors
+                duration-300
+                group-hover:text-primary
+              "
+            >
+              ${category.title}
+            </h3>
+
+            <!-- Course Count -->
+            <p class="mt-1 text-xs text-body">
+              ${category.courses}
+            </p>
           </div>
-
-          <!-- Title -->
-          <h3
-            class="
-              text-sm
-              font-semibold
-              leading-5
-              text-dark
-              transition-colors
-              duration-300
-              group-hover:text-primary
-            "
-          >
-            ${category.title}
-          </h3>
-
-          <!-- Course Count -->
-          <p class="mt-1 text-xs text-body">
-            ${category.courses}
-          </p>
         </a>
-      `,
+      </div>
+    `,
     )
     .join("");
+
+  new Swiper(".categories-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: false,
+    rewind: true,
+    speed: 600,
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: ".categories-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".categories-next",
+      prevEl: ".categories-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 5, spaceBetween: 24 },
+    },
+  });
 }
 
 // ============================================
@@ -119,129 +145,164 @@ if (coursesGrid) {
   coursesGrid.innerHTML = courses
     .map(
       (course) => `
+      <div class="swiper-slide h-auto!">
         <article
           class="
             group
+            flex
+            h-full
+            flex-col
+            justify-between
             overflow-hidden
             rounded-lg
             border
             border-gray-200
             bg-white
-            transition-shadow
+            transition-all
             duration-300
-            hover:shadow-lg
+            hover:border-gray-300
+            hover:shadow-md
           "
         >
-          <!-- Course Image -->
-          <a
-            href="#"
-            class="relative block overflow-hidden h-48"
-          >
-            <img
-              src="${course.image}"
-              alt="${course.title}"
-              class="
-                aspect-video
-                w-full
-                h-full
-                object-cover
-                transition-transform
-                duration-500
-                group-hover:scale-105
-              "
+          <div class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1">
+            
+            <!-- Course Image -->
+            <a
+              href="#"
+              class="relative block overflow-hidden h-48 shrink-0"
             >
+              <img
+                src="${course.image}"
+                alt="${course.title}"
+                class="
+                  aspect-video
+                  w-full
+                  h-full
+                  object-cover
+                  transition-transform
+                  duration-500
+                  group-hover:scale-105
+                "
+              >
 
-            <!-- Category Badge (RTL - positioned right) -->
-            <span
-              class="
-                absolute
-                right-3
-                top-3
-                rounded-lg
-                bg-black/80
-                px-3
-                py-1.5
-                text-xs
-                font-medium
-                text-white
-                backdrop-blur-sm
-              "
-            >
-              ${course.category}
-            </span>
-          </a>
+              <!-- Category Badge -->
+              <span
+                class="
+                  absolute
+                  right-3
+                  top-3
+                  rounded-lg
+                  bg-black/80
+                  px-3
+                  py-1.5
+                  text-xs
+                  font-medium
+                  text-white
+                  backdrop-blur-sm
+                "
+              >
+                ${course.category}
+              </span>
+            </a>
 
-          <!-- Course Content -->
-          <div class="p-5">
-            <!-- Author -->
-            <p class="mb-1.5 text-sm text-gray-400">
-              توسط <span class="font-bold text-gray-700">${course.author}</span>
-            </p>
+            <!-- Course Content -->
+            <div class="p-5 flex flex-1 flex-col justify-between">
+              <div>
+                <!-- Author -->
+                <p class="mb-1.5 text-sm text-gray-400">
+                  توسط <span class="font-bold text-gray-700">${course.author}</span>
+                </p>
 
-            <!-- Course Title -->
-            <h3 class="text-base font-semibold leading-6 text-dark">
-              <a href="#" class="transition-colors hover:text-primary">
-                ${course.title}
-              </a>
-            </h3>
+                <!-- Course Title -->
+                <h3 class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-[3rem]">
+                  <a href="#" class="transition-colors hover:text-primary">
+                    ${course.title}
+                  </a>
+                </h3>
 
-            <!-- Course Meta -->
-            <div class="mt-2 flex items-center gap-5 text-xs text-body">
-              <!-- Weeks -->
-              <div class="flex items-center gap-1.5">
-                <img
-                  src="assets/icons/times.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="size-4 object-contain"
-                >
-                <span>${course.weeks} هفته</span>
+                <!-- Course Meta -->
+                <div class="mt-3 flex items-center gap-5 text-xs text-body">
+                  <!-- Weeks -->
+                  <div class="flex items-center gap-1.5">
+                    <img
+                      src="assets/icons/times.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="size-4 object-contain"
+                    >
+                    <span>${course.weeks} هفته</span>
+                  </div>
+
+                  <!-- Students -->
+                  <div class="flex items-center gap-1.5">
+                    <img
+                      src="assets/icons/students.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="size-4 object-contain"
+                    >
+                    <span>${course.students} دانشجو</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Students -->
-              <div class="flex items-center gap-1.5">
-                <img
-                  src="assets/icons/students.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="size-4 object-contain"
-                >
-                <span>${course.students} دانشجو</span>
+              <!-- Price & Action -->
+              <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                <div class="flex items-center gap-2">
+                  ${
+                    course.oldPrice
+                      ? `
+                        <span class="text-base text-gray-400 line-through">
+                          ${course.oldPrice}
+                        </span>
+                      `
+                      : ""
+                  }
+                  <span
+                    class="
+                      text-base
+                      font-bold
+                      ${course.price === "رایگان" ? "text-emerald-400" : "text-red-500"}
+                    "
+                  >
+                    ${course.price}
+                  </span>
+                </div>
+
+                <a href="#" class="text-sm font-semibold text-dark transition-colors hover:text-primary">
+                  مشاهده بیشتر
+                </a>
               </div>
             </div>
 
-            <!-- Price & Action -->
-            <div class="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
-              <div class="flex items-center gap-2">
-                ${
-                  course.oldPrice
-                    ? `
-                      <span class="text-base text-gray-400 line-through">
-                        ${course.oldPrice}
-                      </span>
-                    `
-                    : ""
-                }
-                <span
-                  class="
-                    text-base
-                    font-bold
-                    ${course.price === "رایگان" ? "text-emerald-400" : "text-red-500"}
-                  "
-                >
-                  ${course.price}
-                </span>
-              </div>
-
-              <a href="#" class="text-sm font-semibold text-dark transition-colors hover:text-primary">
-                مشاهده بیشتر
-              </a>
-            </div>
           </div>
         </article>
+      </div>
       `,
     )
     .join("");
+
+  new Swiper(".courses-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: false,
+    rewind: true,
+    speed: 600,
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: ".courses-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".courses-next",
+      prevEl: ".courses-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+    },
+  });
 }
 
 // ============================================
@@ -257,6 +318,7 @@ if (statsGrid) {
       (stat) => `
         <div
           class="
+            group
             flex
             min-h-35
             sm:min-h-42.5
@@ -269,29 +331,32 @@ if (statsGrid) {
             py-8
             sm:py-10
             text-center
-            transition-shadow
+            transition-all
             duration-300
-            hover:shadow-lg
+            hover:bg-gray-100/80
+            hover:shadow-sm
           "
         >
-          <!-- Value -->
-          <span
-            class="
-              text-3xl
-              font-extrabold
-              leading-snug
-              text-primary
-              sm:text-4xl
-              lg:text-[42px]
-            "
-          >
-            ${stat.value}
-          </span>
+          <div class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1">
+            <!-- Value -->
+            <span
+              class="
+                text-3xl
+                font-extrabold
+                leading-snug
+                text-primary
+                sm:text-4xl
+                lg:text-[42px]
+              "
+            >
+              ${stat.value}
+            </span>
 
-          <!-- Label -->
-          <span class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base">
-            ${stat.label}
-          </span>
+            <!-- Label -->
+            <span class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base">
+              ${stat.label}
+            </span>
+          </div>
         </div>
       `,
     )
@@ -309,9 +374,12 @@ if (testimonialsGrid) {
   testimonialsGrid.innerHTML = testimonials
     .map(
       (item) => `
+      <div class="swiper-slide h-auto!">
         <div
           class="
+            group
             flex
+            h-full
             flex-col
             justify-between
             rounded-2xl
@@ -320,40 +388,66 @@ if (testimonialsGrid) {
             bg-white
             p-6
             shadow-sm
-            transition-shadow
+            transition-all
             duration-300
-            hover:shadow-lg
+            hover:shadow-md
+            hover:border-gray-200
           "
         >
-          <div>
-            <!-- Quote Icon -->
-            <div class="mb-4 text-primary">
-              <img
-                src="assets/images/quote.svg"
-                alt="آیکون نقل قول"
-                class="size-8 object-contain"
-              />
+          <div class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1">
+            <div>
+              <!-- Quote Icon -->
+              <div class="mb-4 text-primary">
+                <img
+                  src="assets/images/quote.svg"
+                  alt="آیکون نقل قول"
+                  class="size-8 object-contain"
+                />
+              </div>
+
+              <!-- Testimonial Content -->
+              <p class="text-xs leading-relaxed text-body sm:text-sm">
+                ${item.content}
+              </p>
             </div>
 
-            <!-- Testimonial Content -->
-            <p class="text-xs leading-relaxed text-body sm:text-sm">
-              ${item.content}
-            </p>
-          </div>
-
-          <!-- Author Info -->
-          <div class="mt-6 border-t border-gray-100 pt-4">
-            <h4 class="text-sm font-bold text-dark">
-              ${item.name}
-            </h4>
-            <p class="mt-0.5 text-xs text-body">
-              ${item.role}
-            </p>
+            <!-- Author Info (همیشه چسبیده به انتهای کارت) -->
+            <div class="mt-6 border-t border-gray-100 pt-4">
+              <h4 class="text-sm font-bold text-dark">
+                ${item.name}
+              </h4>
+              <p class="mt-0.5 text-xs text-body">
+                ${item.role}
+              </p>
+            </div>
           </div>
         </div>
+      </div>
       `,
     )
     .join("");
+
+  new Swiper(".testimonials-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: false,
+    rewind: true,
+    speed: 600,
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: ".testimonials-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".testimonials-next",
+      prevEl: ".testimonials-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 24 },
+    },
+  });
 }
 
 // ============================================
@@ -367,69 +461,102 @@ if (articlesGrid) {
   articlesGrid.innerHTML = articles
     .map(
       (article) => `
+      <div class="swiper-slide h-auto!">
         <article
           class="
             group
             flex
+            h-full
             flex-col
-            gap-2
+            justify-between
             overflow-hidden
             rounded-2xl
             border
             border-gray-100
             bg-white
             shadow-sm
-            transition-shadow
+            transition-all
             duration-300
-            hover:shadow-lg
+            hover:border-gray-200
+            hover:shadow-md
           "
         >
-          <!-- Article Image -->
-          <a
-            href="#"
-            class="relative block aspect-16/10 w-full overflow-hidden bg-gray-100"
-          >
-            <img
-              src="${article.image}"
-              alt="${article.title}"
-              class="
-                h-full
-                w-full
-                object-cover
-                object-center
-                transition-transform
-                duration-500
-                group-hover:scale-105
-              "
-            />
-          </a>
+          <div class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1">
+            
+            <!-- Article Image -->
+            <a
+              href="#"
+              class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+            >
+              <img
+                src="${article.image}"
+                alt="${article.title}"
+                class="
+                  h-full
+                  w-full
+                  object-cover
+                  object-center
+                  transition-transform
+                  duration-500
+                  group-hover:scale-105
+                "
+              />
+            </a>
 
-          <!-- Content -->
-          <div class="flex flex-1 flex-col justify-between p-5">
-            <div>
-              <!-- Title -->
-              <h3 class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg">
-                <a href="#">${article.title}</a>
-              </h3>
+            <!-- Content -->
+            <div class="flex flex-1 flex-col justify-between p-5">
+              <div>
+                <!-- Title -->
+                <h3 class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-[3.5rem]">
+                  <a href="#">${article.title}</a>
+                </h3>
 
-              <!-- Date -->
-              <div class="mt-2.5 flex items-center gap-1.5 text-xs text-body">
-                <img
-                  src="assets/icons/calendar.svg"
-                  alt="تاریخ"
-                  class="size-4 object-contain"
-                />
-                <span>${article.date}</span>
+                <!-- Date -->
+                <div class="mt-2.5 flex items-center gap-1.5 text-xs text-body">
+                  <img
+                    src="assets/icons/calendar.svg"
+                    alt="تاریخ"
+                    class="size-4 object-contain"
+                  />
+                  <span>${article.date}</span>
+                </div>
+
+                <!-- Excerpt -->
+                <p class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2">
+                  ${article.excerpt}
+                </p>
               </div>
-
-              <!-- Excerpt -->
-              <p class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2">
-                ${article.excerpt}
-              </p>
             </div>
+
           </div>
         </article>
+      </div>
       `,
     )
     .join("");
+
+  new Swiper(".articles-swiper", {
+    dir: "rtl",
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: false,
+    rewind: true,
+    speed: 600,
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: ".articles-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".articles-next",
+      prevEl: ".articles-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
+    },
+  });
 }
+
+document.addEventListener("touchstart", function () {}, true);
