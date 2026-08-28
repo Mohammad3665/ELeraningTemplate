@@ -5,96 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ادوپرس | سامانه یادگیری آنلاین</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="src/tailwind/output.css" />
+    <!-- region Stylesheets -->
     <link rel="stylesheet" href="src/css/style.css" />
+    <!-- endregion -->
 
-    <!-- Google Fonts (Vazirmatn for Persian) -->
+    <!-- region Google Fonts (Vazirmatn for Persian) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- endregion -->
 
-    <!-- Swiper CSS -->
+    <!-- region Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- endregion -->
   </head>
   <body class="bg-white text-dark antialiased font-['Vazirmatn']">
-    <!-- ==================== HEADER ==================== -->
+    <!-- region HEADER -->
     <header
       id="site-header"
-      class="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm"
+      class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm"
     >
-      <div class="container-edupress">
+      <div class="container-edupress px-4">
         <div class="flex min-h-16 items-center justify-between sm:min-h-20">
           <!-- Site Logo -->
           <a href="/" class="shrink-0" aria-label="صفحه اصلی ادوپرس">
             <img
-              src="assets/images/logo.svg"
+              src="assets/images/logo.png"
               alt="EduPress"
               class="h-auto w-24 sm:w-28"
             />
           </a>
 
-          <!-- Desktop Navigation -->
+          <!-- region Desktop Navigation (visible from 768px and up) -->
           <nav
-            class="hidden items-center gap-6 lg:flex xl:gap-8"
+            class="hidden items-center gap-4 md:flex lg:gap-8"
             aria-label="منوی اصلی"
           >
             <a
               href="/"
-              class="text-sm font-medium text-primary transition-colors hover:text-primary"
+              class="text-xs font-medium text-primary transition-colors hover:text-primary lg:text-sm"
             >
               صفحه اصلی
             </a>
-
             <a
               href="#featured-courses"
-              class="text-sm font-medium text-dark transition-colors hover:text-primary"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
             >
               دوره‌ها
             </a>
-
             <a
               href="#"
-              class="text-sm font-medium text-dark transition-colors hover:text-primary"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
             >
               صفحات
             </a>
-
             <a
               href="#"
-              class="text-sm font-medium text-dark transition-colors hover:text-primary"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
             >
               افزونه‌های لرن‌پرس
             </a>
-
             <a
               href="#"
-              class="text-sm font-medium text-dark transition-colors hover:text-primary"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
             >
               قالب‌های ویژه
             </a>
           </nav>
+          <!-- endregion -->
 
-          <!-- Desktop Actions -->
-          <div class="hidden items-center gap-5 lg:flex">
-            <a
-              href="#"
-              class="text-sm font-medium text-dark transition-colors hover:text-primary"
-            >
-              ورود / ثبت‌نام
-            </a>
+          <!-- region Header Actions (visible from 500px and up) -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Login/Register buttons in header (visible from 500px) -->
+            <div class="hidden items-center gap-2 min-[500px]:flex">
+              <a
+                href="#"
+                class="rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-primary hover:text-white sm:px-4 sm:py-2"
+              >
+                ورود
+              </a>
+              <a
+                href="#"
+                class="rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:px-4 sm:py-2"
+              >
+                ثبت‌نام
+              </a>
+            </div>
 
-            <!-- Search Toggle Button -->
+            <!-- Search Toggle -->
             <button
               type="button"
               id="search-button"
-              class="flex size-9 items-center justify-center rounded-full border border-primary text-primary transition-colors hover:bg-primary hover:text-white"
+              class="flex size-8 items-center justify-center rounded-full border border-primary text-primary transition-colors hover:bg-primary hover:text-white sm:size-9"
               aria-label="جستجو"
             >
               <svg
@@ -104,91 +112,141 @@
                 stroke="currentColor"
                 stroke-width="1.8"
                 class="size-4"
-                aria-hidden="true"
               >
                 <circle cx="11" cy="11" r="7" />
                 <path d="m20 20-4-4" />
               </svg>
             </button>
-          </div>
 
-          <!-- Mobile Menu Trigger Button -->
+            <!-- region Mobile Menu Trigger (only visible below 768px) -->
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="flex size-9 cursor-pointer items-center justify-center rounded-md transition-all active:scale-95 active:bg-gray-100 md:hidden"
+              aria-label="باز کردن منو"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="size-6"
+              >
+                <path d="M4 6h16" />
+                <path d="M4 12h16" />
+                <path d="M4 18h16" />
+              </svg>
+            </button>
+            <!-- endregion -->
+          </div>
+          <!-- endregion -->
+        </div>
+      </div>
+    </header>
+    <!-- endregion -->
+
+    <!-- region Backdrop Overlay -->
+    <div
+      id="menu-overlay"
+      class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
+    ></div>
+    <!-- endregion -->
+
+    <!-- region Mobile Navigation Sidebar (From Left) -->
+    <aside
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden"
+    >
+      <div>
+        <!-- Header inside drawer -->
+        <div
+          class="flex items-center justify-between border-b border-border pb-4"
+        >
+          <img
+            src="assets/images/logo.png"
+            alt="EduPress"
+            class="h-auto w-24"
+          />
           <button
             type="button"
-            id="mobile-menu-button"
-            class="flex size-10 items-center justify-center rounded-md border border-gray-200 lg:hidden active:bg-gray-100 active:scale-95 transition-all"
-            aria-label="باز کردن منو"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
+            id="close-menu-button"
+            class="rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100"
+            aria-label="بستن منو"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              viewBox="0 0 24 24"
               stroke-width="2"
-              class="size-5"
-              aria-hidden="true"
+              stroke="currentColor"
+              class="size-6"
             >
-              <path d="M4 6h16" />
-              <path d="M4 12h16" />
-              <path d="M4 18h16" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div
-          id="mobile-menu"
-          class="hidden border-t border-gray-100 pb-4 lg:hidden"
-        >
-          <nav class="flex flex-col pt-2" aria-label="منوی موبایل">
-            <a
-              href="/"
-              class="border-b border-gray-100 py-3 text-sm font-medium text-primary"
-            >
-              صفحه اصلی
-            </a>
-
-            <a
-              href="#featured-courses"
-              class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
-            >
-              دوره‌ها
-            </a>
-
-            <a
-              href="#"
-              class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
-            >
-              صفحات
-            </a>
-
-            <a
-              href="#"
-              class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
-            >
-              افزونه‌های لرن‌پرس
-            </a>
-
-            <a
-              href="#"
-              class="border-b border-gray-100 py-3 text-sm font-medium text-dark"
-            >
-              قالب‌های ویژه
-            </a>
-
-            <a href="#" class="pt-3 text-sm font-medium text-dark">
-              ورود / ثبت‌نام
-            </a>
-          </nav>
-        </div>
+        <!-- Nav Links (RTL text alignment) -->
+        <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
+          <a
+            href="/"
+            class="border-b border-border py-3 text-sm font-medium text-primary"
+          >
+            صفحه اصلی
+          </a>
+          <a
+            href="#featured-courses"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            دوره‌ها
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            صفحات
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            افزونه‌های لرن‌پرس
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            قالب‌های ویژه
+          </a>
+        </nav>
       </div>
-    </header>
 
-    <!-- ==================== MAIN CONTENT ==================== -->
+      <!-- Action Buttons at bottom -->
+      <div class="flex flex-col gap-2 pt-6 dir-rtl">
+        <a
+          href="#"
+          class="w-full rounded-lg border border-primary py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+        >
+          ورود
+        </a>
+        <a
+          href="#"
+          class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+        >
+          ثبت‌نام
+        </a>
+      </div>
+    </aside>
+    <!-- endregion -->
+
+    <!-- region MAIN CONTENT -->
     <main id="main-content">
-      <!-- HERO SECTION (DESKTOP) -->
+      <!-- region HERO SECTION (DESKTOP) -->
       <section
         id="hero-desktop"
         class="relative hidden overflow-hidden py-16 sm:py-20 lg:block lg:min-h-175 lg:py-0"
@@ -236,8 +294,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- HERO SECTION (MOBILE) -->
+      <!-- region HERO SECTION (MOBILE) -->
       <section
         id="hero-mobile"
         class="relative overflow-hidden bg-orange-50 pt-10 lg:hidden"
@@ -286,8 +345,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- CATEGORIES SECTION -->
+      <!-- region CATEGORIES SECTION -->
       <section id="categories" class="pt-12 sm:pt-14 lg:pt-16">
         <div class="container-edupress">
           <!-- Section Header -->
@@ -306,7 +366,7 @@
             </div>
             <a
               href="#"
-              class="self-center rounded-full border border-gray-200 px-5 py-2 text-xs font-semibold text-dark transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white active:scale-95 active:bg-primary/90 sm:self-auto sm:text-sm"
+              class="self-center rounded-full border border-border px-5 py-2 text-xs font-semibold text-dark transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white active:scale-95 active:bg-primary/90 sm:self-auto sm:text-sm"
             >
               همه دسته‌بندی‌ها
             </a>
@@ -315,60 +375,301 @@
           <!-- Main Wrapper -->
           <div>
             <!-- Cards container and buttons (without Pagination) -->
-            <div class="relative px-2 py-3 sm:px-6">
-              <!-- Previous button (Right in RTL) -->
-              <button
-                class="categories-prev absolute -right-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-right-5 sm:size-10"
-                aria-label="قبلی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-
+            <div class="relative py-3">
               <!-- Swiper (without extra padding) -->
-              <div class="swiper categories-swiper">
-                <div id="categories-grid" class="swiper-wrapper"></div>
+              <div class="swiper categories-swiper p-4! -m-4!">
+                <div id="categories-grid" class="swiper-wrapper">
+                  <!-- Category 1 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/art-design.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          هنر و طراحی
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 2 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/development.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          برنامه‌نویسی
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 3 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/communication.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          ارتباطات
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 4 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/videography.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          فیلم‌برداری
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 5 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/photography.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          عکاسی
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 6 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/marketing.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          بازاریابی
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 7 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/content-writing.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          تولید محتوا
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 8 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/finance.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          علوم مالی
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 9 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/science.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          علوم پایه
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Category 10 -->
+                  <div class="swiper-slide">
+                    <a
+                      href="#"
+                      class="group flex min-h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-6 text-center transition-all duration-300 hover:border-primary hover:shadow-md"
+                    >
+                      <div
+                        class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1.5"
+                      >
+                        <div
+                          class="mb-4 flex size-12 items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110"
+                        >
+                          <img
+                            src="assets/icons/network.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-10 object-contain"
+                          />
+                        </div>
+                        <h3
+                          class="text-sm font-semibold leading-5 text-dark transition-colors duration-300 group-hover:text-primary"
+                        >
+                          شبکه و امنیت
+                        </h3>
+                        <p class="mt-1 text-xs text-body">۵۸ دوره</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
-
-              <!-- Next button (Left in RTL) -->
-              <button
-                class="categories-next absolute -left-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-left-5 sm:size-10"
-                aria-label="بعدی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
             </div>
-
             <!-- Pagination completely independent and placed below cards -->
             <div class="categories-pagination mt-6 flex justify-center"></div>
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- FEATURED COURSES SECTION -->
+      <!-- region FEATURED COURSES SECTION -->
       <section id="featured-courses" class="pt-12 sm:pt-14 lg:pt-16">
         <div class="container-edupress">
           <!-- Section Header -->
@@ -398,51 +699,486 @@
           <!-- Main Wrapper -->
           <div>
             <!-- Cards container and buttons -->
-            <div class="relative px-2 sm:px-6">
-              <!-- Previous button (Right in RTL) -->
-              <button
-                class="courses-prev absolute -right-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-right-5 sm:size-10"
-                aria-label="قبلی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-
+            <div class="relative">
               <!-- Swiper Main -->
-              <div class="swiper courses-swiper">
-                <div id="courses-grid" class="swiper-wrapper"></div>
+              <div class="swiper courses-swiper p-4! -m-4!">
+                <div id="courses-grid" class="swiper-wrapper">
+                  <!-- Course 1 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-01.png"
+                            alt="مقدمه‌ای بر لرن‌پرس: ساخت سیستم مدیریت آموزش آنلاین"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >تدریس آنلاین</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700">توماس</span>
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >مقدمه‌ای بر لرن‌پرس: ساخت سیستم مدیریت آموزش
+                                آنلاین</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>8 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>607 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base text-gray-400 line-through"
+                                >۲۹.۰ تومان</span
+                              >
+                              <span class="text-base font-bold text-emerald-400"
+                                >رایگان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Course 2 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-02.png"
+                            alt="ایجاد و مدیریت وب‌سایت‌های LMS با لرن‌پرس"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >تدریس آنلاین</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700"
+                                >تیم‌پرس</span
+                              >
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >ایجاد و مدیریت وب‌سایت‌های LMS با لرن‌پرس</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>14 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>536 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base text-gray-400 line-through"
+                                >۵۹.۰ تومان</span
+                              >
+                              <span class="text-base font-bold text-emerald-400"
+                                >رایگان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Course 3 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-03.png"
+                            alt="نحوه فروش دوره‌های حضوری با لرن‌پرس"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >بازاریابی</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700">توماس</span>
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >نحوه فروش دوره‌های حضوری با لرن‌پرس</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>10 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>9 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base text-gray-400 line-through"
+                                >۲۹.۰ تومان</span
+                              >
+                              <span class="text-base font-bold text-emerald-400"
+                                >رایگان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Course 4 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-04.png"
+                            alt="ساخت وب‌سایت LMS با افزونه لرن‌پرس"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >عکاسی</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700">توماس</span>
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >ساخت وب‌سایت LMS با افزونه لرن‌پرس</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>6 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>50 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base font-bold text-gray-900"
+                                >۸۰.۰۰ تومان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Course 5 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-05.png"
+                            alt="مقدمه‌ای بر افزونه آموزش آنلاین لرن‌پرس"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >بازاریابی</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700">توماس</span>
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >مقدمه‌ای بر افزونه آموزش آنلاین لرن‌پرس</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>3 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>323 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base text-gray-400 line-through"
+                                >۴۹.۰۰ تومان</span
+                              >
+                              <span class="text-base font-bold text-red-500"
+                                >۳۰.۰۰ تومان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Course 6 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:border-gray-300 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block overflow-hidden h-48 shrink-0"
+                        >
+                          <img
+                            src="assets/images/course-06.png"
+                            alt="چگونه یک دوره آنلاین تدریس کنیم؟"
+                            class="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span
+                            class="absolute right-3 top-3 rounded-lg bg-black/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                            >تولید محتوا</span
+                          >
+                        </a>
+                        <div class="p-5 flex flex-1 flex-col justify-between">
+                          <div>
+                            <p class="mb-1.5 text-sm text-gray-400">
+                              توسط
+                              <span class="font-bold text-gray-700">توماس</span>
+                            </p>
+                            <h3
+                              class="text-base font-semibold leading-6 text-dark line-clamp-2 min-h-12"
+                            >
+                              <a
+                                href="#"
+                                class="transition-colors hover:text-primary"
+                                >چگونه یک دوره آنلاین تدریس کنیم؟</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-3 flex items-center gap-5 text-xs text-body"
+                            >
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/times.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>2 هفته</span>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <img
+                                  src="assets/icons/students.svg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="size-4 object-contain"
+                                /><span>28 دانشجو</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="mt-6 flex items-center justify-between border-t border-border pt-4"
+                          >
+                            <div class="flex items-center gap-2">
+                              <span class="text-base text-gray-400 line-through"
+                                >۷۰۰.۰۰ تومان</span
+                              >
+                              <span class="text-base font-bold text-red-500"
+                                >۵۹۹.۰۰ تومان</span
+                              >
+                            </div>
+                            <a
+                              href="#"
+                              class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                              >مشاهده بیشتر</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
               </div>
-
-              <!-- Next button (Left in RTL) -->
-              <button
-                class="courses-next absolute -left-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-left-5 sm:size-10"
-                aria-label="بعدی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
             </div>
 
             <!-- Pagination independent below cards -->
@@ -450,8 +1186,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- ADD-ONS BANNER SECTION -->
+      <!-- region ADD-ONS BANNER SECTION -->
       <section id="addons" class="pt-12 lg:pt-16">
         <div class="container-edupress">
           <div class="relative overflow-hidden rounded-2xl bg-gray-50">
@@ -459,7 +1196,7 @@
             <img
               src="assets/images/addons-bg-miror.svg"
               alt="افزونه‌های لرن‌پرس"
-              class="absolute inset-0 h-full w-full object-cover object-left sm:object-contain"
+              class="absolute inset-0 h-full w-full object-cover object-left"
             />
 
             <!-- Mobile Overlay (Hidden on Large Screens) -->
@@ -482,7 +1219,7 @@
               </h2>
 
               <p
-                class="mt-3 text-xs leading-relaxed text-gray-200 sm:text-sm lg:text-body"
+                class="mt-3 text-xs leading-relaxed text-gray-200 sm:text-sm lg:text-body max-w-75"
               >
                 قدرت واقعی لرن‌پرس با افزونه‌های آن آزاد می‌شود. آکادمی آنلاین
                 خود را با امکانات پیشرفته ارتقا دهید.
@@ -498,18 +1235,89 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- STATISTICS SECTION -->
+      <!-- region STATISTICS SECTION -->
       <section id="statistics" class="py-10 lg:py-14">
         <div class="container-edupress">
           <div
             id="stats-grid"
             class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4"
-          ></div>
+          >
+            <!-- Stat 1 -->
+            <div
+              class="group flex min-h-35 sm:min-h-42.5 flex-col items-center justify-center rounded-2xl bg-[#f6f6f6] px-4 py-8 sm:py-10 text-center transition-all duration-300 hover:bg-gray-100/80 hover:shadow-sm"
+            >
+              <div
+                class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1"
+              >
+                <span
+                  class="text-3xl font-extrabold leading-snug text-primary sm:text-4xl lg:text-[42px]"
+                  >۲۵ هزار+</span
+                >
+                <span
+                  class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base"
+                  >دانشجوی فعال</span
+                >
+              </div>
+            </div>
+            <!-- Stat 2 -->
+            <div
+              class="group flex min-h-35 sm:min-h-42.5 flex-col items-center justify-center rounded-2xl bg-[#f6f6f6] px-4 py-8 sm:py-10 text-center transition-all duration-300 hover:bg-gray-100/80 hover:shadow-sm"
+            >
+              <div
+                class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1"
+              >
+                <span
+                  class="text-3xl font-extrabold leading-snug text-primary sm:text-4xl lg:text-[42px]"
+                  >۸۹۹+</span
+                >
+                <span
+                  class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base"
+                  >دوره آموزشی</span
+                >
+              </div>
+            </div>
+            <!-- Stat 3 -->
+            <div
+              class="group flex min-h-35 sm:min-h-42.5 flex-col items-center justify-center rounded-2xl bg-[#f6f6f6] px-4 py-8 sm:py-10 text-center transition-all duration-300 hover:bg-gray-100/80 hover:shadow-sm"
+            >
+              <div
+                class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1"
+              >
+                <span
+                  class="text-3xl font-extrabold leading-snug text-primary sm:text-4xl lg:text-[42px]"
+                  >۱۵۸+</span
+                >
+                <span
+                  class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base"
+                  >مدرس مجرب</span
+                >
+              </div>
+            </div>
+            <!-- Stat 4 -->
+            <div
+              class="group flex min-h-35 sm:min-h-42.5 flex-col items-center justify-center rounded-2xl bg-[#f6f6f6] px-4 py-8 sm:py-10 text-center transition-all duration-300 hover:bg-gray-100/80 hover:shadow-sm"
+            >
+              <div
+                class="flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1"
+              >
+                <span
+                  class="text-3xl font-extrabold leading-snug text-primary sm:text-4xl lg:text-[42px]"
+                  >۱۰۰٪</span
+                >
+                <span
+                  class="mt-3 text-xs font-semibold text-dark sm:text-sm lg:text-base"
+                  >رضایت کاربران</span
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- LMS FEATURES SECTION -->
+      <!-- region LMS FEATURES SECTION -->
       <section id="lms" class="py-8 lg:py-14">
         <div class="container-edupress">
           <div
@@ -592,8 +1400,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- THEME PREVIEW BANNER SECTION -->
+      <!-- region THEME PREVIEW BANNER SECTION -->
       <section id="theme" class="py-8 lg:py-12">
         <div class="container-edupress">
           <div
@@ -645,8 +1454,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- TESTIMONIALS SECTION -->
+      <!-- region TESTIMONIALS SECTION -->
       <section id="testimonials" class="py-10 lg:py-14">
         <div class="container-edupress">
           <!-- Section Header -->
@@ -662,51 +1472,273 @@
           <!-- Main carousel wrapper -->
           <div class="mt-8 lg:mt-10">
             <!-- Cards container and buttons -->
-            <div class="relative px-2 sm:px-6">
-              <!-- Previous button (Right in RTL) -->
-              <button
-                class="testimonials-prev absolute -right-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-right-5 sm:size-10"
-                aria-label="قبلی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-
+            <div class="relative">
               <!-- Swiper Main -->
-              <div class="swiper testimonials-swiper">
-                <div id="testimonials-grid" class="swiper-wrapper"></div>
+              <div class="swiper testimonials-swiper p-4! -m-4!">
+                <div id="testimonials-grid" class="swiper-wrapper">
+                  <!-- Testimonial 1 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            همکاری با این تیم یکی از بهترین تجربه‌های حرفه‌ای من
+                            بود. کیفیت کار و دقت در جزئیات واقعاً چشمگیر بود.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">رول کرول</h4>
+                          <p class="mt-0.5 text-xs text-body">
+                            توسعه‌دهنده ارشد
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 2 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            طراحی فوق‌العاده و کاربرپسند، دقیقاً همون چیزی که
+                            مشتری‌هام به دنبالش بودن. حتماً دوباره همکاری
+                            می‌کنیم.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">
+                            سارا محمدی
+                          </h4>
+                          <p class="mt-0.5 text-xs text-body">
+                            طراح تجربه کاربری
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 3 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            سرعت تحویل و کیفیت خروجی فراتر از انتظارم بود.
+                            مدیریت عالی و ارتباط مؤثر در تمام مراحل پروژه.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">علی رضایی</h4>
+                          <p class="mt-0.5 text-xs text-body">مدیر محصول</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 4 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            داده‌های دقیق و تحلیل‌های عمیقی که ارائه دادن، مسیر
+                            تصمیم‌گیری ما رو کاملاً متحول کرد.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">
+                            مریم حسینی
+                          </h4>
+                          <p class="mt-0.5 text-xs text-body">تحلیلگر داده</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 5 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            پشتیبانی فنی قوی و کدنویسی تمیز و اصولی. خیالم از
+                            سمت سرور کاملاً راحت هستش.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">رضا کریمی</h4>
+                          <p class="mt-0.5 text-xs text-body">
+                            توسعه‌دهنده بک‌اند
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 6 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            هماهنگی کامل بین تیم‌ها و تحویل به‌موقع پروژه‌های
+                            سنگین، واقعاً تحسین‌برانگیزه.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">
+                            نرگس احمدی
+                          </h4>
+                          <p class="mt-0.5 text-xs text-body">مدیر پروژه</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 7 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            راه‌حل‌های خلاقانه و نوآورانه‌ای که ارائه دادن، مشکل
+                            چندساله ما رو یک‌بار برای همیشه حل کرد.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">
+                            محمد جعفری
+                          </h4>
+                          <p class="mt-0.5 text-xs text-body">
+                            مهندس نرم‌افزار
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 8 -->
+                  <div class="swiper-slide h-auto!">
+                    <div
+                      class="group flex h-full flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-200"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <div>
+                          <div class="mb-4 text-primary">
+                            <img
+                              src="assets/images/quote.svg"
+                              alt="آیکون نقل قول"
+                              class="size-8 object-contain"
+                            />
+                          </div>
+                          <p
+                            class="text-xs leading-relaxed text-body sm:text-sm"
+                          >
+                            بازخورد مشتری‌ها از کمپین‌های انجام‌شده فوق‌العاده
+                            مثبت بود. قطعاً همکاریشون رو به همه توصیه می‌کنم.
+                          </p>
+                        </div>
+                        <div class="mt-6 border-t border-border pt-4">
+                          <h4 class="text-sm font-bold text-dark">
+                            زهرا کاظمی
+                          </h4>
+                          <p class="mt-0.5 text-xs text-body">
+                            کارشناس بازاریابی
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Next button (Left in RTL) -->
-              <button
-                class="testimonials-next absolute -left-2 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-left-5 sm:size-10"
-                aria-label="بعدی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
             </div>
 
             <!-- Pagination independent below cards -->
@@ -714,8 +1746,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- ACADEMY LMS CALLOUT SECTION -->
+      <!-- region ACADEMY LMS CALLOUT SECTION -->
       <section id="academy" class="py-8 lg:py-12">
         <div class="container-edupress">
           <div
@@ -759,8 +1792,9 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
 
-      <!-- LATEST ARTICLES SECTION -->
+      <!-- region LATEST ARTICLES SECTION -->
       <section id="articles" class="py-8 lg:py-12">
         <div class="container-edupress">
           <!-- Section Header -->
@@ -786,53 +1820,303 @@
 
           <!-- Main Wrapper -->
           <div class="mt-8">
-            <div class="relative px-2 sm:px-6">
-              <!-- Previous button -->
-              <button
-                type="button"
-                class="articles-prev absolute -right-2 top-1/2 z-20 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-right-5 sm:size-10"
-                aria-label="قبلی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-
+            <div class="relative">
               <!-- Swiper Main -->
-              <div class="swiper articles-swiper overflow-hidden">
-                <div id="articles-grid" class="swiper-wrapper"></div>
+              <div class="swiper articles-swiper p-4! -m-4!">
+                <div id="articles-grid" class="swiper-wrapper">
+                  <!-- Article 1 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-01.png"
+                            alt="بهترین مجموعه‌های قالب وردپرس لرن‌پرس برای سال ۲۰۲۳"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >بهترین مجموعه‌های قالب وردپرس لرن‌پرس برای سال
+                                ۲۰۲۳</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۴ بهمن ۱۴۰۱</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              به دنبال یک قالب فوق‌العاده برای سایت آموزشی خود
+                              هستید؟ لرن‌پرس بهترین انتخاب برای شماست.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article 2 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-02.png"
+                            alt="۱۰ افزونه ضروری برای افزایش سرعت سایت وردپرسی"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >۱۰ افزونه ضروری برای افزایش سرعت سایت
+                                وردپرسی</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۱۲ اسفند ۱۴۰۱</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              سرعت بارگذاری سایت یکی از مهم‌ترین عوامل سئو و
+                              تجربه کاربری است. این افزونه‌ها را حتماً نصب کنید.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article 3 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-03.png"
+                            alt="راهنمای جامع امنیت وردپرس در سال ۲۰۲۳"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >راهنمای جامع امنیت وردپرس در سال ۲۰۲۳</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۲۱ فروردین ۱۴۰۲</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              آیا سایت وردپرسی شما در برابر حملات سایبری امن
+                              است؟ با این راهنما سایت خود را ایمن کنید.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article 4 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-04.png"
+                            alt="مقایسه بهترین صفحه‌سازهای وردپرس: المنتور در مقابل دیوی"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >مقایسه بهترین صفحه‌سازهای وردپرس: المنتور در
+                                مقابل دیوی</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۳ اردیبهشت ۱۴۰۲</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              کدام صفحه‌ساز برای نیازهای شما مناسب‌تر است؟
+                              مقایسه کامل امکانات، سرعت و قیمت.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article 5 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-05.png"
+                            alt="بهینه‌سازی تصاویر در وردپرس برای بهبود سئو"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >بهینه‌سازی تصاویر در وردپرس برای بهبود سئو</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۱۵ خرداد ۱۴۰۲</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              با بهینه‌سازی تصاویر، هم سرعت سایت را افزایش دهید
+                              و هم در نتایج گوگل رتبه بهتری کسب کنید.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article 6 -->
+                  <div class="swiper-slide h-auto!">
+                    <article
+                      class="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                    >
+                      <div
+                        class="flex h-full flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1"
+                      >
+                        <a
+                          href="#"
+                          class="relative block aspect-16/10 w-full shrink-0 overflow-hidden bg-gray-100"
+                        >
+                          <img
+                            src="assets/images/article-06.png"
+                            alt="آموزش راه‌اندازی فروشگاه اینترنتی با ووکامرس"
+                            class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </a>
+                        <div class="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3
+                              class="text-base font-bold text-dark transition-colors duration-300 group-hover:text-primary sm:text-lg line-clamp-2 min-h-14"
+                            >
+                              <a href="#"
+                                >آموزش راه‌اندازی فروشگاه اینترنتی با ووکامرس</a
+                              >
+                            </h3>
+                            <div
+                              class="mt-2.5 flex items-center gap-1.5 text-xs text-body"
+                            >
+                              <img
+                                src="assets/icons/calendar.svg"
+                                alt="تاریخ"
+                                class="size-4 object-contain"
+                              />
+                              <span>۲۸ تیر ۱۴۰۲</span>
+                            </div>
+                            <p
+                              class="mt-3 text-xs leading-relaxed text-body sm:text-sm line-clamp-2"
+                            >
+                              از صفر تا صد ایجاد یک فروشگاه اینترنتی حرفه‌ای با
+                              قدرتمندترین افزونه فروشگاهی وردپرس.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
               </div>
-
-              <!-- Next button -->
-              <button
-                type="button"
-                class="articles-next absolute -left-2 top-1/2 z-20 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white active:scale-95 sm:-left-5 sm:size-10"
-                aria-label="بعدی"
-              >
-                <svg
-                  class="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
             </div>
 
             <!-- Pagination -->
@@ -840,9 +2124,11 @@
           </div>
         </div>
       </section>
+      <!-- endregion -->
     </main>
+    <!-- endregion -->
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- region FOOTER -->
     <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
       <div class="container-edupress">
         <div
@@ -852,7 +2138,7 @@
           <div class="lg:col-span-4">
             <a href="#" class="inline-block">
               <img
-                src="assets/images/logo.svg"
+                src="assets/images/logo.png"
                 alt="لوگوی ادوپرس"
                 class="h-8 w-auto object-contain"
               />
@@ -986,10 +2272,13 @@
         </div>
       </div>
     </footer>
+    <!-- endregion -->
 
-    <!-- Swiper JS -->
+    <!-- region Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Entry JavaScript Module -->
-    <script type="module" src="src/js/main-fa.js"></script>
+    <!-- endregion -->
+    <!-- region Entry JavaScript Module -->
+    <script type="module" src="src/js/main.js"></script>
+    <!-- endregion -->
   </body>
 </html>
