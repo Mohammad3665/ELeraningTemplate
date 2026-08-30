@@ -1,0 +1,2084 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>همه دوره‌ها | وایلند</title>
+
+    <!-- region Stylesheets -->
+    <link rel="stylesheet" href="src/css/style.css" />
+    <!-- endregion -->
+
+    <!-- region Google Fonts (Vazirmatn for Persian) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- endregion -->
+  </head>
+  <body class="bg-white text-dark antialiased font-['Vazirmatn']">
+    <!-- region HEADER -->
+    <header
+      id="site-header"
+      class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm"
+    >
+      <div class="container-whyland px-4">
+        <div class="flex min-h-16 items-center justify-between sm:min-h-20">
+          <!-- Site Logo -->
+          <a href="/" class="shrink-0" aria-label="صفحه اصلی وایلند">
+            <img
+              src="assets/images/logo.png"
+              alt="whyland"
+              class="h-auto w-24 sm:w-28"
+            />
+          </a>
+
+          <!-- region Desktop Navigation (visible from 768px and up) -->
+          <nav
+            class="hidden items-center gap-4 md:flex lg:gap-8"
+            aria-label="منوی اصلی"
+          >
+            <a
+              href="/"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              صفحه اصلی
+            </a>
+            <a
+              href="course-listing.html"
+              class="text-xs font-medium text-primary selected-header-item bg-[#f8f9fa] transition-colors hover:text-primary lg:text-sm"
+            >
+              دوره‌ها
+            </a>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              وبلاگ
+            </a>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              صفحات
+            </a>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              افزونه‌های لرن‌پرس
+            </a>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              قالب‌های ویژه
+            </a>
+          </nav>
+          <!-- endregion -->
+
+          <!-- region Header Actions (visible from 500px and up) -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Login/Register buttons in header (visible from 500px) -->
+            <div class="hidden items-center gap-2 min-[500px]:flex">
+              <a
+                href="#"
+                class="rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-primary hover:text-white sm:px-4 sm:py-2"
+              >
+                ورود
+              </a>
+              <a
+                href="#"
+                class="rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:px-4 sm:py-2"
+              >
+                ثبت‌نام
+              </a>
+            </div>
+
+            <!-- Search Toggle -->
+            <button
+              type="button"
+              id="search-button"
+              class="flex size-8 items-center justify-center rounded-full border border-primary text-primary transition-colors hover:bg-primary hover:text-white sm:size-9"
+              aria-label="جستجو"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="size-4"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-4-4" />
+              </svg>
+            </button>
+
+            <!-- region Mobile Menu Trigger (only visible below 768px) -->
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="flex size-9 cursor-pointer items-center justify-center rounded-md transition-all active:scale-95 active:bg-gray-100 md:hidden"
+              aria-label="باز کردن منو"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="size-6"
+              >
+                <path d="M4 6h16" />
+                <path d="M4 12h16" />
+                <path d="M4 18h16" />
+              </svg>
+            </button>
+            <!-- endregion -->
+          </div>
+          <!-- endregion -->
+        </div>
+      </div>
+    </header>
+    <!-- endregion -->
+
+    <!-- region Backdrop Overlay -->
+    <div
+      id="menu-overlay"
+      class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
+    ></div>
+    <!-- endregion -->
+
+    <!-- region Mobile Navigation Sidebar (From Left) -->
+    <aside
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden"
+    >
+      <div>
+        <!-- Header inside drawer -->
+        <div
+          class="flex items-center justify-between border-b border-border pb-4"
+        >
+          <img src="assets/images/logo.png" alt="whyland" class="h-auto w-24" />
+          <button
+            type="button"
+            id="close-menu-button"
+            class="rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100"
+            aria-label="بستن منو"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav Links (RTL text alignment) -->
+        <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
+          <a
+            href="/"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            صفحه اصلی
+          </a>
+          <a
+            href="course-listing.html"
+            class="border-b border-border py-3 text-sm font-medium text-primary"
+          >
+            دوره‌ها
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            صفحات
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            افزونه‌های لرن‌پرس
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            قالب‌های ویژه
+          </a>
+        </nav>
+      </div>
+
+      <!-- Action Buttons at bottom -->
+      <div class="flex flex-col gap-2 pt-6 dir-rtl">
+        <a
+          href="#"
+          class="w-full rounded-lg border border-primary py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+        >
+          ورود
+        </a>
+        <a
+          href="#"
+          class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+        >
+          ثبت‌نام
+        </a>
+      </div>
+    </aside>
+    <!-- endregion -->
+
+    <!-- region MAIN CONTENT -->
+    <main id="main-content">
+      <!-- region BREADCRUMB -->
+      <div class="border-b border-border bg-[#f8f9fa]">
+        <div class="container-whyland px-4 py-4">
+          <nav aria-label="مسیر صفحه">
+            <ol
+              class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm"
+            >
+              <li>
+                <a href="/" class="transition-colors hover:text-primary"
+                  >صفحه اصلی</a
+                >
+              </li>
+              <li aria-hidden="true" class="text-gray-300">/</li>
+              <li>
+                <a
+                  href="course-listing.html"
+                  class="transition-colors hover:text-primary"
+                  >دوره‌ها</a
+                >
+              </li>
+              <li aria-hidden="true" class="text-gray-300">/</li>
+              <li class="font-medium text-dark" aria-current="page">
+                همه دوره‌ها
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- endregion -->
+
+      <!-- region COURSE LISTING SECTION -->
+      <section id="course-listing" class="py-10 lg:py-14">
+        <div class="container-whyland px-4">
+          <!-- Main Grid: Sidebar (right) + Courses (left) -->
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
+            <!-- region SIDEBAR FILTERS -->
+            <aside class="order-2 lg:order-2">
+              <div
+                class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto pl-4 scrollbar-thin"
+              >
+                <!-- Course Category -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">
+                    دسته‌بندی دوره
+                  </h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >تجاری</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark cursor-pointer"
+                          >اداری</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="text-sm font-medium text-dark"
+                          >فروشگاه</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark cursor-pointer"
+                          >آموزشی</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="text-sm font-medium text-dark"
+                          >آکادمی</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >خانه ویلایی</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >استودیو</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >دانشگاه</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Instructors -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">مدرسین</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >کنی وایت</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >جان دو</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Price -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">قیمت</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="text-sm font-medium text-dark">همه</span>
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >رایگان</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >پولی</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Review -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">امتیاز</h3>
+                  <ul class="space-y-3">
+                    <!-- 5 stars -->
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="flex items-center gap-0.5 text-amber-400">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
+                    </li>
+                    <!-- 4 stars checked -->
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="flex items-center gap-0.5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
+                    </li>
+                    <!-- 3 stars -->
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="flex items-center gap-0.5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
+                    </li>
+                    <!-- 2 stars -->
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="flex items-center gap-0.5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
+                    </li>
+                    <!-- 1 star -->
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="flex items-center gap-0.5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-amber-400"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="size-3.5 text-gray-200"
+                          >
+                            <path
+                              d="M10 1.5l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.2 6.1-.6z"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                      <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Level -->
+                <div class="pb-2">
+                  <h3 class="mb-4 text-base font-bold text-dark">سطح دوره</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >همه سطوح</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >مبتدی</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span class="text-sm font-medium text-dark">متوسط</span>
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <label
+                        class="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
+                        />
+                        <span
+                          class="text-sm text-body transition-colors group-hover:text-dark"
+                          >پیشرفته</span
+                        >
+                      </label>
+                      <span class="text-xs text-gray-400">۱۵</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </aside>
+            <!-- endregion -->
+
+            <!-- region COURSE LIST -->
+            <div class="order-1 lg:order-1">
+              <!-- Page Header: Title + Search + View Toggle (moved INSIDE the courses column so it top-aligns with the sidebar) -->
+              <div
+                class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <h1
+                  class="text-2xl font-bold leading-tight text-dark sm:text-3xl"
+                >
+                  همه دوره‌ها
+                </h1>
+
+                <div class="flex items-center gap-3">
+                  <!-- Search Box -->
+                  <div class="relative w-full sm:w-64">
+                    <input
+                      type="text"
+                      placeholder="جستجوی دوره..."
+                      class="w-full rounded-full border border-border bg-white py-2.5 pr-4 pl-11 text-sm text-dark placeholder:text-gray-400 focus:border-primary focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      aria-label="جستجو"
+                      class="absolute left-1.5 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="size-3.5"
+                      >
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-4-4" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="courses-list" class="flex flex-col space-y-6">
+                <!-- Course Row 1 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-01.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 2 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-02.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 3 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-03.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 4 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-04.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 5 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-05.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 6 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-06.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 7 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-07.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 8 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-08.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 9 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-09.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course Row 10 -->
+                <article
+                  class="course-item group flex flex-col sm:gap-5 first:pt-0 last:pb-0 sm:flex-row border sm:border-x-0 sm:border-y border-border overflow-hidden rounded-2xl sm:rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl"
+                >
+                  <a
+                    href="#"
+                    class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/course-10.png"
+                      alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span
+                      class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >عکاسی</span
+                    >
+                  </a>
+                  <div
+                    class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between"
+                  >
+                    <div class="pb-7">
+                      <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                        توسط
+                        <span class="font-bold text-gray-700"
+                          >توماس پورتاس</span
+                        >
+                      </p>
+                      <h3
+                        class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg"
+                      >
+                        <a href="#" class="transition-colors hover:text-primary"
+                          >ایجاد وب‌سایت LMS با لرن‌پرس</a
+                        >
+                      </h3>
+                      <div
+                        class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/times.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲ هفته</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/students.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۱۵۶ دانشجو</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/levels.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>همه سطوح</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <img
+                            src="assets/icons/lessons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="size-4 object-contain"
+                          /><span>۲۰ درس</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-4 py-3 flex items-center border-t border-border justify-between sm:mt-6"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="text-sm text-gray-400 line-through sm:text-base"
+                          >۲۹.۰ تومان</span
+                        >
+                        <span
+                          class="text-sm font-bold text-emerald-500 sm:text-base"
+                          >رایگان</span
+                        >
+                      </div>
+                      <a
+                        href="#"
+                        class="text-sm font-semibold text-dark transition-colors hover:text-primary"
+                        >مشاهده بیشتر</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Pagination -->
+              <nav
+                class="mt-10 flex items-center justify-center gap-2"
+                aria-label="صفحه‌بندی"
+              >
+                <button
+                  type="button"
+                  aria-label="صفحه بعد"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="size-3 object-contain translate-x-px"
+                  />
+                </button>
+                <a
+                  href="#"
+                  aria-current="page"
+                  class="flex size-9 items-center justify-center rounded-full bg-dark text-sm font-semibold text-white"
+                  >۱</a
+                >
+                <a
+                  href="#"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-sm font-semibold text-dark transition-colors hover:border-primary hover:text-primary"
+                  >۲</a
+                >
+                <a
+                  href="#"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-sm font-semibold text-dark transition-colors hover:border-primary hover:text-primary"
+                  >۳</a
+                >
+                <button
+                  type="button"
+                  aria-label="صفحه قبل"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="size-3 object-contain -translate-x-px"
+                  />
+                </button>
+              </nav>
+            </div>
+            <!-- endregion -->
+          </div>
+        </div>
+      </section>
+      <!-- endregion -->
+    </main>
+    <!-- endregion -->
+
+    <!-- region FOOTER -->
+    <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
+      <div class="container-whyland">
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12"
+        >
+          <!-- Column 1: Brand Info -->
+          <div class="lg:col-span-4">
+            <a href="#" class="inline-block">
+              <img
+                src="assets/images/logo.png"
+                alt="لوگوی وایلند"
+                class="h-8 w-auto object-contain"
+              />
+            </a>
+            <p
+              class="mt-4 max-w-sm text-xs leading-relaxed text-body sm:text-sm"
+            >
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است.
+            </p>
+          </div>
+
+          <!-- Column 2: Help Links -->
+          <div class="lg:col-span-2">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              راهنما
+            </h4>
+            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  تماس با ما
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  آخرین مقالات
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  سوالات متداول
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Program Links -->
+          <div class="lg:col-span-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              برنامه‌های آموزشی
+            </h4>
+            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  هنر و طراحی
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  کسب و کار
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  فناوری اطلاعات و نرم‌افزار
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  زبان‌های خارجی
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  برنامه‌نویسی
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact & Social Info -->
+          <div class="lg:col-span-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              ارتباط با ما
+            </h4>
+            <div class="mt-4 space-y-2 text-xs leading-relaxed sm:text-sm">
+              <p>
+                <span class="font-medium text-dark">آدرس:</span> تهران، خیابان
+                آزادی، پلاک ۱۲۳
+              </p>
+              <p>
+                <span class="font-medium text-dark">تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸
+              </p>
+              <p>
+                <span class="font-medium text-dark">ایمیل:</span>
+                supportlms@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer & Copyright -->
+        <div class="relative mt-12 border-t border-gray-200/80 pt-6">
+          <div class="flex items-center justify-between">
+            <p class="w-full text-center text-xs text-body sm:text-sm">
+              توسعه یافته توسط استاد بزرگ محمدمهدی زنگنه(راشد)
+            </p>
+
+            <button
+              id="scroll-to-top"
+              class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 hover:scale-110 active:scale-95 active:bg-primary/90 sm:size-10"
+              aria-label="بازگشت به بالا"
+            >
+              <img src="assets/icons/arrow-up.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- endregion -->
+
+    <!-- region Entry JavaScript Module -->
+    <script type="module" src="src/js/main.js"></script>
+    <!-- endregion -->
+  </body>
+</html>
