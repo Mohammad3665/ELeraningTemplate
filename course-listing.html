@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>همه دوره‌ها | وایلند</title>
 
-    <!-- region Stylesheets -->
+    <!-- #region Stylesheets -->
     <link rel="stylesheet" href="src/css/style.css" />
     <!-- endregion -->
 
-    <!-- region Google Fonts (Vazirmatn for Persian) -->
+    <!-- #region Google Fonts (Vazirmatn for Persian) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,7 @@
     <!-- endregion -->
   </head>
   <body class="bg-white text-dark antialiased font-['Vazirmatn']">
-    <!-- region HEADER -->
+    <!-- #region HEADER -->
     <header
       id="site-header"
       class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm"
@@ -35,7 +35,7 @@
             />
           </a>
 
-          <!-- region Desktop Navigation (visible from 768px and up) -->
+          <!-- #region Desktop Navigation (visible from 768px and up) -->
           <nav
             class="hidden items-center gap-4 md:flex lg:gap-8"
             aria-label="منوی اصلی"
@@ -48,7 +48,7 @@
             </a>
             <a
               href="course-listing.html"
-              class="text-xs font-medium text-primary selected-header-item bg-[#f8f9fa] transition-colors hover:text-primary lg:text-sm"
+              class="text-xs font-medium text-primary selected-header-item transition-colors hover:text-primary lg:text-sm"
             >
               دوره‌ها
             </a>
@@ -58,12 +58,59 @@
             >
               وبلاگ
             </a>
-            <a
-              href="#"
-              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
-            >
-              صفحات
-            </a>
+            <!-- Dropdown Item -->
+            <div class="group relative py-4 cursor-pointer">
+              <button
+                type="button"
+                class="cursor-pointer flex items-center gap-1 text-xs font-medium text-dark transition-colors group-hover:text-primary lg:text-sm"
+              >
+                <span>صفحات</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="size-4 transition-transform duration-200 group-hover:rotate-180"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+
+              <!-- Submenu Dropdown -->
+              <div
+                class="invisible absolute right-0 top-full w-48 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100"
+              >
+                <div
+                  class="mt-1 flex flex-col rounded-xl border border-border bg-white p-2 shadow-lg"
+                >
+                  <a
+                    href="login.html"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    ورود
+                  </a>
+                  <a
+                    href="register.html"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    ثبت‌نام
+                  </a>
+                  <a
+                    href="#"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    سوالات متداول
+                  </a>
+                  <a
+                    href="#"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    بلاگ
+                  </a>
+                </div>
+              </div>
+            </div>
             <a
               href="#"
               class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
@@ -79,18 +126,18 @@
           </nav>
           <!-- endregion -->
 
-          <!-- region Header Actions (visible from 500px and up) -->
+          <!-- #region Header Actions (visible from 500px and up) -->
           <div class="flex items-center gap-2 sm:gap-3">
             <!-- Login/Register buttons in header (visible from 500px) -->
             <div class="hidden items-center gap-2 min-[500px]:flex">
               <a
-                href="#"
+                href="login.html"
                 class="rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-primary hover:text-white sm:px-4 sm:py-2"
               >
                 ورود
               </a>
               <a
-                href="#"
+                href="register.html"
                 class="rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:px-4 sm:py-2"
               >
                 ثبت‌نام
@@ -117,7 +164,7 @@
               </svg>
             </button>
 
-            <!-- region Mobile Menu Trigger (only visible below 768px) -->
+            <!-- #region Mobile Menu Trigger (only visible below 768px) -->
             <button
               type="button"
               id="mobile-menu-button"
@@ -145,19 +192,19 @@
     </header>
     <!-- endregion -->
 
-    <!-- region Backdrop Overlay -->
+    <!-- #region Backdrop Overlay -->
     <div
       id="menu-overlay"
       class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
     ></div>
     <!-- endregion -->
 
-    <!-- region Mobile Navigation Sidebar (From Left) -->
+    <!-- #region Mobile Navigation Sidebar (From Left) -->
     <aside
       id="mobile-menu"
       class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden"
     >
-      <div>
+      <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
         <!-- Header inside drawer -->
         <div
           class="flex items-center justify-between border-b border-border pb-4"
@@ -195,7 +242,7 @@
             صفحه اصلی
           </a>
           <a
-            href="course-listing.html"
+            href="#"
             class="border-b border-border py-3 text-sm font-medium text-primary"
           >
             دوره‌ها
@@ -204,8 +251,55 @@
             href="#"
             class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
           >
-            صفحات
+            وبلاگ
           </a>
+          <!-- Mobile Accordion/Dropdown -->
+          <details class="group border-b border-border">
+            <summary
+              class="flex cursor-pointer items-center justify-between py-3 text-sm font-medium text-dark select-none hover:text-primary [&::-webkit-details-marker]:hidden"
+            >
+              <span>صفحات</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="size-4 transition-transform duration-300 group-open:rotate-180"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+
+            <div
+              class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]"
+            >
+              <div class="overflow-hidden items-center">
+                <div class="flex flex-col gap-2 pr-4">
+                  <a
+                    href="login.html"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >ورود</a
+                  >
+                  <a
+                    href="register.html"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >ثبت‌نام</a
+                  >
+                  <a
+                    href="#"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >سوالات متداول</a
+                  >
+                  <a
+                    href="#"
+                    class="text-xs font-medium pb-3 pt-1 text-dark/80 transition-colors hover:text-primary"
+                    >بلاگ</a
+                  >
+                </div>
+              </div>
+            </div>
+          </details>
           <a
             href="#"
             class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
@@ -224,13 +318,13 @@
       <!-- Action Buttons at bottom -->
       <div class="flex flex-col gap-2 pt-6 dir-rtl">
         <a
-          href="#"
+          href="login.html"
           class="w-full rounded-lg border border-primary py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
         >
           ورود
         </a>
         <a
-          href="#"
+          href="register.html"
           class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90"
         >
           ثبت‌نام
@@ -239,9 +333,9 @@
     </aside>
     <!-- endregion -->
 
-    <!-- region MAIN CONTENT -->
+    <!-- #region MAIN CONTENT -->
     <main id="main-content">
-      <!-- region BREADCRUMB -->
+      <!-- #region BREADCRUMB -->
       <div class="border-b border-border bg-[#f8f9fa]">
         <div class="container-whyland px-4 py-4">
           <nav aria-label="مسیر صفحه">
@@ -271,12 +365,12 @@
       </div>
       <!-- endregion -->
 
-      <!-- region COURSE LISTING SECTION -->
+      <!-- #region COURSE LISTING SECTION -->
       <section id="course-listing" class="py-10 lg:py-14">
         <div class="container-whyland px-4">
           <!-- Main Grid: Sidebar (right) + Courses (left) -->
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
-            <!-- region SIDEBAR FILTERS -->
+            <!-- #region SIDEBAR FILTERS -->
             <aside class="order-2 lg:order-2">
               <div
                 class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto pl-4 scrollbar-thin"
@@ -287,121 +381,153 @@
                     دسته‌بندی دوره
                   </h3>
                   <ul class="space-y-3">
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >تجاری</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark cursor-pointer"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >اداری</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span class="text-sm font-medium text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" checked />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >فروشگاه</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark cursor-pointer"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >آموزشی</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span class="text-sm font-medium text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" checked />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >آکادمی</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >خانه ویلایی</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >استودیو</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >دانشگاه</span
                         >
                       </label>
@@ -414,31 +540,39 @@
                 <div class="border-b border-border pb-6">
                   <h3 class="mb-4 text-base font-bold text-dark">مدرسین</h3>
                   <ul class="space-y-3">
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >کنی وایت</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >جان دو</span
                         >
                       </label>
@@ -451,44 +585,58 @@
                 <div class="border-b border-border pb-6">
                   <h3 class="mb-4 text-base font-bold text-dark">قیمت</h3>
                   <ul class="space-y-3">
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span class="text-sm font-medium text-dark">همه</span>
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" checked />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
+                          >همه</span
+                        >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >رایگان</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >پولی</span
                         >
                       </label>
@@ -502,14 +650,19 @@
                   <h3 class="mb-4 text-base font-bold text-dark">امتیاز</h3>
                   <ul class="space-y-3">
                     <!-- 5 stars -->
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
                         <span class="flex items-center gap-0.5 text-amber-400">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -566,15 +719,19 @@
                       <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
                     </li>
                     <!-- 4 stars checked -->
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" checked />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
                         <span class="flex items-center gap-0.5">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -631,14 +788,19 @@
                       <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
                     </li>
                     <!-- 3 stars -->
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
                         <span class="flex items-center gap-0.5">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -695,14 +857,19 @@
                       <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
                     </li>
                     <!-- 2 stars -->
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
                         <span class="flex items-center gap-0.5">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -759,14 +926,19 @@
                       <span class="text-xs text-gray-400">(۱,۰۲۵)</span>
                     </li>
                     <!-- 1 star -->
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
                         <span class="flex items-center gap-0.5">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -829,59 +1001,77 @@
                 <div class="pb-2">
                   <h3 class="mb-4 text-base font-bold text-dark">سطح دوره</h3>
                   <ul class="space-y-3">
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >همه سطوح</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >مبتدی</span
                         >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span class="text-sm font-medium text-dark">متوسط</span>
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" checked />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
+                          >متوسط</span
+                        >
                       </label>
                       <span class="text-xs text-gray-400">۱۵</span>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <label
-                        class="flex items-center gap-2.5 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          class="size-4 rounded border-gray-300 accent-primary cursor-pointer"
-                        />
-                        <span
-                          class="text-sm text-body transition-colors group-hover:text-dark"
+                    <li class="flex items-center justify-between p-1">
+                      <label class="flex cursor-pointer items-center gap-2">
+                        <div class="custom-checkbox">
+                          <span class="checkbox">
+                            <input type="checkbox" />
+                            <svg>
+                              <use
+                                xlink:href="#checkbox-30"
+                                class="checkbox"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs font-medium text-dark sm:text-sm"
                           >پیشرفته</span
                         >
                       </label>
@@ -893,7 +1083,7 @@
             </aside>
             <!-- endregion -->
 
-            <!-- region COURSE LIST -->
+            <!-- #region COURSE LIST -->
             <div class="order-1 lg:order-1">
               <!-- Page Header: Title + Search + View Toggle (moved INSIDE the courses column so it top-aligns with the sidebar) -->
               <div
@@ -1931,7 +2121,7 @@
     </main>
     <!-- endregion -->
 
-    <!-- region FOOTER -->
+    <!-- #region FOOTER -->
     <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
       <div class="container-whyland">
         <div
@@ -2077,8 +2267,18 @@
     </footer>
     <!-- endregion -->
 
-    <!-- region Entry JavaScript Module -->
+    <!-- #region Entry JavaScript Module -->
     <script type="module" src="src/js/main.js"></script>
     <!-- endregion -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="checkbox-30" viewBox="0 0 22 22">
+        <path
+          fill="none"
+          stroke="primary"
+          d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2"
+        />
+      </symbol>
+    </svg>
   </body>
 </html>
