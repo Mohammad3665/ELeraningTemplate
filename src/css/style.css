@@ -183,3 +183,36 @@
   display: flex;
   align-items: center;
 }
+
+/* ==========================================
+   استایل‌های عمومی آکاردئون (Generic Accordions)
+   ========================================== */
+
+/* ۱. مخفی‌سازی اولیه محتوا */
+.curriculum-content,
+.faq-content {
+  @apply max-h-0 opacity-0 invisible transition-all duration-300 ease-in-out;
+}
+
+/* ۲. باز شدن محتوا */
+.curriculum-item.is-open .curriculum-content,
+.faq-item.is-open .faq-content {
+  @apply max-h-[1000px] opacity-100 visible;
+}
+
+/* ۳. چرخش و تغییر رنگ فلش */
+.curriculum-item.is-open .curriculum-chevron,
+.faq-item.is-open .faq-chevron {
+  @apply rotate-180 text-primary;
+}
+
+/* ۴. تغییر رنگ متن عنوان */
+.curriculum-item.is-open .curriculum-toggle span,
+.faq-item.is-open .faq-toggle span {
+  @apply text-primary;
+}
+
+/* ۵. استایل کادر آیتم باز شده (برای FAQ) */
+.faq-item.is-open {
+  @apply border-primary/40 shadow-md ring-1 ring-primary/20;
+}
