@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بلاگ | وایلند</title>
+
+    <!-- #region Stylesheets -->
+    <link rel="stylesheet" href="src/css/style.css" />
+    <!-- endregion -->
+
+    <!-- #region Google Fonts (Vazirmatn for Persian) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- endregion -->
+  </head>
+  <body class="bg-white text-dark antialiased font-['Vazirmatn']">
+    <!-- #region HEADER -->
+    <header
+      id="site-header"
+      class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm"
+    >
+      <div class="container-whyland px-4">
+        <div class="flex min-h-16 items-center justify-between sm:min-h-20">
+          <!-- Site Logo -->
+          <a href="/" class="shrink-0" aria-label="صفحه اصلی وایلند">
+            <img
+              src="assets/images/logo.png"
+              alt="whyland"
+              class="h-auto w-24 sm:w-28"
+            />
+          </a>
+
+          <!-- #region Desktop Navigation (visible from 768px and up) -->
+          <nav
+            class="hidden items-center gap-4 md:flex lg:gap-8"
+            aria-label="منوی اصلی"
+          >
+            <a
+              href="/"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              صفحه اصلی
+            </a>
+            <a
+              href="course-listing.html"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              دوره‌ها
+            </a>
+            <a
+              href="blog-listing.html"
+              class="text-xs font-medium text-primary selected-header-item transition-colors hover:text-primary lg:text-sm"
+            >
+              بلاگ
+            </a>
+            <!-- Dropdown Item -->
+            <div class="group relative py-4 cursor-pointer">
+              <button
+                type="button"
+                class="cursor-pointer flex items-center gap-1 text-xs font-medium text-dark transition-colors group-hover:text-primary lg:text-sm"
+              >
+                <span>صفحات</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="size-4 transition-transform duration-200 group-hover:rotate-180"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+
+              <!-- Submenu Dropdown -->
+              <div
+                class="invisible absolute right-0 top-full w-48 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100"
+              >
+                <div
+                  class="mt-1 flex flex-col rounded-xl border border-border bg-white p-2 shadow-lg"
+                >
+                  <a
+                    href="login.html"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    ورود
+                  </a>
+                  <a
+                    href="register.html"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    ثبت‌نام
+                  </a>
+                  <a
+                    href="#"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    سوالات متداول
+                  </a>
+                  <a
+                    href="blog-listing.html"
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm"
+                  >
+                    بلاگ
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              افزونه‌های لرن‌پرس
+            </a>
+            <a
+              href="#"
+              class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm"
+            >
+              قالب‌های ویژه
+            </a>
+          </nav>
+          <!-- endregion -->
+
+          <!-- #region Header Actions (visible from 500px and up) -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Login/Register buttons in header (visible from 500px) -->
+            <div class="hidden items-center gap-2 min-[500px]:flex">
+              <a
+                href="login.html"
+                class="rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-primary hover:text-white sm:px-4 sm:py-2"
+              >
+                ورود
+              </a>
+              <a
+                href="register.html"
+                class="rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:px-4 sm:py-2"
+              >
+                ثبت‌نام
+              </a>
+            </div>
+
+            <!-- Search Toggle -->
+            <button
+              type="button"
+              id="search-button"
+              class="flex size-8 items-center justify-center rounded-full border border-primary text-primary transition-colors hover:bg-primary hover:text-white sm:size-9"
+              aria-label="جستجو"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="size-4"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-4-4" />
+              </svg>
+            </button>
+
+            <!-- #region Mobile Menu Trigger (only visible below 768px) -->
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="flex size-9 cursor-pointer items-center justify-center rounded-md transition-all active:scale-95 active:bg-gray-100 md:hidden"
+              aria-label="باز کردن منو"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="size-6"
+              >
+                <path d="M4 6h16" />
+                <path d="M4 12h16" />
+                <path d="M4 18h16" />
+              </svg>
+            </button>
+            <!-- endregion -->
+          </div>
+          <!-- endregion -->
+        </div>
+      </div>
+    </header>
+    <!-- endregion -->
+
+    <!-- #region Backdrop Overlay -->
+    <div
+      id="menu-overlay"
+      class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
+    ></div>
+    <!-- endregion -->
+
+    <!-- #region Mobile Navigation Sidebar (From Left) -->
+    <aside
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden"
+    >
+      <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
+        <!-- Header inside drawer -->
+        <div
+          class="flex items-center justify-between border-b border-border pb-4"
+        >
+          <img src="assets/images/logo.png" alt="whyland" class="h-auto w-24" />
+          <button
+            type="button"
+            id="close-menu-button"
+            class="rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100"
+            aria-label="بستن منو"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav Links (RTL text alignment) -->
+        <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
+          <a
+            href="/"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            صفحه اصلی
+          </a>
+          <a
+            href="course-listing.html"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            دوره‌ها
+          </a>
+          <a
+            href="blog-listing.html"
+            class="border-b border-border py-3 text-sm font-medium text-primary"
+          >
+            بلاگ
+          </a>
+          <!-- Mobile Accordion/Dropdown -->
+          <details class="group border-b border-border">
+            <summary
+              class="flex cursor-pointer items-center justify-between py-3 text-sm font-medium text-dark select-none hover:text-primary [&::-webkit-details-marker]:hidden"
+            >
+              <span>صفحات</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="size-4 transition-transform duration-300 group-open:rotate-180"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+
+            <div
+              class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]"
+            >
+              <div class="overflow-hidden items-center">
+                <div class="flex flex-col gap-2 pr-4">
+                  <a
+                    href="login.html"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >ورود</a
+                  >
+                  <a
+                    href="register.html"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >ثبت‌نام</a
+                  >
+                  <a
+                    href="#"
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary"
+                    >سوالات متداول</a
+                  >
+                  <a
+                    href="blog-listing.html"
+                    class="text-xs font-medium pb-3 pt-1 text-dark/80 transition-colors hover:text-primary"
+                    >بلاگ</a
+                  >
+                </div>
+              </div>
+            </div>
+          </details>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            افزونه‌های لرن‌پرس
+          </a>
+          <a
+            href="#"
+            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary"
+          >
+            قالب‌های ویژه
+          </a>
+        </nav>
+      </div>
+
+      <!-- Action Buttons at bottom -->
+      <div class="flex flex-col gap-2 pt-6 dir-rtl">
+        <a
+          href="login.html"
+          class="w-full rounded-lg border border-primary py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+        >
+          ورود
+        </a>
+        <a
+          href="register.html"
+          class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+        >
+          ثبت‌نام
+        </a>
+      </div>
+    </aside>
+    <!-- endregion -->
+
+    <!-- #region MAIN CONTENT -->
+    <main id="main-content">
+      <!-- #region BREADCRUMB -->
+      <div class="border-b border-border bg-[#f8f9fa]">
+        <div class="container-whyland px-4 py-4">
+          <nav aria-label="مسیر صفحه">
+            <ol
+              class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm"
+            >
+              <li>
+                <a href="/" class="transition-colors hover:text-primary"
+                  >صفحه اصلی</a
+                >
+              </li>
+              <li aria-hidden="true" class="text-gray-300">/</li>
+              <li class="font-medium text-dark" aria-current="page">بلاگ</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- endregion -->
+
+      <!-- #region BLOG LISTING SECTION -->
+      <section id="blog-listing" class="py-10 lg:py-14">
+        <div class="container-whyland px-4">
+          <!-- Main Grid: Sidebar (right) + Articles (left) -->
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
+            <!-- #region SIDEBAR -->
+            <aside class="order-2 lg:order-2">
+              <div
+                class="space-y-8 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto pl-4 scrollbar-thin"
+              >
+                <!-- Category -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">دسته‌بندی</h3>
+                  <ul class="space-y-1">
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>تجاری</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>اداری</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>فروشگاهی</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>آموزشی</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>آکادمی</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center justify-between rounded-lg p-1.5 text-xs font-medium text-dark transition-colors hover:text-primary sm:text-sm"
+                      >
+                        <span>خانه ویلایی</span>
+                        <span class="text-xs text-gray-400">۱۵</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="border-b border-border pb-6">
+                  <h3 class="mb-4 text-base font-bold text-dark">
+                    آخرین مقالات
+                  </h3>
+                  <ul class="space-y-4">
+                    <li class="">
+                      <a
+                        href="blog-single.html"
+                        class="flex items-start gap-3 border-border"
+                      >
+                        <img
+                          src="assets/images/article-01.png"
+                          alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                          class="size-16 shrink-0 rounded-lg object-cover"
+                        />
+                        <span
+                          class="line-clamp-3 text-sm font-semibold leading-6 text-dark transition-colors hover:text-primary"
+                          >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a href="blog-single.html" class="flex items-start gap-3">
+                        <img
+                          src="assets/images/article-02.png"
+                          alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                          class="size-16 shrink-0 rounded-lg object-cover"
+                        />
+                        <span
+                          class="line-clamp-3 text-sm font-semibold leading-6 text-dark transition-colors hover:text-primary"
+                          >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</span
+                        >
+                      </a>
+                    </li>
+                    <li>
+                      <a href="blog-single.html" class="flex items-start gap-3">
+                        <img
+                          src="assets/images/article-03.png"
+                          alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                          class="size-16 shrink-0 rounded-lg object-cover"
+                        />
+                        <span
+                          class="line-clamp-3 text-sm font-semibold leading-6 text-dark transition-colors hover:text-primary"
+                          >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</span
+                        >
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="pb-2">
+                  <h3 class="mb-4 text-base font-bold text-dark">برچسب‌ها</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <a
+                      href="#"
+                      class="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm"
+                      >دوره‌های رایگان</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm"
+                      >بازاریابی</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm"
+                      >ایده</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm"
+                      >LMS</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full border border-transparent bg-gray-100 px-4 py-1.5 text-xs font-semibold text-dark sm:text-sm"
+                      >لرن‌پرس</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm"
+                      >مدرس</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <!-- endregion -->
+
+            <!-- #region ARTICLE LIST -->
+            <div class="order-1 lg:order-1">
+              <!-- Page Header: Title + Search + View Toggle -->
+              <div
+                class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <h1
+                  class="text-2xl font-bold leading-tight text-dark sm:text-3xl"
+                >
+                  همه مقالات
+                </h1>
+
+                <div class="flex items-center gap-3">
+                  <!-- Search Box -->
+                  <div class="relative w-full sm:w-64">
+                    <input
+                      type="text"
+                      placeholder="جستجو..."
+                      class="w-full rounded-full border border-border bg-white py-2.5 pr-4 pl-11 text-sm text-dark placeholder:text-gray-400 focus:border-primary focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      aria-label="جستجو"
+                      class="absolute left-1.5 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="size-3.5"
+                      >
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-4-4" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="blog-list" class="flex flex-col space-y-6">
+                <!-- Article 1 -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-01.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Article 2 (Highlighted) -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-02.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-03.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-04.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-05.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article
+                  class="blog-item group relative flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl transition-colors"
+                >
+                  <div
+                    class="relative block h-48 w-full shrink-0 overflow-hidden bg-gray-100 sm:h-auto sm:self-stretch sm:w-70"
+                  >
+                    <img
+                      src="assets/images/article-06.png"
+                      alt="بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 flex-col justify-center px-4 pb-4 pt-4 sm:px-0 sm:pb-5 sm:pt-5"
+                  >
+                    <h3
+                      class="text-base font-semibold leading-6 text-dark sm:text-lg lg:text-xl"
+                    >
+                      <a
+                        href="blog-single.html"
+                        class="static outline-none transition-colors before:absolute before:inset-0 group-hover:text-primary focus-visible:before:rounded-2xl focus-visible:before:ring-2 focus-visible:before:ring-primary"
+                        >بهترین مجموعه قالب‌های وردپرس لرن‌پرس برای ۲۰۲۳</a
+                      >
+                    </h3>
+                    <div
+                      class="mt-2.5 flex items-center gap-1.5 text-xs text-body sm:text-sm"
+                    >
+                      <img src="assets/icons/calendar.svg" alt="" />
+                      <span>۴ بهمن ۱۴۰۱</span>
+                    </div>
+                    <p
+                      class="mt-3 line-clamp-2 text-xs leading-relaxed text-body sm:text-sm"
+                    >
+                      به دنبال یک قالب وردپرس لرن‌پرس شگفت‌انگیز و کاربردی
+                      هستید؟ آموزش آنلاین...
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Pagination -->
+              <nav
+                class="mt-10 flex items-center justify-center gap-2"
+                aria-label="صفحه‌بندی"
+              >
+                <button
+                  type="button"
+                  aria-label="صفحه بعد"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="size-3 object-contain translate-x-px"
+                  />
+                </button>
+                <a
+                  href="#"
+                  aria-current="page"
+                  class="flex size-9 items-center justify-center rounded-full bg-dark text-sm font-semibold text-white"
+                  >۱</a
+                >
+                <a
+                  href="#"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-sm font-semibold text-dark transition-colors hover:border-primary hover:text-primary"
+                  >۲</a
+                >
+                <a
+                  href="#"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-sm font-semibold text-dark transition-colors hover:border-primary hover:text-primary"
+                  >۳</a
+                >
+                <button
+                  type="button"
+                  aria-label="صفحه قبل"
+                  class="flex size-9 items-center justify-center rounded-full border border-border text-gray-400 transition-colors hover:border-primary hover:text-primary"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="size-3 object-contain -translate-x-px"
+                  />
+                </button>
+              </nav>
+            </div>
+            <!-- endregion -->
+          </div>
+        </div>
+      </section>
+      <!-- endregion -->
+    </main>
+    <!-- endregion -->
+
+    <!-- #region FOOTER -->
+    <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
+      <div class="container-whyland">
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12"
+        >
+          <!-- Column 1: Brand Info -->
+          <div class="lg:col-span-4">
+            <a href="#" class="inline-block">
+              <img
+                src="assets/images/logo.png"
+                alt="لوگوی وایلند"
+                class="h-8 w-auto object-contain"
+              />
+            </a>
+            <p
+              class="mt-4 max-w-sm text-xs leading-relaxed text-body sm:text-sm"
+            >
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است.
+            </p>
+          </div>
+
+          <!-- Column 2: Help Links -->
+          <div class="lg:col-span-2">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              راهنما
+            </h4>
+            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  تماس با ما
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  آخرین مقالات
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  سوالات متداول
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Program Links -->
+          <div class="lg:col-span-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              برنامه‌های آموزشی
+            </h4>
+            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  هنر و طراحی
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  کسب و کار
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  فناوری اطلاعات و نرم‌افزار
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  زبان‌های خارجی
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-300 hover:text-primary"
+                >
+                  برنامه‌نویسی
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact & Social Info -->
+          <div class="lg:col-span-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+              ارتباط با ما
+            </h4>
+            <div class="mt-4 space-y-2 text-xs leading-relaxed sm:text-sm">
+              <p>
+                <span class="font-medium text-dark">آدرس:</span> تهران، خیابان
+                آزادی، پلاک ۱۲۳
+              </p>
+              <p>
+                <span class="font-medium text-dark">تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸
+              </p>
+              <p>
+                <span class="font-medium text-dark">ایمیل:</span>
+                supportlms@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer & Copyright -->
+        <div class="relative mt-12 border-t border-gray-200/80 pt-6">
+          <div class="flex items-center justify-between">
+            <p class="w-full text-center text-xs text-body sm:text-sm">
+              توسعه یافته توسط استاد بزرگ محمدمهدی زنگنه(راشد)
+            </p>
+
+            <button
+              id="scroll-to-top"
+              class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 hover:scale-110 active:scale-95 active:bg-primary/90 sm:size-10"
+              aria-label="بازگشت به بالا"
+            >
+              <img src="assets/icons/arrow-up.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- endregion -->
+
+    <!-- #region Entry JavaScript Module -->
+    <script type="module" src="src/js/main.js"></script>
+    <!-- endregion -->
+  </body>
+</html>
