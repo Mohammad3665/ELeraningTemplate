@@ -210,7 +210,7 @@
   overflow: hidden;
 }
 
-/* ۲. باز شدن محتوا */
+/* 2. Content expanding open */
 .curriculum-item.is-open .curriculum-content,
 .faq-item.is-open .faq-content {
   max-height: 1000px;
@@ -218,16 +218,16 @@
   visibility: visible;
 }
 
-/* ۳. چرخش و تغییر رنگ فلش */
+/* 3. Chevron rotation and color change */
 .curriculum-item.is-open .curriculum-chevron,
 .faq-item.is-open .faq-chevron {
   transform: rotate(180deg);
   transition-duration: 300ms;
-  color: var(--color-primary); /* رنگ primary در Tailwind */
+  color: var(--color-primary); /* primary color defined in Tailwind */
 }
 
-/* ۴. تغییر رنگ متن عنوان */
+/* 4. Title text color change */
 .curriculum-item.is-open .curriculum-toggle span,
 .faq-item.is-open .faq-toggle span {
-  color: var(--color-primary); /* رنگ primary در Tailwind */
+  color: var(--color-primary); /* primary color defined in Tailwind */
 }
