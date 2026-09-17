@@ -36,13 +36,14 @@
                         class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm">
                         دوره‌ها
                     </a>
-                    <a href="#" class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm">
-                        وبلاگ
+                    <a href="blog-listing.html"
+                        class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm">
+                        بلاگ
                     </a>
                     <!-- Dropdown Item -->
-                    <div class="group relative cursor-pointer">
+                    <div class="group relative py-4 cursor-pointer">
                         <button type="button"
-                            class="selected-header-item flex cursor-pointer items-center gap-1 text-xs font-medium text-dark transition-colors group-hover:text-primary lg:text-sm">
+                            class="cursor-pointer flex items-center gap-1 text-xs font-medium text-dark transition-colors group-hover:text-primary lg:text-sm">
                             <span>صفحات</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2"
@@ -55,7 +56,7 @@
                         <div
                             class="invisible absolute right-0 top-full w-48 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                             <div class="mt-1 flex flex-col rounded-xl border border-border bg-white p-2 shadow-lg">
-                                <a href="#"
+                                <a href="login.html"
                                     class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                                     ورود
                                 </a>
@@ -63,13 +64,25 @@
                                     class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                                     ثبت‌نام
                                 </a>
-                                <a href="#"
+                                <a href="faq.html"
                                     class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                                     سوالات متداول
                                 </a>
-                                <a href="#"
+                                <a href="course-single.html"
                                     class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                                    بلاگ
+                                    صفحه دوره
+                                </a>
+                                <a href="blog-listing.html"
+                                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                                    لیست مقالات
+                                </a>
+                                <a href="course-listing.html"
+                                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                                    صفحه دوره‌ها
+                                </a>
+                                <a href="blog-single.html"
+                                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                                    صفحه مقاله
                                 </a>
                             </div>
                         </div>
@@ -87,7 +100,7 @@
                 <div class="flex items-center gap-2 sm:gap-3">
                     <!-- Login/Register buttons in header (visible from 500px) -->
                     <div class="hidden items-center gap-2 min-[500px]:flex">
-                        <a href="#"
+                        <a href="login.html"
                             class="rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-primary hover:text-white sm:px-4 sm:py-2">
                             ورود
                         </a>
@@ -151,15 +164,16 @@
 
             <!-- Nav Links (RTL text alignment) -->
             <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
-                <a href="/" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+                <a href="/" class="border-b border-border py-3 text-sm font-medium text-dark">
                     صفحه اصلی
                 </a>
                 <a href="course-listing.html"
                     class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
                     دوره‌ها
                 </a>
-                <a href="#" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
-                    وبلاگ
+                <a href="blog-listing.html"
+                    class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+                    بلاگ
                 </a>
                 <!-- Mobile Accordion/Dropdown -->
                 <details class="group border-b border-border">
@@ -176,15 +190,25 @@
                         class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]">
                         <div class="overflow-hidden items-center">
                             <div class="flex flex-col gap-2 pr-4">
-                                <a href="#"
+                                <a href="login.html"
                                     class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود</a>
                                 <a href="register.html"
                                     class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ثبت‌نام</a>
-                                <a href="#"
+                                <a href="faq.html"
                                     class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">سوالات
                                     متداول</a>
-                                <a href="#"
-                                    class="text-xs font-medium pb-3 pt-1 text-dark/80 transition-colors hover:text-primary">بلاگ</a>
+                                <a href="course-listing.html"
+                                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
+                                    دوره‌ها</a>
+                                <a href="course-single.html"
+                                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
+                                    دوره</a>
+                                <a href="blog-listing.html"
+                                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
+                                    مقالات</a>
+                                <a href="blog-single.html"
+                                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
+                                    مقاله</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +224,7 @@
 
         <!-- Action Buttons at bottom -->
         <div class="flex flex-col gap-2 pt-6 dir-rtl">
-            <a href="#"
+            <a href="login.html"
                 class="w-full rounded-lg border border-primary py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
                 ورود
             </a>

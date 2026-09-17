@@ -10,6 +10,12 @@
   background-color: #f8f9fa;
 }
 
+@media (min-width: 750px) and (max-width: 1020px) {
+  .selected-header-item {
+    margin: -16px 0 -17px 0;
+  }
+}
+
 .eye-animated .eye-slash {
   stroke-dasharray: 27;
   stroke-dashoffset: 27;
@@ -97,12 +103,12 @@
   transition: 0.2s;
 }
 
-.toggle-switch input:checked + .slider:before {
+.toggle-switch input:checked+.slider:before {
   transform: translate(-12px, -50%);
   background-color: var(--color-primary);
 }
 
-.toggle-switch input:checked + .slider {
+.toggle-switch input:checked+.slider {
   box-shadow:
     0 0 0 1.5px var(--color-primary),
     0 0 6px var(--color-primary);
@@ -119,15 +125,18 @@
   width: calc(var(--size, 1) * 22px);
   position: relative;
 }
+
 .custom-checkbox .checkbox:after {
   content: "";
   width: 100%;
   padding-top: 100%;
   display: block;
 }
-.custom-checkbox .checkbox > * {
+
+.custom-checkbox .checkbox>* {
   position: absolute;
 }
+
 .custom-checkbox .checkbox input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -142,21 +151,26 @@
   padding: 0;
   transition: all calc(var(--dur) / 3) linear;
 }
+
 .custom-checkbox .checkbox input:hover,
 .custom-checkbox .checkbox input:checked {
   --newBrdr: calc(var(--size, 1) * 2);
 }
+
 .custom-checkbox .checkbox input:hover {
   --newBrdrClr: var(--brdr-hovr);
 }
+
 .custom-checkbox .checkbox input:checked {
   --newBrdrClr: var(--color-primary);
   transition-delay: calc(var(--dur) / 1.3);
 }
-.custom-checkbox .checkbox input:checked + svg {
+
+.custom-checkbox .checkbox input:checked+svg {
   --dashArray: 16 93;
   --dashOffset: 109;
 }
+
 .custom-checkbox .checkbox svg {
   fill: none;
   left: 0;
@@ -172,6 +186,7 @@
     stroke-dasharray var(--dur),
     stroke-dashoffset var(--dur);
 }
+
 .custom-checkbox .checkbox svg,
 .custom-checkbox .checkbox input {
   display: block;
@@ -223,11 +238,13 @@
 .faq-item.is-open .faq-chevron {
   transform: rotate(180deg);
   transition-duration: 300ms;
-  color: var(--color-primary); /* primary color defined in Tailwind */
+  color: var(--color-primary);
+  /* primary color defined in Tailwind */
 }
 
 /* 4. Title text color change */
 .curriculum-item.is-open .curriculum-toggle span,
 .faq-item.is-open .faq-toggle span {
-  color: var(--color-primary); /* primary color defined in Tailwind */
+  color: var(--color-primary);
+  /* primary color defined in Tailwind */
 }
