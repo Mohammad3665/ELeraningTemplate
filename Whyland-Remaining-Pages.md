@@ -155,13 +155,8 @@
   - نام خانوادگی (LastName)
   - ایمیل (Email)
   - شماره موبایل (PhoneNumber) - با تایید OTP
-  - کد ملی (NationalCode)
   - تاریخ تولد (BirthDate)
   - جنسیت (Gender)
-  - آدرس (Address)
-  - استان (Province)
-  - شهر (City)
-  - کد پستی (PostalCode)
   - آپلود تصویر پروفایل (Avatar)
 - دکمه «ذخیره تغییرات»
 
