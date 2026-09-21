@@ -254,77 +254,163 @@
     <!-- endregion -->
 
     <!-- #region REGISTER SECTION -->
-    <section id="login-section" class="py-12 sm:py-16">
+    <section id="register-section" class="py-12 sm:py-16">
       <div class="container-whyland flex justify-center px-4">
-        <!-- Card Container -->
-        <div class="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:p-8">
+        <!-- Card Container (wider for two columns on lg) -->
+        <div class="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:p-8 lg:max-w-3xl">
           <!-- Section Title -->
-          <h1 class="mb-6 text-xl font-bold text-dark sm:text-2xl">
-            ثبت‌نام
-          </h1>
+          <h1 class="mb-2 text-center text-xl font-bold text-dark sm:text-2xl">ثبت‌نام</h1>
+          <p class="mb-6 text-center text-xs leading-relaxed text-body sm:text-sm">
+            برای ساخت حساب کاربری، اطلاعات زیر را تکمیل کنید.
+          </p>
 
           <!-- Register Form -->
-          <form action="#" method="POST" class="space-y-4">
-            <!-- Email Input -->
-            <div>
-              <label for="username-or-email" class="sr-only">ایمیل یا نام کاربری</label>
-              <input type="text" id="username-or-email" name="username_or_email" placeholder="نام کاربری یا ایمیل *"
-                required
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-            </div>
+          <form action="#" method="POST" class="space-y-6">
 
-            <!-- Username -->
-            <div>
-              <label for="username-or-email" class="sr-only">نام کاربری</label>
-              <input type="text" id="username-or-email" name="username_or_email" placeholder="نام کاربری *" required
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-            </div>
+            <!-- ============ SIX INPUTS — TWO COLUMNS ON LG ============ -->
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
 
-            <!-- Password Input with Toggle Eye Icon -->
-            <div class="password-wrapper relative">
-              <input type="password" placeholder="رمز عبور *"
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-              <button type="button"
-                class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
-                aria-label="نمایش/مخفی‌سازی رمز عبور">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                  stroke="currentColor" class="eye-animated size-4 sm:size-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
-                </svg>
+              <!-- Right column (in RTL) -->
+              <div class="space-y-4">
+                <!-- First Name -->
+                <div>
+                  <label for="first-name" class="sr-only">نام</label>
+                  <input type="text" id="first-name" name="first_name" placeholder="نام *" required
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                  <label for="last-name" class="sr-only">نام خانوادگی</label>
+                  <input type="text" id="last-name" name="last_name" placeholder="نام خانوادگی *" required
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                  <label for="phone-number" class="sr-only">شماره موبایل</label>
+                  <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="rtl"
+                    placeholder="شماره موبایل *" required
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-right text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                </div>
+              </div>
+
+              <!-- Left column (in RTL) -->
+              <div class="space-y-4">
+                <!-- Email (Optional) -->
+                <div>
+                  <label for="email" class="sr-only">ایمیل</label>
+                  <input type="email" id="email" name="email" placeholder="ایمیل (اختیاری)"
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                </div>
+
+                <!-- Password -->
+                <div class="password-wrapper relative">
+                  <label for="password" class="sr-only">رمز عبور</label>
+                  <input type="password" id="password" name="password" placeholder="رمز عبور *"
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <button type="button"
+                    class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
+                    aria-label="نمایش/مخفی‌سازی رمز عبور">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                      stroke="currentColor" class="eye-animated size-4 sm:size-5">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="password-wrapper relative">
+                  <label for="confirm-password" class="sr-only">تکرار رمز عبور</label>
+                  <input type="password" id="confirm-password" name="confirm_password" placeholder="تکرار رمز عبور *"
+                    class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <button type="button"
+                    class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
+                    aria-label="نمایش/مخفی‌سازی رمز عبور">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                      stroke="currentColor" class="eye-animated size-4 sm:size-5">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- ============ END SIX INPUTS ============ -->
+
+            <!-- ============ BELOW: TERMS + ACTIONS (CENTERED) ============ -->
+            <div class="mx-auto w-full max-w-sm space-y-4">
+
+              <!-- Terms Checkbox -->
+              <div class="flex items-start justify-center gap-2 pt-0.5">
+                <div class="custom-checkbox mt-0.5">
+                  <span class="checkbox">
+                    <input type="checkbox" id="terms" name="terms" required />
+                    <svg>
+                      <use xlink:href="#checkbox-30" class="checkbox"></use>
+                    </svg>
+                  </span>
+                </div>
+                <label for="terms" class="select-none text-xs leading-relaxed text-body sm:text-sm cursor-pointer">
+                  <a href="#"
+                    class="font-medium text-primary underline transition-colors hover:text-primary/80 hover:no-underline">قوانین
+                    و مقررات</a>
+                  و
+                  <a href="#"
+                    class="font-medium text-primary underline transition-colors hover:text-primary/80 hover:no-underline">سیاست
+                    حفظ حریم خصوصی</a>
+                  را می‌پذیرم.
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit"
+                class="w-full cursor-pointer rounded-full bg-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
+                ثبت‌نام
               </button>
-            </div>
 
-            <!-- Confirm password -->
-            <div class="password-wrapper relative">
-              <input type="password" placeholder="تکرار رمز عبور *"
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+              <!-- Divider -->
+              <div class="relative flex items-center py-1">
+                <div class="flex-grow border-t border-gray-200"></div>
+                <span class="mx-3 text-[10px] text-gray-400 sm:text-xs">یا</span>
+                <div class="flex-grow border-t border-gray-200"></div>
+              </div>
+
+              <!-- Google Sign Up Button -->
               <button type="button"
-                class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
-                aria-label="نمایش/مخفی‌سازی رمز عبور">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                  stroke="currentColor" class="eye-animated size-4 sm:size-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
+                class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-primary bg-primary/5 py-2.5 text-center text-xs font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white active:scale-[0.98] sm:text-sm">
+                <svg class="size-4 sm:size-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    fill="currentColor" />
+                  <path
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    fill="currentColor" />
+                  <path
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    fill="currentColor" />
+                  <path
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    fill="currentColor" />
                 </svg>
+                ثبت‌نام با گوگل
               </button>
-            </div>
 
-            <!-- Submit Button -->
-            <button type="submit"
-              class="w-full cursor-pointer rounded-full bg-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
-              ثبت‌نام
-            </button>
-            <div class="text-center sm:text-right">
-              <a href="login.html"
-                class="underline text-xs font-medium text-dark/70 transition-colors hover:text-primary hover:no-underline focus:text-primary active:text-primary">
-                قبلا حساب کاربری ایحاد کرده‌اید؟ ورود
-              </a>
+              <!-- Login Link -->
+              <div class="pt-1 text-center">
+                <a href="login.html"
+                  class="underline text-xs font-medium text-dark/70 transition-colors hover:text-primary hover:no-underline focus:text-primary active:text-primary">
+                  قبلاً ثبت‌نام کرده‌اید؟ وارد شوید
+                </a>
+              </div>
             </div>
+            <!-- ============ END CENTERED BLOCK ============ -->
+
           </form>
         </div>
       </div>

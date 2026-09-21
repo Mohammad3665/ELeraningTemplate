@@ -1,3 +1,69 @@
+/* ============================================================
+   Persian Digits Converter
+   تبدیل تمام اعداد انگلیسی به فارسی در کل صفحه
+   ============================================================ */
+(function () {
+  const PERSIAN_DIGITS = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+  const SKIP_TAGS = new Set([
+    'SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'CODE', 'PRE',
+    'INPUT', 'SELECT', 'OPTION',
+  ]);
+
+  function toPersianDigits(text) {
+    return text.replace(/\d/g, (d) => PERSIAN_DIGITS[d]);
+  }
+
+  function convertNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const parent = node.parentNode;
+      if (!parent || SKIP_TAGS.has(parent.tagName)) return;
+      const converted = toPersianDigits(node.nodeValue);
+      if (converted !== node.nodeValue) {
+        node.nodeValue = converted;
+      }
+      return;
+    }
+
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (SKIP_TAGS.has(node.tagName)) return;
+
+      ['placeholder', 'title', 'alt', 'aria-label'].forEach((attr) => {
+        if (node.hasAttribute && node.hasAttribute(attr)) {
+          const val = node.getAttribute(attr);
+          const converted = toPersianDigits(val);
+          if (converted !== val) node.setAttribute(attr, converted);
+        }
+      });
+
+      node.childNodes.forEach(convertNode);
+    }
+  }
+
+  function convertAll() {
+    convertNode(document.body);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', convertAll);
+  } else {
+    convertAll();
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach(convertNode);
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+})();
+
 // ============================================
 // Mobile Side Drawer Toggle
 // ============================================
@@ -60,7 +126,7 @@ if (scrollTopBtn) {
   });
 }
 
-document.addEventListener("touchstart", function () {}, true);
+document.addEventListener("touchstart", function () { }, true);
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".password-wrapper").forEach((wrapper) => {
