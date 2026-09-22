@@ -315,42 +315,86 @@
               <!-- Right column (in RTL) -->
               <div class="space-y-4">
                 <!-- First Name -->
-                <div>
-                  <label for="first-name" class="sr-only">نام</label>
-                  <input type="text" id="first-name" name="first_name" placeholder="نام *" required
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                <div class="relative">
+                  <input type="text" id="first-name" name="first_name" placeholder=" " required
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="first-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    نام *
+                  </label>
                 </div>
 
                 <!-- Last Name -->
-                <div>
-                  <label for="last-name" class="sr-only">نام خانوادگی</label>
-                  <input type="text" id="last-name" name="last_name" placeholder="نام خانوادگی *" required
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                <div class="relative">
+                  <input type="text" id="last-name" name="last_name" placeholder=" " required
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="last-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    نام خانوادگی *
+                  </label>
                 </div>
 
                 <!-- Phone Number -->
-                <div>
-                  <label for="phone-number" class="sr-only">شماره موبایل</label>
-                  <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="rtl"
-                    placeholder="شماره موبایل *" required
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-right text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                <div class="relative">
+                  <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="rtl" placeholder=" " required
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-right text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="phone-number" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    شماره موبایل *
+                  </label>
                 </div>
               </div>
 
               <!-- Left column (in RTL) -->
               <div class="space-y-4">
                 <!-- Email (Optional) -->
-                <div>
-                  <label for="email" class="sr-only">ایمیل</label>
-                  <input type="email" id="email" name="email" placeholder="ایمیل (اختیاری)"
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                <div class="relative">
+                  <input type="email" id="email" name="email" placeholder=" "
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    ایمیل (اختیاری)
+                  </label>
                 </div>
 
                 <!-- Password -->
                 <div class="password-wrapper relative">
-                  <label for="password" class="sr-only">رمز عبور</label>
-                  <input type="password" id="password" name="password" placeholder="رمز عبور *"
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <input type="password" id="password" name="password" placeholder=" "
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="password" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    رمز عبور *
+                  </label>
                   <button type="button"
                     class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
                     aria-label="نمایش/مخفی‌سازی رمز عبور">
@@ -366,9 +410,18 @@
 
                 <!-- Confirm Password -->
                 <div class="password-wrapper relative">
-                  <label for="confirm-password" class="sr-only">تکرار رمز عبور</label>
-                  <input type="password" id="confirm-password" name="confirm_password" placeholder="تکرار رمز عبور *"
-                    class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <input type="password" id="confirm-password" name="confirm_password" placeholder=" "
+                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                  <label for="confirm-password" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    transition-all duration-200
+                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                    peer-focus:text-sm
+                    peer-not-placeholder-shown:right-3
+                    peer-not-placeholder-shown:top-0
+                    peer-not-placeholder-shown:-translate-y-1/2
+                    peer-not-placeholder-shown:text-sm">
+                    تکرار رمز عبور *
+                  </label>
                   <button type="button"
                     class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
                     aria-label="نمایش/مخفی‌سازی رمز عبور">

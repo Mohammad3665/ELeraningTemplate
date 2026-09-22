@@ -311,11 +311,20 @@
 
                         <form id="otp-mobile-form" action="#" method="POST" class="space-y-4">
                             <!-- Mobile Input -->
-                            <div>
-                                <label for="mobile-number" class="sr-only">شماره موبایل</label>
+                            <div class="relative">
                                 <input type="tel" id="mobile-number" name="mobile_number" inputmode="numeric"
-                                    placeholder="شماره موبایل *" required
-                                    class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                                    placeholder=" " required
+                                    class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                                <label for="mobile-number" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                                    transition-all duration-200
+                                    peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                                    peer-focus:text-sm
+                                    peer-not-placeholder-shown:right-3
+                                    peer-not-placeholder-shown:top-0
+                                    peer-not-placeholder-shown:-translate-y-1/2
+                                    peer-not-placeholder-shown:text-sm">
+                                    شماره موبایل *
+                                </label>
                             </div>
 
                             <!-- Submit Button -->

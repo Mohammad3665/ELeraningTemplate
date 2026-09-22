@@ -161,12 +161,16 @@
         <!-- endregion -->
       </div>
     </div>
+  </header>
+  <!-- endregion -->
 
-    <a href="change-password.html"
-      class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تغییر
-      رمز عبور</a>dregion -->
+  <!-- #region Backdrop Overlay -->
+  <div id="menu-overlay"
+    class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden">
+  </div>
+  <!-- endregion -->
 
-    <!-- #region Mobile Navigation Sidebar (From Left) -->
+  <!-- #region Mobile Navigation Sidebar (From Left) -->
     <aside id="mobile-menu"
       class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden">
       <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
@@ -516,7 +520,7 @@
               <!-- endregion -->
 
               <!-- #region QUICK LINKS TO PROFILE SECTIONS -->
-              <div class="mt-10 text-center">
+              <div class="mt-10 text-center sm:text-right">
                 <h3 class="text-base font-bold text-dark sm:text-lg">بخش‌های پروفایل</h3>
                 <p class="mt-1.5 text-xs text-body sm:text-sm">
                   مدیریت سایر بخش‌های حساب کاربری

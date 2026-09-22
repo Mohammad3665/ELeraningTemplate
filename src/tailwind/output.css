@@ -327,6 +327,9 @@
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
   .right-90 {
     right: calc(var(--spacing) * 90);
   }
@@ -1220,6 +1223,9 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
+  .px-1 {
+    padding-inline: var(--spacing);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -1690,6 +1696,76 @@
     .group-hover\:opacity-100:is(:where(.group):hover *) {
       opacity: 100%;
     }
+  }
+  .peer-not-placeholder-shown\:top-0:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    top: 0px;
+  }
+  .peer-not-placeholder-shown\:right-3:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    right: calc(var(--spacing) * 3);
+  }
+  .peer-not-placeholder-shown\:-translate-y-1:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    --tw-translate-y: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .peer-not-placeholder-shown\:-translate-y-1\/2:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .peer-not-placeholder-shown\:text-lg:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .peer-not-placeholder-shown\:text-sm:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .peer-not-placeholder-shown\:text-xs:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .peer-not-placeholder-shown\:text-\[10px\]:is(:where(.peer):not(:placeholder-shown) ~ *) {
+    font-size: 10px;
+  }
+  .peer-focus\:top-0:is(:where(.peer):focus ~ *) {
+    top: 0px;
+  }
+  .peer-focus\:right-3:is(:where(.peer):focus ~ *) {
+    right: calc(var(--spacing) * 3);
+  }
+  .peer-focus\:-translate-y-1\/2:is(:where(.peer):focus ~ *) {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .peer-focus\:text-lg:is(:where(.peer):focus ~ *) {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .peer-focus\:text-sm:is(:where(.peer):focus ~ *) {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .peer-focus\:text-xs:is(:where(.peer):focus ~ *) {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .peer-focus\:text-\[10px\]:is(:where(.peer):focus ~ *) {
+    font-size: 10px;
+  }
+  .peer-focus\:text-primary:is(:where(.peer):focus ~ *) {
+    color: var(--color-primary);
+  }
+  .peer-\[\:not\(\:placeholder-shown\)\]\:top-0:is(:where(.peer):is(:not(:placeholder-shown)) ~ *) {
+    top: 0px;
+  }
+  .peer-\[\:not\(\:placeholder-shown\)\]\:right-3:is(:where(.peer):is(:not(:placeholder-shown)) ~ *) {
+    right: calc(var(--spacing) * 3);
+  }
+  .peer-\[\:not\(\:placeholder-shown\)\]\:-translate-y-1\/2:is(:where(.peer):is(:not(:placeholder-shown)) ~ *) {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .peer-\[\:not\(\:placeholder-shown\)\]\:text-\[10px\]:is(:where(.peer):is(:not(:placeholder-shown)) ~ *) {
+    font-size: 10px;
   }
   .placeholder\:text-gray-400::placeholder {
     color: var(--color-gray-400);

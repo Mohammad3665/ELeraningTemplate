@@ -307,16 +307,35 @@
           <!-- Login Form -->
           <form action="#" method="POST" class="space-y-4">
             <!-- Username / Email Input -->
-            <div>
-              <label for="username-or-email" class="sr-only">ایمیل</label>
-              <input type="text" id="username-or-email" name="username_or_email" placeholder="ایمیل *" required
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+            <div class="relative">
+              <input type="text" id="username-or-email" name="username_or_email" placeholder=" " required
+                class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+              <label for="username-or-email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                transition-all duration-200
+                peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                peer-focus:text-sm
+                peer-not-placeholder-shown:right-3
+                peer-not-placeholder-shown:top-0
+                peer-not-placeholder-shown:-translate-y-1/2
+                peer-not-placeholder-shown:text-sm">
+                ایمیل *
+              </label>
             </div>
 
             <!-- Password Input with Toggle Eye Icon -->
             <div class="password-wrapper relative">
-              <input type="password" placeholder="رمز عبور *"
-                class="h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark placeholder-gray-400 outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+              <input type="password" placeholder=" "
+                class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+              <label class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                transition-all duration-200
+                peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                peer-focus:text-sm
+                peer-not-placeholder-shown:right-3
+                peer-not-placeholder-shown:top-0
+                peer-not-placeholder-shown:-translate-y-1/2
+                peer-not-placeholder-shown:text-sm">
+                رمز عبور *
+              </label>
               <button type="button"
                 class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
                 aria-label="نمایش/مخفی‌سازی رمز عبور">

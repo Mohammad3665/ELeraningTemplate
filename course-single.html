@@ -1629,10 +1629,34 @@
 
               <form class="mt-5 space-y-4">
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <input type="text" placeholder="نام*"
-                    class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:border-primary focus:outline-none" />
-                  <input type="email" placeholder="ایمیل*"
-                    class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:border-primary focus:outline-none" />
+                  <div class="relative">
+                    <input type="text" id="comment-name" placeholder=" "
+                      class="peer w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-dark outline-none transition-all focus:border-primary focus:outline-none" />
+                    <label for="comment-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                      transition-all duration-200
+                      peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                      peer-focus:text-sm
+                      peer-not-placeholder-shown:right-3
+                      peer-not-placeholder-shown:top-0
+                      peer-not-placeholder-shown:-translate-y-1/2
+                      peer-not-placeholder-shown:text-sm">
+                      نام*
+                    </label>
+                  </div>
+                  <div class="relative">
+                    <input type="email" id="comment-email" placeholder=" "
+                      class="peer w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-dark outline-none transition-all focus:border-primary focus:outline-none" />
+                    <label for="comment-email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                      transition-all duration-200
+                      peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+                      peer-focus:text-sm
+                      peer-not-placeholder-shown:right-3
+                      peer-not-placeholder-shown:top-0
+                      peer-not-placeholder-shown:-translate-y-1/2
+                      peer-not-placeholder-shown:text-sm">
+                      ایمیل*
+                    </label>
+                  </div>
                 </div>
                 <textarea rows="5" placeholder="دیدگاه"
                   class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:border-primary focus:outline-none"></textarea>
