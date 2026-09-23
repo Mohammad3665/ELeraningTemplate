@@ -401,6 +401,13 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px]">
           <!-- Main Column -->
           <div>
+            <!-- Video Tag -->
+            <div class="mb-8 overflow-hidden rounded-2xl border border-border bg-black">
+              <video id="course-video" class="w-full aspect-video" controls preload="metadata"
+                poster="assets/images/course-cover.jpg">
+                <source id="course-video-source" src="assets/videos/course-video-02.mp4" type="video/mp4" />
+              </video>
+            </div>
             <!-- Tabs -->
             <div id="course-tabs"
               class="flex overflow-x-auto overflow-y-hidden rounded-t-2xl border-t border-r border-l border-border relative z-10 -mb-px bg-white"
@@ -425,16 +432,12 @@
                 data-tab="faqs" role="tab" aria-selected="false">
                 سوالات متداول
               </button>
-              <button type="button"
-                class="course-tab-btn flex-1 whitespace-nowrap border-b border-border z-10 px-3 lg:px-5 py-4 text-center text-xs lg:text-sm font-bold text-dark transition-colors hover:text-primary"
-                data-tab="reviews" role="tab" aria-selected="false">
-                دیدگاه‌ها
-              </button>
             </div>
 
             <!-- #region TAB PANEL: OVERVIEW -->
             <div id="tab-overview"
-              class="course-tab-panel rounded-b-2xl border-t-0 border-border bg-[#f8f9fa] p-5 sm:p-6" role="tabpanel">
+              class="course-tab-panel rounded-b-2xl border border-t-0 border-border bg-[#f8f9fa] p-5 sm:p-6"
+              role="tabpanel">
               <div class="space-y-4 text-xs leading-relaxed text-body sm:text-sm">
                 <p>
                   این افزونه، یکی از کامل‌ترین سیستم‌های مدیریت یادگیری (LMS)
@@ -468,7 +471,7 @@
                 <!-- ==================== Chapter 1 (Closed) ==================== -->
                 <div class="curriculum-item is-open">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 text-dark transition-transform">
@@ -485,36 +488,38 @@
                   <div class="curriculum-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
-                        <span class="flex items-center gap-2 text-xs text-primary sm:text-sm">
+                        <span class="lesson-title flex items-center gap-2 text-xs text-dark sm:text-sm">
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: معرفی پنل مدیریت
                         </span>
                         <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
+                          <button type="button" data-video="assets/videos/course-video-01.mp4"
+                            class="preview-btn cursor-pointer rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
                             پیش‌نمایش
                           </button>
                           <span class="text-xs text-gray-400">۰۸:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" class="size-4 text-emerald-500">
-                            <path d="m5 13 4 4L19 7" />
+                            stroke-width="2" class="size-4 text-emerald-500">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
+                            <path d="m8 12 3 3 5-6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
                         </span>
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
-                        <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
+                        <span class="lesson-title flex items-center gap-2 text-xs text-dark sm:text-sm">
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: آشنایی با ساختار منوها
                         </span>
                         <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
+                          <button type="button" data-video="assets/videos/course-video-02.mp4"
+                            class="preview-btn cursor-pointer rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
                             پیش‌نمایش
                           </button>
                           <span class="text-xs text-gray-400">۱۲:۱۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" class="size-4 text-emerald-500">
-                            <path d="m5 13 4 4L19 7" />
+                            stroke-width="2" class="size-4 text-emerald-500">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
+                            <path d="m8 12 3 3 5-6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
                         </span>
                       </li>
@@ -523,16 +528,12 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: تنظیمات عمومی پنل
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۴۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4 text-gray-400">
-                            <rect x="5" y="11" width="14" height="9" rx="2" />
-                            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                            stroke-width="2" class="size-4 text-emerald-500">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
+                            <path d="m8 12 3 3 5-6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
                         </span>
                       </li>
@@ -541,16 +542,12 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: مدیریت محتوا در پنل
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۵۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4 text-gray-400">
-                            <rect x="5" y="11" width="14" height="9" rx="2" />
-                            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                            stroke-width="2" class="size-4 text-yellow-500">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
+                            <path d="m8 12 3 3 5-6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
                         </span>
                       </li>
@@ -559,16 +556,11 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: ابزارهای پیشرفته پنل
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۴:۳۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4 text-gray-400">
-                            <rect x="5" y="11" width="14" height="9" rx="2" />
-                            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                            stroke-width="2" class="size-4 text-gray-300">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
                           </svg>
                         </span>
                       </li>
@@ -577,11 +569,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: امنیت و پشتیبان‌گیری
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۲:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -597,7 +585,7 @@
                 <!-- ==================== Chapter 2 (Open) ==================== -->
                 <div class="curriculum-item">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 transition-transform">
@@ -619,11 +607,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: دانلود و نصب افزونه
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -636,11 +620,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: تنظیمات اولیه و فعال‌سازی
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۱:۴۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -653,11 +633,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: آشنایی با محیط افزونه
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۶:۳۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -670,11 +646,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: عیب‌یابی مشکلات نصب
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۲۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -688,11 +660,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: به‌روزرسانی افزونه
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۷:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -708,7 +676,7 @@
                 <!-- ==================== Chapter 3 (Closed) ==================== -->
                 <div class="curriculum-item">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 text-dark transition-transform">
@@ -730,11 +698,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: ایجاد دوره جدید
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۱:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -747,11 +711,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: افزودن بخش‌ها و درس‌ها
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۳:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -764,11 +724,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: تنظیمات پیشرفته دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۴۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -782,11 +738,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: مدیریت دانشجویان دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۷:۳۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -800,11 +752,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: ابزارهای تعاملی دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۳:۲۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -818,11 +766,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: وضعیت‌ها و پیشرفت دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۶:۴۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -836,11 +780,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: حذف و آرشیو دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -856,7 +796,7 @@
                 <!-- ==================== Chapter 4 (Closed) ==================== -->
                 <div class="curriculum-item">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 text-dark transition-transform">
@@ -877,11 +817,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: آشنایی با آزمون‌ها
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -894,11 +830,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: طراحی سوالات تشریحی
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۳۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -911,11 +843,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: طراحی سوالات تستی
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۴۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -929,11 +857,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: زمان‌بندی و نمره‌دهی
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۶:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -947,11 +871,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: گزارشات و تحلیل نتایج
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۵:۲۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -965,11 +885,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: آزمون‌های ترکیبی و جامع
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -985,7 +901,7 @@
                 <!-- ==================== Chapter 5 (Open) ==================== -->
                 <div class="curriculum-item">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 transition-transform">
@@ -1007,11 +923,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: تنظیمات فروش دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۲:۱۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -1024,11 +936,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: اتصال به درگاه پرداخت
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۵:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -1041,11 +949,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: کوپن‌ها و تخفیف‌ها
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۳۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1059,11 +963,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: انتشار دوره در سایت
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۵:۴۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1077,11 +977,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: بازاریابی و فروش بیشتر
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۳:۴۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1097,7 +993,7 @@
                 <!-- ==================== Chapter 6 (Closed) ==================== -->
                 <div class="curriculum-item">
                   <button type="button"
-                    class="curriculum-toggle flex w-full items-center justify-between gap-4 px-4 py-4 text-right sm:px-5">
+                    class="curriculum-toggle flex w-full flex-col items-start gap-2 px-4 py-4 text-right sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5">
                     <span class="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" class="curriculum-chevron size-4 shrink-0 text-dark transition-transform">
@@ -1118,11 +1014,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: مدیریت دانشجویان
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" class="size-4 text-emerald-500">
@@ -1135,11 +1027,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: گزارشات پیشرفت دانشجویان
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۱۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1153,11 +1041,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: صدور گواهی پایان دوره
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۴۵</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1171,11 +1055,7 @@
                           <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
                           درس ویدیویی: تحلیل آمار و عملکرد
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button"
-                            class="rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۰۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-gray-400">
@@ -1463,10 +1343,8 @@
             </div>
             <!-- endregion -->
 
-            <!-- #region TAB PANEL: REVIEWS -->
-            <div id="tab-reviews"
-              class="course-tab-panel hidden rounded-b-2xl border border-t-0 border-border bg-[#f8f9fa] p-5 sm:p-6"
-              role="tabpanel">
+            <!-- #region COMMENTS -->
+            <div class="mt-12 border-t border-border pt-10">
               <h3 class="text-base font-bold text-dark sm:text-lg">
                 دیدگاه‌ها
               </h3>
@@ -1840,11 +1718,82 @@
         const isActive = wishlistBtn.getAttribute('aria-pressed') === 'true';
         wishlistBtn.setAttribute('aria-pressed', String(!isActive));
 
-        // فقط قلب را پر/خالی کن
         const svg = wishlistBtn.querySelector('svg');
         svg.setAttribute('fill', !isActive ? 'currentColor' : 'none');
       });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('course-video');
+      const videoSource = document.getElementById('course-video-source');
+      const previewBtns = document.querySelectorAll('.preview-btn');
+      const lessonTitles = document.querySelectorAll('.lesson-title');
+
+      const DEFAULT_SRC = 'assets/videos/course-video-01.mp4';
+      const STORAGE_KEY = 'activeLessonSrc';
+
+      function clearHighlight() {
+        lessonTitles.forEach((t) => {
+          t.classList.remove('text-primary');
+          t.classList.add('text-dark');
+        });
+      }
+
+      function highlightBySrc(src) {
+        clearHighlight();
+        if (!src) return;
+
+        const fileName = src.split('/').pop();
+
+        let activeBtn = null;
+        previewBtns.forEach((btn) => {
+          if (btn.dataset.video && btn.dataset.video.split('/').pop() === fileName) {
+            activeBtn = btn;
+          }
+        });
+        if (!activeBtn) return;
+
+        const title = activeBtn.closest('li').querySelector('.lesson-title');
+        if (title) {
+          title.classList.remove('text-dark');
+          title.classList.add('text-primary');
+        }
+      }
+
+      function activateLesson(src, { autoplay = true } = {}) {
+        if (!src) return;
+
+        if (!videoSource.src.endsWith(src)) {
+          videoSource.src = src;
+          video.load();
+          if (autoplay) video.play().catch(() => { });
+        }
+
+        highlightBySrc(src);
+        localStorage.setItem(STORAGE_KEY, src);
+      }
+
+      const savedSrc = localStorage.getItem(STORAGE_KEY) || DEFAULT_SRC;
+      activateLesson(savedSrc, { autoplay: false });
+
+      previewBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const newSrc = btn.dataset.video;
+          if (!newSrc) return;
+
+          activateLesson(newSrc, { autoplay: true });
+          video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      window.addEventListener('storage', (e) => {
+        if (e.key === STORAGE_KEY && e.newValue) {
+          activateLesson(e.newValue, { autoplay: false });
+        }
+      });
+    });
   </script>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
