@@ -760,6 +760,9 @@
   .flex-col-reverse {
     flex-direction: column-reverse;
   }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -1193,6 +1196,9 @@
   .px-1 {
     padding-inline: var(--spacing);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -1372,6 +1378,9 @@
   .text-\[10px\] {
     font-size: 10px;
   }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
@@ -1435,6 +1444,12 @@
     color: color-mix(in srgb, #111111 40%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-dark) 40%, transparent);
+    }
+  }
+  .text-dark\/60 {
+    color: color-mix(in srgb, #111111 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-dark) 60%, transparent);
     }
   }
   .text-dark\/70 {
@@ -1631,6 +1646,10 @@
     .group-hover\:visible:is(:where(.group):hover *) {
       visibility: visible;
     }
+    .group-hover\:-translate-x-0\.5:is(:where(.group):hover *) {
+      --tw-translate-x: calc(var(--spacing) * -0.5);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
     .group-hover\:-translate-y-1:is(:where(.group):hover *) {
       --tw-translate-y: calc(var(--spacing) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -1659,6 +1678,14 @@
     }
     .group-hover\:text-primary:is(:where(.group):hover *) {
       color: var(--color-primary);
+    }
+    .group-hover\:text-primary\/80:is(:where(.group):hover *) {
+      color: color-mix(in srgb, #ff5a1f 80%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .group-hover\:text-primary\/80:is(:where(.group):hover *) {
+        color: color-mix(in oklab, var(--color-primary) 80%, transparent);
+      }
     }
     .group-hover\:text-white:is(:where(.group):hover *) {
       color: var(--color-white);
@@ -1774,6 +1801,14 @@
     }
     .hover\:bg-primary:hover {
       background-color: var(--color-primary);
+    }
+    .hover\:bg-primary\/80:hover {
+      background-color: color-mix(in srgb, #ff5a1f 80%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-primary\/80:hover {
+        background-color: color-mix(in oklab, var(--color-primary) 80%, transparent);
+      }
     }
     .hover\:bg-primary\/90:hover {
       background-color: color-mix(in srgb, #ff5a1f 90%, transparent);
