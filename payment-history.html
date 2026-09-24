@@ -4,14 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وایلند | ویرایش اطلاعات کاربری</title>
+  <title>وایلند | تاریخچه پرداخت‌ها</title>
 
   <!-- #region FavIcon -->
   <link rel="icon" type="image/png" href="assets/images/fav-icon.png">
   <!-- endregion -->
 
+  <!-- #region DataTables -->
+  <link rel="stylesheet" href="src/css/datatables.min.css">
+  <link rel="stylesheet" href="src/css/responsive.datatables.min.css">
+  <!-- endregion -->
+
   <!-- #region Stylesheets -->
   <link rel="stylesheet" href="src/css/style.css" />
+  <!-- endregion -->
+
+  <!-- #region Payment History DataTable -->
+  <link rel="stylesheet" href="src/css/payment-history-datatable.css">
   <!-- endregion -->
 
   <!-- #region Google Fonts (Vazirmatn for Persian) -->
@@ -73,7 +82,7 @@
                   پروفایل کاربری
                 </a>
                 <a href="edit-profile.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   ویرایش پروفایل
                 </a>
                 <a href="change-password.html"
@@ -88,10 +97,10 @@
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   دوره‌های مورد علاقه
                 </a>
-                  <a href="payment-history.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    تاریخچه پرداخت‌ها
-                  </a>
+                <a href="payment-history.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  تاریخچه پرداخت‌ها
+                </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   سوالات متداول
@@ -100,13 +109,13 @@
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   صفحه دوره
                 </a>
-                <a href="blog-listing.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                  لیست مقالات
-                </a>
                 <a href="course-listing.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   صفحه دوره‌ها
+                </a>
+                <a href="blog-listing.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  لیست مقالات
                 </a>
                 <a href="blog-single.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -115,6 +124,8 @@
               </div>
             </div>
           </div>
+          <!-- endregion -->
+
           <a href="#" class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm">
             افزونه‌های لرن‌پرس
           </a>
@@ -224,7 +235,7 @@
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">پروفایل
                   کاربری</a>
                 <a href="edit-profile.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">ویرایش
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ویرایش
                   پروفایل</a>
                 <a href="change-password.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تغییر
@@ -235,9 +246,9 @@
                 <a href="favorites.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
                   مورد علاقه</a>
-                  <a href="payment-history.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تاریخچه
-                    پرداخت‌ها</a>
+                <a href="payment-history.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">تاریخچه
+                  پرداخت‌ها</a>
                 <a href="faq.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
                   متداول</a>
@@ -290,14 +301,14 @@
               <a href="dashboard.html" class="transition-colors hover:text-primary">حساب کاربری</a>
             </li>
             <li aria-hidden="true" class="text-gray-300">/</li>
-            <li class="font-medium text-dark" aria-current="page">ویرایش اطلاعات</li>
+            <li class="font-medium text-dark" aria-current="page">تاریخچه پرداخت‌ها</li>
           </ol>
         </nav>
       </div>
     </div>
     <!-- endregion -->
 
-    <!-- #region EDIT PROFILE -->
+    <!-- #region PAYMENT HISTORY -->
     <section class="py-10 sm:py-14">
       <div class="container-whyland px-4">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-[290px_1fr] lg:gap-10">
@@ -333,7 +344,7 @@
                   </svg>
                   <span>
                     عضو وایلند از
-                    <span id="profile-joined-date">۱ شهریور ۱۴۰۴</span>
+                    <span data-jalali-date="2026-09-01"></span>
                   </span>
                 </div>
               </div>
@@ -352,13 +363,11 @@
                       <span class="flex-1">اطلاعات کاربری</span>
                     </a>
                   </li>
-                  <!-- Active item -->
                   <li>
                     <a href="edit-profile.html"
-                      class="flex items-center gap-3 rounded-xl bg-[#fff4ef] px-3.5 py-3 text-xs font-bold text-primary transition-colors sm:text-sm"
-                      aria-current="page">
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0">
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
                         <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17z" />
                         <path d="M13.5 6.5l3 3" />
                       </svg>
@@ -387,22 +396,13 @@
                       <span class="flex-1">دوره‌های خریداری شده</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="favorites.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <path
-                          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
-                      </svg>
-                      <span class="flex-1">دوره‌های مورد علاقه</span>
-                    </a>
-                  </li>
+                  <!-- Active item -->
                   <li>
                     <a href="payment-history.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      class="flex items-center gap-3 rounded-xl bg-[#fff4ef] px-3.5 py-3 text-xs font-bold text-primary transition-colors sm:text-sm"
+                      aria-current="page">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        stroke-width="1.8" class="size-5 shrink-0">
                         <rect x="2" y="5" width="20" height="14" rx="2" />
                         <path d="M2 10h20" />
                       </svg>
@@ -459,340 +459,479 @@
           <div>
             <!-- Page Heading -->
             <div class="mb-6 text-center sm:text-right">
-              <h1 class="text-xl font-bold text-dark sm:text-2xl">ویرایش اطلاعات کاربری</h1>
+              <h1 class="text-xl font-bold text-dark sm:text-2xl">تاریخچه پرداخت‌ها</h1>
               <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                اطلاعات حساب خود را به‌روزرسانی کنید. فیلدهای الزامی با
-                <span class="text-red-500">*</span> مشخص شده‌اند.
+                لیست همه پرداخت‌های شما به همراه شماره سفارش، مبلغ، روش پرداخت و وضعیت هر تراکنش.
               </p>
             </div>
 
-            <!-- Edit Profile Form -->
-            <form id="edit-profile-form" action="#" method="POST" class="space-y-6" novalidate>
+            <!-- ==================== STATUS FILTER ==================== -->
+            <div class="mb-6 flex flex-wrap items-center gap-2" role="group" aria-label="فیلتر بر اساس وضعیت">
+              <button type="button" data-status-filter="all"
+                class="status-filter-pill cursor-pointer rounded-full border border-primary bg-primary px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:text-sm">
+                همه
+              </button>
+              <button type="button" data-status-filter="موفق"
+                class="status-filter-pill cursor-pointer rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                موفق
+              </button>
+              <button type="button" data-status-filter="ناموفق"
+                class="status-filter-pill cursor-pointer rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                ناموفق
+              </button>
+              <button type="button" data-status-filter="در انتظار"
+                class="status-filter-pill cursor-pointer rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                در انتظار
+              </button>
+            </div>
 
-              <!-- #region AVATAR UPLOAD -->
-              <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
-                <h2 class="text-sm font-bold text-dark sm:text-base">تصویر پروفایل</h2>
+            <!-- ==================== PAYMENTS TABLE ==================== -->
+            <div id="payments-list">
+              <div class="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
+                <table id="payments-table" class="w-full text-right">
+                  <thead>
+                    <tr>
+                      <th class="hover:text-primary">شماره سفارش</th>
+                      <th>تاریخ</th>
+                      <th>مبلغ</th>
+                      <th>روش پرداخت</th>
+                      <th>وضعیت</th>
+                      <th>شماره پیگیری</th>
+                      <th>عملیات</th>
+                    </tr>
+                  </thead>
 
-                <div class="mt-4 flex flex-col items-center gap-5 sm:flex-row">
-                  <!-- Avatar Preview -->
-                  <div
-                    class="flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
-                    <img id="avatar-preview" src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
-                      class="h-full w-full object-cover" />
-                  </div>
+                  <tbody>
 
-                  <div class="flex-1 text-center sm:text-right">
-                    <p class="text-xs leading-relaxed text-body sm:text-sm">
-                      فرمت‌های مجاز JPG و PNG — حداکثر حجم ۲ مگابایت.
-                    </p>
-                    <div class="mt-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-                      <button type="button" id="avatar-select-btn"
-                        class="cursor-pointer rounded-full border border-primary px-5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                        انتخاب تصویر
-                      </button>
-                      <button type="button" id="avatar-remove-btn"
-                        class="hidden cursor-pointer rounded-full border border-border px-5 py-2 text-xs font-semibold text-body transition-colors hover:border-red-500 hover:text-red-500">
-                        حذف تصویر
-                      </button>
-                      <input type="file" id="avatar-input" name="avatar" accept="image/png, image/jpeg"
-                        class="hidden" />
-                    </div>
-                    <p id="avatar-error" class="mt-2 hidden text-xs text-red-500"></p>
-                  </div>
-                </div>
+                    <!-- Row 1 -->
+                    <tr>
+                      <td>WHY-1404-0214</td>
+                      <td>۱۲ شهریور ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۲۹,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۸۳۴۵۲۱۹۷</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                      <td>WHY-1404-0213</td>
+                      <td>۳ شهریور ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۴۹,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۷۲۴۰۱۹۳۸</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr>
+                      <td>WHY-1404-0210</td>
+                      <td>۲۸ مرداد ۱۴۰۴</td>
+                      <td>
+                        <span class="font-bold text-gray-900">۲۹,۰۰۰ تومان</span>
+                      </td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr>
+                      <td>WHY-1404-0205</td>
+                      <td>۲۱ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۵,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 5 -->
+                    <tr>
+                      <td>WHY-1404-0202</td>
+                      <td>۱۸ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۵۵,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۶۴۸۲۱۹۵۷</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 6 -->
+                    <tr>
+                      <td>WHY-1404-0199</td>
+                      <td>۱۵ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۷۵,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۵۳۱۷۴۰۲۶</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 7 -->
+                    <tr>
+                      <td>WHY-1404-0196</td>
+                      <td>۱۲ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۹,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 8 -->
+                    <tr>
+                      <td>WHY-1404-0192</td>
+                      <td>۹ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۲۵,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 9 -->
+                    <tr>
+                      <td>WHY-1404-0188</td>
+                      <td>۶ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۸۹,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۴۲۸۶۱۹۳۵</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 10 -->
+                    <tr>
+                      <td>WHY-1404-0184</td>
+                      <td>۳ مرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۴۵,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۳۷۵۹۲۰۴۸</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 11 -->
+                    <tr>
+                      <td>WHY-1404-0180</td>
+                      <td>۳۰ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۶۵,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 12 -->
+                    <tr>
+                      <td>WHY-1404-0176</td>
+                      <td>۲۷ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۲,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۲۹۴۸۱۵۶۳</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 13 -->
+                    <tr>
+                      <td>WHY-1404-0172</td>
+                      <td>۲۴ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۱۲۰,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۱۸۶۴۲۰۷۵</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 14 -->
+                    <tr>
+                      <td>WHY-1404-0168</td>
+                      <td>۲۱ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۲۸,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 15 -->
+                    <tr>
+                      <td>WHY-1404-0164</td>
+                      <td>۱۸ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۵۹,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۹۷۳۵۲۱۴۶</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 16 -->
+                    <tr>
+                      <td>WHY-1404-0160</td>
+                      <td>۱۵ تیر ۱۴۰۴</td>
+                      <td>
+                        <span class="font-bold text-gray-900">۲۹,۰۰۰ تومان</span>
+                      </td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 17 -->
+                    <tr>
+                      <td>WHY-1404-0156</td>
+                      <td>۱۲ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۴۲,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۸۵۲۶۱۴۹۳</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 18 -->
+                    <tr>
+                      <td>WHY-1404-0152</td>
+                      <td>۹ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۹۵,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 19 -->
+                    <tr>
+                      <td>WHY-1404-0148</td>
+                      <td>۶ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۸,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۷۴۱۹۵۲۸۶</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 20 -->
+                    <tr>
+                      <td>WHY-1404-0144</td>
+                      <td>۳ تیر ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۶۹,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 21 -->
+                    <tr>
+                      <td>WHY-1404-0140</td>
+                      <td>۳۱ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۲۷,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۶۳۸۲۷۴۱۵</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 22 -->
+                    <tr>
+                      <td>WHY-1404-0136</td>
+                      <td>۲۸ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۱۵۰,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۵۲۹۶۱۳۸۴</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 23 -->
+                    <tr>
+                      <td>WHY-1404-0132</td>
+                      <td>۲۵ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۳,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 24 -->
+                    <tr>
+                      <td>WHY-1404-0128</td>
+                      <td>۲۲ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۷۸,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۴۱۸۷۵۳۲۰</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 25 -->
+                    <tr>
+                      <td>WHY-1404-0124</td>
+                      <td>۱۹ خرداد ۱۴۰۴</td>
+                      <td>
+                        <span class="font-bold text-gray-900">۲۹,۰۰۰ تومان</span>
+                      </td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="ناموفق">
+                        <span class="payment-status payment-status-failed">ناموفق</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 26 -->
+                    <tr>
+                      <td>WHY-1404-0120</td>
+                      <td>۱۶ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۴۸,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۳۶۹۲۸۵۷۱</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 27 -->
+                    <tr>
+                      <td>WHY-1404-0116</td>
+                      <td>۱۳ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۲۲,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۲۱۵۸۴۷۶۹</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 28 -->
+                    <tr>
+                      <td>WHY-1404-0112</td>
+                      <td>۱۰ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۸۵,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="در انتظار">
+                        <span class="payment-status payment-status-pending">در انتظار</span>
+                      </td>
+                      <td>—</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 29 -->
+                    <tr>
+                      <td>WHY-1404-0108</td>
+                      <td>۷ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۵۲,۰۰۰ تومان</span></td>
+                      <td>درگاه بانکی</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۱۹۴۶۳۸۲۷</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                    <!-- Row 30 -->
+                    <tr>
+                      <td>WHY-1404-0104</td>
+                      <td>۴ خرداد ۱۴۰۴</td>
+                      <td><span class="font-bold text-gray-900">۳۶,۰۰۰ تومان</span></td>
+                      <td>کیف پول</td>
+                      <td data-status="موفق">
+                        <span class="payment-status payment-status-success">موفق</span>
+                      </td>
+                      <td>۸۷۳۵۲۱۶۴</td>
+                      <td><a href="#" class="payment-details-btn">مشاهده جزئیات</a></td>
+                    </tr>
+
+                  </tbody>
+                </table>
               </div>
-              <!-- endregion -->
+            </div>
 
-              <!-- #region BASE INFORMATION -->
-              <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
-                <h2 class="text-sm font-bold text-dark sm:text-base">اطلاعات پایه</h2>
-
-                <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <!-- First Name -->
-                  <div class="relative">
-                    <input type="text" id="first-name" name="first_name" value="محمد مهدی" placeholder=" " required
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all
-                        focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="first-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                        transition-all duration-200
-                        peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                        peer-focus:text-sm
-                        peer-not-placeholder-shown:right-3
-                        peer-not-placeholder-shown:top-0
-                        peer-not-placeholder-shown:-translate-y-1/2
-                        peer-not-placeholder-shown:text-sm">
-                      نام *
-                    </label>
-                  </div>
-
-                  <!-- Last Name -->
-                  <div class="relative">
-                    <input type="text" id="last-name" name="last_name" value="زنگنه" placeholder=" " required
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="last-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                        transition-all duration-200
-                        peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                        peer-focus:text-sm
-                        peer-not-placeholder-shown:right-3
-                        peer-not-placeholder-shown:top-0
-                        peer-not-placeholder-shown:-translate-y-1/2
-                        peer-not-placeholder-shown:text-sm">
-                      نام خانوادگی *
-                    </label>
-                  </div>
-
-                  <!-- Email -->
-                  <div class="relative">
-                    <input type="email" id="email" name="email" dir="ltr" value="mehdi@example.com" placeholder=" "
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                        transition-all duration-200
-                        peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                        peer-focus:text-sm
-                        peer-not-placeholder-shown:right-3
-                        peer-not-placeholder-shown:top-0
-                        peer-not-placeholder-shown:-translate-y-1/2
-                        peer-not-placeholder-shown:text-sm">
-                      ایمیل *
-                    </label>
-                  </div>
-
-                  <!-- Phone Number (with OTP verification) -->
-                  <div>
-                    <div class="flex items-center gap-2">
-                      <div class="relative w-full">
-                        <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="ltr" required
-                          value="09123456789" placeholder=" "
-                          class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark text-left outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                        <label for="phone-number" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                            transition-all duration-200
-                            peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                            peer-focus:text-sm
-                            peer-not-placeholder-shown:right-3
-                            peer-not-placeholder-shown:top-0
-                            peer-not-placeholder-shown:-translate-y-1/2
-                            peer-not-placeholder-shown:text-sm">
-                          شماره موبایل *
-                        </label>
-                      </div>
-                      <button type="button" id="phone-verify-btn"
-                        class="shrink-0 cursor-pointer rounded-xl border border-primary px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                        تایید
-                      </button>
-                    </div>
-                    <!-- Verification state -->
-                    <div id="phone-verified-badge" class="mt-1.5 hidden items-center gap-1 text-xs text-emerald-500">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" class="size-4">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="m9 12 2 2 4-4" />
-                      </svg>
-                      <span>شماره موبایل تایید شده است</span>
-                    </div>
-                    <p id="phone-error" class="mt-1.5 hidden text-xs text-red-500"></p>
-                  </div>
-
-                  <!-- Birth Date -->
-                  <div class="relative">
-                    <label for="birth-date" class="sr-only">تاریخ تولد</label>
-                    <div class="relative">
-                      <input type="text" id="birth-date" name="birth_date" readonly placeholder=" " value="۱۳۷۵/۰۵/۱۵"
-                        data-jalali-picker="birth-date-picker" class="peer h-10 w-full cursor-pointer rounded-xl border border-gray-200 bg-white pl-10 pr-4
-                      text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary
-                      sm:text-sm" />
-
-                      <label for="birth-date" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-        transition-all duration-200
-        peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-        peer-focus:text-sm
-        peer-not-placeholder-shown:right-3
-        peer-not-placeholder-shown:top-0
-        peer-not-placeholder-shown:-translate-y-1/2
-        peer-not-placeholder-shown:text-sm">
-                        تاریخ تولد *
-                      </label>
-
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8"
-                        class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400">
-                        <rect x="3" y="5" width="18" height="16" rx="2" />
-                        <path d="M16 3v4" />
-                        <path d="M8 3v4" />
-                        <path d="M3 11h18" />
-                      </svg>
-                    </div>
-
-                    <!-- Jalali date picker panel -->
-                    <div id="birth-date-picker" data-jalali-picker-panel
-                      class="absolute left-0 right-0 top-full z-30 mt-2 hidden rounded-xl border border-border bg-white p-3 shadow-lg">
-
-                      <!-- Header: prev / label / next -->
-                      <div class="flex items-center justify-between gap-2">
-                        <button type="button" data-picker-nav="prev"
-                          class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
-                          aria-label="قبلی">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4">
-                            <path d="m9 6 6 6-6 6" />
-                          </svg>
-                        </button>
-
-                        <button type="button" data-picker-label
-                          class="flex-1 rounded-md px-2 py-1 text-xs font-bold text-dark transition-colors hover:text-primary"
-                          aria-label="انتخاب ماه و سال"></button>
-
-                        <button type="button" data-picker-nav="next"
-                          class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
-                          aria-label="بعدی">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4">
-                            <path d="m15 6-6 6 6 6" />
-                          </svg>
-                        </button>
-                      </div>
-
-                      <!-- Days view -->
-                      <div data-picker-days class="mt-3">
-                        <div data-picker-grid
-                          class="grid grid-cols-7 gap-1 text-center text-[10px] text-body sm:text-xs"></div>
-                      </div>
-
-                      <!-- Months view -->
-                      <div data-picker-months class="mt-3 hidden">
-                        <div data-picker-months-grid class="grid grid-cols-3 gap-1 text-center"></div>
-                      </div>
-
-                      <!-- Years view — a select dropdown -->
-                      <div data-picker-years class="mt-3 hidden">
-                        <div data-picker-years-grid
-                          class="grid max-h-52 grid-cols-4 gap-1 overflow-y-auto text-center text-xs">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Gender -->
-                  <div>
-                    <span class="text-xs font-medium text-dark sm:text-sm">جنسیت *</span>
-                    <div class="mt-2.5 flex flex-wrap items-center gap-5">
-                      <label class="flex cursor-pointer items-center gap-2">
-                        <div class="custom-checkbox">
-                          <span class="checkbox">
-                            <input type="radio" name="gender" value="male" checked />
-                            <svg>
-                              <use xlink:href="#checkbox-30" class="checkbox"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <span class="text-xs text-body sm:text-sm">مرد</span>
-                      </label>
-                      <label class="flex cursor-pointer items-center gap-2">
-                        <div class="custom-checkbox">
-                          <span class="checkbox">
-                            <input type="radio" name="gender" value="female" />
-                            <svg>
-                              <use xlink:href="#checkbox-30" class="checkbox"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <span class="text-xs text-body sm:text-sm">زن</span>
-                      </label>
-                    </div>
-                  </div>
+            <!-- ==================== EMPTY STATE (shown when no payments) ==================== -->
+            <div id="payments-empty" class="hidden">
+              <div class="rounded-2xl border border-dashed border-border bg-white px-6 py-12 text-center sm:py-16">
+                <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-[#fff4ef] text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" class="size-9">
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <path d="M2 10h20" />
+                  </svg>
                 </div>
-                <!-- endregion -->
-
-                <!-- #region ACTIONS -->
-                <div class="flex flex-col-reverse items-center justify-between gap-4 sm:flex-row">
-                  <a href="dashboard.html"
-                    class="w-full rounded-full border border-border px-8 py-3 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:w-auto">
-                    انصراف
-                  </a>
-                  <button type="submit"
-                    class="w-full rounded-full px-8 py-3 text-center text-xs sm:w-auto button-primary">
-                    ذخیره تغییرات
-                  </button>
-                </div>
-                <!-- endregion -->
-
-                <!-- Form feedback -->
-                <p id="form-message" class="hidden text-center text-xs sm:text-sm"></p>
+                <h2 class="mt-5 text-base font-bold text-dark sm:text-lg">پرداختی برای نمایش وجود ندارد!</h2>
+                <p class="mx-auto mt-2 max-w-sm text-xs leading-relaxed text-body sm:text-sm">
+                  هنوز تراکنشی ثبت نشده است؛ با خرید اولین دوره خود، پرداخت‌های شما اینجا نمایش داده می‌شود.
+                </p>
+                <a href="course-listing.html"
+                  class="mt-6 inline-block rounded-full button-primary px-6 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:text-sm">
+                  مشاهده دوره‌ها
+                </a>
               </div>
-            </form>
+            </div>
           </div>
+          <!-- endregion -->
         </div>
       </div>
     </section>
     <!-- endregion -->
-
-    <!-- #region PHONE OTP MODAL -->
-    <div id="otp-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-      <!-- Backdrop -->
-      <div id="otp-modal-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
-      <!-- Modal Card -->
-      <div class="relative w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:p-8">
-        <button type="button" id="otp-modal-close"
-          class="absolute left-4 top-4 rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100" aria-label="بستن">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="size-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <h2 class="mb-2 text-lg font-bold text-dark sm:text-xl">تایید شماره موبایل</h2>
-        <p class="mb-6 text-xs leading-relaxed text-body sm:text-sm">
-          کد ۶ رقمی پیامک‌شده به شماره
-          <span id="otp-display-phone" class="font-semibold text-dark" dir="ltr"></span>
-          را وارد کنید.
-        </p>
-
-        <form id="otp-form" class="space-y-4">
-          <!-- OTP Inputs (LTR for digits) -->
-          <div class="flex items-center justify-center gap-2" dir="ltr">
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            <input type="text" inputmode="numeric" maxlength="1" data-otp
-              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-          </div>
-
-          <!-- Countdown Timer -->
-          <p class="text-center text-xs text-body sm:text-sm">
-            زمان باقی‌مانده تا ارسال مجدد:
-            <span id="otp-timer" class="font-semibold text-primary">۰۲:۰۰</span>
-          </p>
-
-          <p id="otp-error" class="hidden text-center text-xs text-red-500 sm:text-sm"></p>
-
-          <!-- Submit -->
-          <button type="submit"
-            class="w-full cursor-pointer rounded-full bg-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
-            تایید کد
-          </button>
-
-          <!-- Resend + Cancel -->
-          <div class="flex items-center justify-between pt-1">
-            <button type="button" id="otp-resend" class="cursor-not-allowed text-xs font-medium text-dark/40" disabled>
-              ارسال مجدد کد
-            </button>
-            <button type="button" id="otp-cancel"
-              class="cursor-pointer text-xs font-medium text-dark/70 underline transition-colors hover:text-primary hover:no-underline">
-              انصراف
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- endregion -->
   </main>
+  <!-- endregion -->
 
   <!-- #region FOOTER -->
   <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
@@ -910,32 +1049,22 @@
   <script type="module" src="src/js/main.js"></script>
   <!-- endregion -->
 
-  <!-- #region Jalali Date Formatter -->
+  <!-- #region Jalali Date Utility -->
   <script src="src/js/jalali-date.js" defer></script>
   <!-- #endregion -->
 
-  <!-- #region Jalali Date Picker -->
-  <script src="src/js/jalali-date-picker.js" defer></script>
+  <!-- #region Empty State Utility -->
+  <script src="src/js/empty-state.js" defer></script>
   <!-- #endregion -->
 
-  <!-- #region Avatar Upload -->
-  <script src="src/js/edit-profile/avatar-upload.js" defer></script>
+  <!-- #region DataTables -->
+  <script src="src/js/datatables.min.js"></script>
+  <script src="src/js/responsive.datatables.min.js"></script>
   <!-- #endregion -->
 
-  <!-- #region Phone OTP Verification -->
-  <script src="src/js/edit-profile/phone-otp-verify.js" defer></script>
-  <!-- #endregion -->
-
-  <!-- #region Edit Profile Page Script -->
-  <script src="src/js/edit-profile/edit-profile.js" defer></script>
-  <!-- #endregion -->
-
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-    <symbol id="checkbox-30" viewBox="0 0 22 22">
-      <path fill="none" stroke="primary"
-        d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
-    </symbol>
-  </svg>
+  <!-- #region Payment History Page Script -->
+  <script src="src/js/payment-history.js"></script>
+  <!-- endregion -->
 </body>
 
 </html>

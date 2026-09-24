@@ -57,6 +57,7 @@
             { list: 'favorites-list', empty: 'favorites-empty' },
             { list: 'courses-list', empty: 'courses-empty' },
             { list: 'orders-list', empty: 'orders-empty' },
+            { list: 'payments-list', empty: 'payments-empty' },
         ];
 
         for (var i = 0; i < pairs.length; i++) {

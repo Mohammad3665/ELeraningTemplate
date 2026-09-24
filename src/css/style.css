@@ -1,27 +1,5 @@
 @import "../tailwind/output.css";
 
-:root {
-  --plyr-color-main: var(--color-primary);
-}
-
-@media (max-width: 768px) {
-  .plyr__time--current {
-    display: none !important;
-  }
-
-  .plyr__control[data-plyr="mute"] {
-    display: none !important;
-  }
-
-  .plyr__volume {
-    display: none !important;
-  }
-}
-
-.plyr__time--duration::before {
-  display: none !important;
-}
-
 mark {
   background-color: color-mix(in srgb, #ff5a1f 20%, #ffcc00 10%, transparent);
   color: inherit;
