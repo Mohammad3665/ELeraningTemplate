@@ -393,3 +393,28 @@
 #payments-table thead th:hover {
     color: var(--color-primary) !important;
 }
+
+/* =========================================================
+   STATUS FILTER
+   ========================================================= */
+
+.status-filter-pill {
+    transition:
+        color 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease;
+}
+
+/* Hover state for inactive filters */
+.status-filter-pill:not(.is-active):hover {
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    color: var(--color-primary);
+}
+
+/* Keep active filter unchanged on hover */
+.status-filter-pill.is-active:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: #ffffff !important;
+}

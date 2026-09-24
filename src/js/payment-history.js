@@ -198,10 +198,10 @@ statusFilters.forEach((button) => {
         // Reset all filter buttons
         statusFilters.forEach((filter) => {
             filter.classList.remove(
+                "is-active",
                 "border-primary",
                 "bg-primary",
-                "text-white",
-                "hover:text-white"
+                "text-white"
             );
 
             filter.classList.add(
@@ -219,18 +219,16 @@ statusFilters.forEach((button) => {
         );
 
         this.classList.add(
+            "is-active",
             "border-primary",
             "bg-primary",
-            "text-white",
-            "hover:text-white"
+            "text-white"
         );
 
         // Apply DataTables filter
-        if (status === "all") {
-            table.column(4).search("").draw();
-            return;
-        }
-
-        table.column(4).search(status).draw();
+        table
+            .column(4)
+            .search(status === "all" ? "" : status)
+            .draw();
     });
 });
