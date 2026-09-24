@@ -4,6 +4,20 @@
   --plyr-color-main: var(--color-primary);
 }
 
+@media (max-width: 768px) {
+  .plyr__time--current {
+    display: none !important;
+  }
+
+  .plyr__control[data-plyr="mute"] {
+    display: none !important;
+  }
+
+  .plyr__volume {
+    display: none !important;
+  }
+}
+
 .plyr__time--duration::before {
   display: none !important;
 }
