@@ -213,7 +213,8 @@
             <div class="overflow-hidden items-center">
               <div class="flex flex-col gap-2 pr-4">
                 <a href="login.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود / ثبت‌نام</a>
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود
+                  / ثبت‌نام</a>
                 <a href="forgot-password.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فراموشی
                   رمز عبور</a>
@@ -327,7 +328,7 @@
                   </svg>
                   <span>
                     عضو وایلند از
-                    <span id="profile-joined-date">۱ شهریور ۱۴۰۴</span>
+                    <span data-jalali-date="2026-09-01"></span>
                   </span>
                 </div>
               </div>
@@ -899,45 +900,16 @@
   <script type="module" src="src/js/main.js"></script>
   <!-- endregion -->
 
+  <!-- #region Jalali Date Utility -->
+  <script src="src/js/jalali-date.js" defer></script>
+  <!-- #endregion -->
+
+  <!-- #region Empty State Utility -->
+  <script src="src/js/empty-state.js" defer></script>
+  <!-- #endregion -->
+
   <!-- #region Favorites Page Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      /* ---- Joined date (Jalali via Intl, same as other profile pages) ---- */
-      var joinedEls = document.querySelectorAll('#profile-joined-date');
-      if (joinedEls.length) {
-        try {
-          var formatted = new Intl.DateTimeFormat('fa-IR', {
-            year: 'numeric', month: 'long', day: 'numeric',
-          }).format(new Date('2026-09-01'));
-          joinedEls.forEach(function (el) { el.textContent = formatted; });
-        } catch (e) { /* keep static fallback */ }
-      }
-
-      /* ---- Remove favorite: removes the row and shows empty state when none left ---- */
-      var list = document.getElementById('favorites-list');
-      var empty = document.getElementById('favorites-empty');
-      document.querySelectorAll('.remove-favorite').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var row = btn.closest('article');
-          if (row) row.remove();
-          if (list && empty && list.children.length === 0) {
-            list.classList.add('hidden');
-            empty.classList.remove('hidden');
-            var pagination = document.querySelector('nav[aria-label="صفحه‌بندی"]');
-            if (pagination) pagination.classList.add('hidden');
-          }
-        });
-      });
-
-      /* ---- Demo toggle: open favorites.html?empty to preview the empty state ---- */
-      if (new URLSearchParams(window.location.search).has('empty')) {
-        document.getElementById('favorites-list').classList.add('hidden');
-        empty.classList.remove('hidden');
-        var pagination = document.querySelector('nav[aria-label="صفحه‌بندی"]');
-        if (pagination) pagination.classList.add('hidden');
-      }
-    });
-  </script>
+  <script src="src/js/favorites.js"></script>
   <!-- endregion -->
 </body>
 

@@ -85,8 +85,8 @@
                   دوره‌های خریداری شده
                 </a>
                 <a href="favorites.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    دوره‌های مورد علاقه
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  دوره‌های مورد علاقه
                 </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -213,7 +213,8 @@
             <div class="overflow-hidden items-center">
               <div class="flex flex-col gap-2 pr-4">
                 <a href="login.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود / ثبت‌نام</a>
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود
+                  / ثبت‌نام</a>
                 <a href="forgot-password.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فراموشی
                   رمز عبور</a>
@@ -230,8 +231,8 @@
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">دوره‌های
                   خریداری شده</a>
                 <a href="favorites.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
-                    مورد علاقه</a>
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
+                  مورد علاقه</a>
                 <a href="faq.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
                   متداول</a>
@@ -327,7 +328,7 @@
                   </svg>
                   <span>
                     عضو وایلند از
-                    <span id="profile-joined-date">۱ شهریور ۱۴۰۴</span>
+                    <span data-jalali-date="2026-09-01"></span>
                   </span>
                 </div>
               </div>
@@ -895,30 +896,13 @@
   <script type="module" src="src/js/main.js"></script>
   <!-- endregion -->
 
-  <!-- #region My Courses Page Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      /* ---- Joined date (Jalali via Intl, same as other profile pages) ---- */
-      var joinedEls = document.querySelectorAll('#profile-joined-date');
-      if (joinedEls.length) {
-        try {
-          var formatted = new Intl.DateTimeFormat('fa-IR', {
-            year: 'numeric', month: 'long', day: 'numeric',
-          }).format(new Date('2026-09-01'));
-          joinedEls.forEach(function (el) { el.textContent = formatted; });
-        } catch (e) { /* keep static fallback */ }
-      }
+  <!-- #region Jalali Date Utility -->
+  <script src="src/js/jalali-date.js" defer></script>
+  <!-- #endregion -->
 
-      /* ---- Demo toggle: open my-courses.html?empty to preview the empty state ---- */
-      if (new URLSearchParams(window.location.search).has('empty')) {
-        document.getElementById('my-courses-list').classList.add('hidden');
-        document.getElementById('my-courses-empty').classList.remove('hidden');
-        var pagination = document.querySelector('nav[aria-label="صفحه‌بندی"]');
-        if (pagination) pagination.classList.add('hidden');
-      }
-    });
-  </script>
-  <!-- endregion -->
+  <!-- #region Empty State Utility -->
+  <script src="src/js/empty-state.js" defer></script>
+  <!-- #endregion -->
 </body>
 
 </html>

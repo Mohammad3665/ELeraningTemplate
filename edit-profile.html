@@ -81,12 +81,12 @@
                   تغییر رمز عبور
                 </a>
                 <a href="my-courses.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    دوره‌های خریداری شده
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  دوره‌های خریداری شده
                 </a>
                 <a href="favorites.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    دوره‌های مورد علاقه
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  دوره‌های مورد علاقه
                 </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -167,345 +167,346 @@
   <!-- endregion -->
 
   <!-- #region Mobile Navigation Sidebar (From Left) -->
-    <aside id="mobile-menu"
-      class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden">
-      <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
-        <!-- Header inside drawer -->
-        <div class="flex items-center justify-between border-b border-border pb-4">
-          <img src="assets/images/logo.png" alt="whyland" class="h-auto w-24" />
-          <button type="button" id="close-menu-button"
-            class="rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100" aria-label="بستن منو">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  <aside id="mobile-menu"
+    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden">
+    <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
+      <!-- Header inside drawer -->
+      <div class="flex items-center justify-between border-b border-border pb-4">
+        <img src="assets/images/logo.png" alt="whyland" class="h-auto w-24" />
+        <button type="button" id="close-menu-button"
+          class="rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100" aria-label="بستن منو">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav Links (RTL text alignment) -->
+      <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
+        <a href="index.html" class="border-b border-border py-3 text-sm font-medium text-dark">
+          صفحه اصلی
+        </a>
+        <a href="course-listing.html"
+          class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+          دوره‌ها
+        </a>
+        <a href="blog-listing.html"
+          class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+          بلاگ
+        </a>
+        <!-- Mobile Accordion/Dropdown -->
+        <details class="group border-b border-border">
+          <summary
+            class="flex cursor-pointer items-center justify-between py-3 text-sm font-medium text-dark select-none hover:text-primary [&::-webkit-details-marker]:hidden">
+            <span>صفحات</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" class="size-4 transition-transform duration-300 group-open:rotate-180">
+              <path d="m6 9 6 6 6-6" />
             </svg>
-          </button>
-        </div>
+          </summary>
 
-        <!-- Nav Links (RTL text alignment) -->
-        <nav class="flex flex-col pt-4 dir-rtl" aria-label="منوی موبایل">
-          <a href="index.html" class="border-b border-border py-3 text-sm font-medium text-dark">
-            صفحه اصلی
-          </a>
-          <a href="course-listing.html"
-            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
-            دوره‌ها
-          </a>
-          <a href="blog-listing.html"
-            class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
-            بلاگ
-          </a>
-          <!-- Mobile Accordion/Dropdown -->
-          <details class="group border-b border-border">
-            <summary
-              class="flex cursor-pointer items-center justify-between py-3 text-sm font-medium text-dark select-none hover:text-primary [&::-webkit-details-marker]:hidden">
-              <span>صفحات</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" class="size-4 transition-transform duration-300 group-open:rotate-180">
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </summary>
-
-            <div
-              class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]">
-              <div class="overflow-hidden items-center">
-                <div class="flex flex-col gap-2 pr-4">
-                  <a href="login.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود / ثبت‌نام</a>
-                  <a href="forgot-password.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فراموشی
-                    رمز عبور</a>
-                  <a href="dashboard.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">پروفایل
-                    کاربری</a>
-                  <a href="edit-profile.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">ویرایش
-                    پروفایل</a>
-                  <a href="change-password.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تغییر
-                    رمز عبور</a>
-                  <a href="my-courses.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
-                    خریداری شده</a>
-                  <a href="favorites.html"
-                      class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
-                      مورد علاقه</a>
-                  <a href="faq.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
-                    متداول</a>
-                  <a href="course-listing.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
-                    دوره‌ها</a>
-                  <a href="course-single.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
-                    دوره</a>
-                  <a href="blog-listing.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
-                    مقالات</a>
-                  <a href="blog-single.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
-                    مقاله</a>
-                </div>
+          <div
+            class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-open:grid-rows-[1fr]">
+            <div class="overflow-hidden items-center">
+              <div class="flex flex-col gap-2 pr-4">
+                <a href="login.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود
+                  / ثبت‌نام</a>
+                <a href="forgot-password.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فراموشی
+                  رمز عبور</a>
+                <a href="dashboard.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">پروفایل
+                  کاربری</a>
+                <a href="edit-profile.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">ویرایش
+                  پروفایل</a>
+                <a href="change-password.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تغییر
+                  رمز عبور</a>
+                <a href="my-courses.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
+                  خریداری شده</a>
+                <a href="favorites.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
+                  مورد علاقه</a>
+                <a href="faq.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
+                  متداول</a>
+                <a href="course-listing.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
+                  دوره‌ها</a>
+                <a href="course-single.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
+                  دوره</a>
+                <a href="blog-listing.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">لیست
+                  مقالات</a>
+                <a href="blog-single.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">صفحه
+                  مقاله</a>
               </div>
             </div>
-          </details>
-          <a href="#" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
-            افزونه‌های لرن‌پرس
-          </a>
-          <a href="#" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
-            قالب‌های ویژه
-          </a>
+          </div>
+        </details>
+        <a href="#" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+          افزونه‌های لرن‌پرس
+        </a>
+        <a href="#" class="border-b border-border py-3 text-sm font-medium text-dark hover:text-primary">
+          قالب‌های ویژه
+        </a>
+      </nav>
+    </div>
+
+    <!-- Action Buttons at bottom -->
+    <div class="flex flex-col gap-2 pt-6 dir-rtl">
+      <a href="login.html"
+        class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+        ورود / ثبت‌نام
+      </a>
+    </div>
+  </aside>
+  <!-- endregion -->
+
+  <main id="main-content">
+    <!-- #region BREADCRUMB -->
+    <div class="border-b border-border bg-[#f8f9fa]">
+      <div class="container-whyland px-4 py-4">
+        <nav aria-label="مسیر صفحه">
+          <ol class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm">
+            <li>
+              <a href="index.html" class="transition-colors hover:text-primary">صفحه اصلی</a>
+            </li>
+            <li aria-hidden="true" class="text-gray-300">/</li>
+            <li>
+              <a href="dashboard.html" class="transition-colors hover:text-primary">حساب کاربری</a>
+            </li>
+            <li aria-hidden="true" class="text-gray-300">/</li>
+            <li class="font-medium text-dark" aria-current="page">ویرایش اطلاعات</li>
+          </ol>
         </nav>
       </div>
-
-      <!-- Action Buttons at bottom -->
-      <div class="flex flex-col gap-2 pt-6 dir-rtl">
-        <a href="login.html"
-          class="w-full rounded-lg bg-primary py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary/90">
-          ورود / ثبت‌نام
-        </a>
-      </div>
-    </aside>
+    </div>
     <!-- endregion -->
 
-    <main id="main-content">
-      <!-- #region BREADCRUMB -->
-      <div class="border-b border-border bg-[#f8f9fa]">
-        <div class="container-whyland px-4 py-4">
-          <nav aria-label="مسیر صفحه">
-            <ol class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm">
-              <li>
-                <a href="index.html" class="transition-colors hover:text-primary">صفحه اصلی</a>
-              </li>
-              <li aria-hidden="true" class="text-gray-300">/</li>
-              <li>
-                <a href="dashboard.html" class="transition-colors hover:text-primary">حساب کاربری</a>
-              </li>
-              <li aria-hidden="true" class="text-gray-300">/</li>
-              <li class="font-medium text-dark" aria-current="page">ویرایش اطلاعات</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <!-- endregion -->
+    <!-- #region EDIT PROFILE -->
+    <section class="py-10 sm:py-14">
+      <div class="container-whyland px-4">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[290px_1fr] lg:gap-10">
 
-      <!-- #region EDIT PROFILE -->
-      <section class="py-10 sm:py-14">
-        <div class="container-whyland px-4">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-[290px_1fr] lg:gap-10">
+          <!-- ==================== PROFILE SIDEBAR ==================== -->
+          <aside class="lg:sticky lg:top-24 self-start">
+            <div class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+              <!-- User Summary (card) -->
+              <div class="border-b border-border px-5 pb-5 pt-8 text-center">
+                <!-- Avatar -->
+                <div
+                  class="mx-auto flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
+                  <img src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
+                    class="h-full w-full object-cover" />
+                </div>
 
-            <!-- ==================== PROFILE SIDEBAR ==================== -->
-            <aside class="lg:sticky lg:top-24 self-start">
-              <div class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-                <!-- User Summary (card) -->
-                <div class="border-b border-border px-5 pb-5 pt-8 text-center">
-                  <!-- Avatar -->
+                <!-- Name -->
+                <h2 class="mt-3 text-sm font-bold text-dark sm:text-base">
+                  محمد مهدی زنگنه
+                </h2>
+                <p class="mt-1 text-xs text-body" dir="ltr">
+                  ۰۹۱۲۳۴۵۶۷۸۹
+                </p>
+
+                <!-- Membership Date -->
+                <div class="mt-3 flex items-center justify-center gap-1.5 text-xs text-body">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" class="size-4 text-gray-400">
+                    <rect x="3" y="5" width="18" height="16" rx="2" />
+                    <path d="M16 3v4" />
+                    <path d="M8 3v4" />
+                    <path d="M3 11h18" />
+                  </svg>
+                  <span>
+                    عضو وایلند از
+                    <span id="profile-joined-date">۱ شهریور ۱۴۰۴</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Sidebar Links -->
+              <nav class="p-3" aria-label="منوی پروفایل">
+                <ul class="flex flex-col gap-1">
+                  <li>
+                    <a href="dashboard.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <circle cx="12" cy="8" r="3.5" />
+                        <path d="M4.5 20c1.6-3.7 4.3-5.3 7.5-5.3s5.9 1.6 7.5 5.3" />
+                      </svg>
+                      <span class="flex-1">اطلاعات کاربری</span>
+                    </a>
+                  </li>
+                  <!-- Active item -->
+                  <li>
+                    <a href="edit-profile.html"
+                      class="flex items-center gap-3 rounded-xl bg-[#fff4ef] px-3.5 py-3 text-xs font-bold text-primary transition-colors sm:text-sm"
+                      aria-current="page">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0">
+                        <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17z" />
+                        <path d="M13.5 6.5l3 3" />
+                      </svg>
+                      <span class="flex-1">ویرایش اطلاعات</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="change-password.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <rect x="5" y="11" width="14" height="9" rx="2" />
+                        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                      </svg>
+                      <span class="flex-1">تغییر رمز عبور</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="my-courses.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15z" />
+                        <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" />
+                      </svg>
+                      <span class="flex-1">دوره‌های خریداری شده</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="favorites.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <path
+                          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
+                      </svg>
+                      <span class="flex-1">دوره‌های مورد علاقه</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="dashboard.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                      </svg>
+                      <span class="flex-1">تاریخچه پرداخت‌ها</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="dashboard.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
+                        <path d="M15 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
+                        <path d="M15 3v4h4" />
+                        <path d="M9 13h6" />
+                        <path d="M9 17h6" />
+                      </svg>
+                      <span class="flex-1">فاکتورها</span>
+                    </a>
+                  </li>
+                  <li class="my-2 border-t border-border"></li>
+                  <li>
+                    <a href="login.html"
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-red-500 transition-colors hover:bg-red-50 sm:text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" class="size-5 shrink-0">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <path d="m16 17 5-5-5-5" />
+                        <path d="M21 12H9" />
+                      </svg>
+                      <span class="flex-1">خروج</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <!-- Sidebar Footer -->
+              <div class="border-t border-border p-3">
+                <a href="course-listing.html"
+                  class="flex w-full items-center justify-center gap-2 rounded-full border border-primary py-2.5 text-center text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" class="size-4">
+                    <path d="M4 9 5.5 4h13L20 9" />
+                    <path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9z" />
+                    <path d="M9 20v-5h6v5" />
+                  </svg>
+                  ورود به فروشگاه
+                </a>
+              </div>
+            </div>
+          </aside>
+          <!-- endregion -->
+
+          <!-- ==================== MAIN CONTENT ==================== -->
+          <div>
+            <!-- Page Heading -->
+            <div class="mb-6 text-center sm:text-right">
+              <h1 class="text-xl font-bold text-dark sm:text-2xl">ویرایش اطلاعات کاربری</h1>
+              <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                اطلاعات حساب خود را به‌روزرسانی کنید. فیلدهای الزامی با
+                <span class="text-red-500">*</span> مشخص شده‌اند.
+              </p>
+            </div>
+
+            <!-- Edit Profile Form -->
+            <form id="edit-profile-form" action="#" method="POST" class="space-y-6" novalidate>
+
+              <!-- #region AVATAR UPLOAD -->
+              <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
+                <h2 class="text-sm font-bold text-dark sm:text-base">تصویر پروفایل</h2>
+
+                <div class="mt-4 flex flex-col items-center gap-5 sm:flex-row">
+                  <!-- Avatar Preview -->
                   <div
-                    class="mx-auto flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
-                    <img src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
+                    class="flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
+                    <img id="avatar-preview" src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
                       class="h-full w-full object-cover" />
                   </div>
 
-                  <!-- Name -->
-                  <h2 class="mt-3 text-sm font-bold text-dark sm:text-base">
-                    محمد مهدی زنگنه
-                  </h2>
-                  <p class="mt-1 text-xs text-body" dir="ltr">
-                    ۰۹۱۲۳۴۵۶۷۸۹
-                  </p>
-
-                  <!-- Membership Date -->
-                  <div class="mt-3 flex items-center justify-center gap-1.5 text-xs text-body">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.8" class="size-4 text-gray-400">
-                      <rect x="3" y="5" width="18" height="16" rx="2" />
-                      <path d="M16 3v4" />
-                      <path d="M8 3v4" />
-                      <path d="M3 11h18" />
-                    </svg>
-                    <span>
-                      عضو وایلند از
-                      <span id="profile-joined-date">۱ شهریور ۱۴۰۴</span>
-                    </span>
+                  <div class="flex-1 text-center sm:text-right">
+                    <p class="text-xs leading-relaxed text-body sm:text-sm">
+                      فرمت‌های مجاز JPG و PNG — حداکثر حجم ۲ مگابایت.
+                    </p>
+                    <div class="mt-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+                      <button type="button" id="avatar-select-btn"
+                        class="cursor-pointer rounded-full border border-primary px-5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+                        انتخاب تصویر
+                      </button>
+                      <button type="button" id="avatar-remove-btn"
+                        class="hidden cursor-pointer rounded-full border border-border px-5 py-2 text-xs font-semibold text-body transition-colors hover:border-red-500 hover:text-red-500">
+                        حذف تصویر
+                      </button>
+                      <input type="file" id="avatar-input" name="avatar" accept="image/png, image/jpeg"
+                        class="hidden" />
+                    </div>
+                    <p id="avatar-error" class="mt-2 hidden text-xs text-red-500"></p>
                   </div>
                 </div>
-
-                <!-- Sidebar Links -->
-                <nav class="p-3" aria-label="منوی پروفایل">
-                  <ul class="flex flex-col gap-1">
-                    <li>
-                      <a href="dashboard.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <circle cx="12" cy="8" r="3.5" />
-                          <path d="M4.5 20c1.6-3.7 4.3-5.3 7.5-5.3s5.9 1.6 7.5 5.3" />
-                        </svg>
-                        <span class="flex-1">اطلاعات کاربری</span>
-                      </a>
-                    </li>
-                    <!-- Active item -->
-                    <li>
-                      <a href="edit-profile.html"
-                        class="flex items-center gap-3 rounded-xl bg-[#fff4ef] px-3.5 py-3 text-xs font-bold text-primary transition-colors sm:text-sm"
-                        aria-current="page">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0">
-                          <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17z" />
-                          <path d="M13.5 6.5l3 3" />
-                        </svg>
-                        <span class="flex-1">ویرایش اطلاعات</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="change-password.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <rect x="5" y="11" width="14" height="9" rx="2" />
-                          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                        </svg>
-                        <span class="flex-1">تغییر رمز عبور</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="my-courses.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15z" />
-                          <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" />
-                        </svg>
-                        <span class="flex-1">دوره‌های خریداری شده</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="favorites.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <path
-                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
-                        </svg>
-                        <span class="flex-1">دوره‌های مورد علاقه</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="dashboard.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <rect x="2" y="5" width="20" height="14" rx="2" />
-                          <path d="M2 10h20" />
-                        </svg>
-                        <span class="flex-1">تاریخچه پرداخت‌ها</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="dashboard.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                          <path d="M15 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
-                          <path d="M15 3v4h4" />
-                          <path d="M9 13h6" />
-                          <path d="M9 17h6" />
-                        </svg>
-                        <span class="flex-1">فاکتورها</span>
-                      </a>
-                    </li>
-                    <li class="my-2 border-t border-border"></li>
-                    <li>
-                      <a href="login.html"
-                        class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-red-500 transition-colors hover:bg-red-50 sm:text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8" class="size-5 shrink-0">
-                          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                          <path d="m16 17 5-5-5-5" />
-                          <path d="M21 12H9" />
-                        </svg>
-                        <span class="flex-1">خروج</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-
-                <!-- Sidebar Footer -->
-                <div class="border-t border-border p-3">
-                  <a href="course-listing.html"
-                    class="flex w-full items-center justify-center gap-2 rounded-full border border-primary py-2.5 text-center text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.8" class="size-4">
-                      <path d="M4 9 5.5 4h13L20 9" />
-                      <path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9z" />
-                      <path d="M9 20v-5h6v5" />
-                    </svg>
-                    ورود به فروشگاه
-                  </a>
-                </div>
               </div>
-            </aside>
-            <!-- endregion -->
+              <!-- endregion -->
 
-            <!-- ==================== MAIN CONTENT ==================== -->
-            <div>
-              <!-- Page Heading -->
-              <div class="mb-6 text-center sm:text-right">
-                <h1 class="text-xl font-bold text-dark sm:text-2xl">ویرایش اطلاعات کاربری</h1>
-                <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                  اطلاعات حساب خود را به‌روزرسانی کنید. فیلدهای الزامی با
-                  <span class="text-red-500">*</span> مشخص شده‌اند.
-                </p>
-              </div>
+              <!-- #region BASE INFORMATION -->
+              <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
+                <h2 class="text-sm font-bold text-dark sm:text-base">اطلاعات پایه</h2>
 
-              <!-- Edit Profile Form -->
-              <form id="edit-profile-form" action="#" method="POST" class="space-y-6" novalidate>
-
-                <!-- #region AVATAR UPLOAD -->
-                <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
-                  <h2 class="text-sm font-bold text-dark sm:text-base">تصویر پروفایل</h2>
-
-                  <div class="mt-4 flex flex-col items-center gap-5 sm:flex-row">
-                    <!-- Avatar Preview -->
-                    <div
-                      class="flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
-                      <img id="avatar-preview" src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
-                        class="h-full w-full object-cover" />
-                    </div>
-
-                    <div class="flex-1 text-center sm:text-right">
-                      <p class="text-xs leading-relaxed text-body sm:text-sm">
-                        فرمت‌های مجاز JPG و PNG — حداکثر حجم ۲ مگابایت.
-                      </p>
-                      <div class="mt-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-                        <button type="button" id="avatar-select-btn"
-                          class="cursor-pointer rounded-full border border-primary px-5 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                          انتخاب تصویر
-                        </button>
-                        <button type="button" id="avatar-remove-btn"
-                          class="hidden cursor-pointer rounded-full border border-border px-5 py-2 text-xs font-semibold text-body transition-colors hover:border-red-500 hover:text-red-500">
-                          حذف تصویر
-                        </button>
-                        <input type="file" id="avatar-input" name="avatar" accept="image/png, image/jpeg"
-                          class="hidden" />
-                      </div>
-                      <p id="avatar-error" class="mt-2 hidden text-xs text-red-500"></p>
-                    </div>
-                  </div>
-                </div>
-                <!-- endregion -->
-
-                <!-- #region BASE INFORMATION -->
-                <div class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
-                  <h2 class="text-sm font-bold text-dark sm:text-base">اطلاعات پایه</h2>
-
-                  <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <!-- First Name -->
-                    <div class="relative">
-                      <input type="text" id="first-name" name="first_name" value="محمد مهدی" placeholder=" " required
-                        class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all
+                <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <!-- First Name -->
+                  <div class="relative">
+                    <input type="text" id="first-name" name="first_name" value="محمد مهدی" placeholder=" " required
+                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all
                         focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                      <label for="first-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                    <label for="first-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
                         transition-all duration-200
                         peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
                         peer-focus:text-sm
@@ -513,15 +514,15 @@
                         peer-not-placeholder-shown:top-0
                         peer-not-placeholder-shown:-translate-y-1/2
                         peer-not-placeholder-shown:text-sm">
-                        نام *
-                      </label>
-                    </div>
+                      نام *
+                    </label>
+                  </div>
 
-                    <!-- Last Name -->
-                    <div class="relative">
-                      <input type="text" id="last-name" name="last_name" value="زنگنه" placeholder=" " required
-                        class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                      <label for="last-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                  <!-- Last Name -->
+                  <div class="relative">
+                    <input type="text" id="last-name" name="last_name" value="زنگنه" placeholder=" " required
+                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                    <label for="last-name" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
                         transition-all duration-200
                         peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
                         peer-focus:text-sm
@@ -529,15 +530,15 @@
                         peer-not-placeholder-shown:top-0
                         peer-not-placeholder-shown:-translate-y-1/2
                         peer-not-placeholder-shown:text-sm">
-                        نام خانوادگی *
-                      </label>
-                    </div>
+                      نام خانوادگی *
+                    </label>
+                  </div>
 
-                    <!-- Email -->
-                    <div class="relative">
-                      <input type="email" id="email" name="email" dir="ltr" value="mehdi@example.com" placeholder=" "
-                        class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                      <label for="email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                  <!-- Email -->
+                  <div class="relative">
+                    <input type="email" id="email" name="email" dir="ltr" value="mehdi@example.com" placeholder=" "
+                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                    <label for="email" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
                         transition-all duration-200
                         peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
                         peer-focus:text-sm
@@ -545,18 +546,18 @@
                         peer-not-placeholder-shown:top-0
                         peer-not-placeholder-shown:-translate-y-1/2
                         peer-not-placeholder-shown:text-sm">
-                        ایمیل *
-                      </label>
-                    </div>
+                      ایمیل *
+                    </label>
+                  </div>
 
-                    <!-- Phone Number (with OTP verification) -->
-                    <div>
-                      <div class="flex items-center gap-2">
-                        <div class="relative w-full">
-                          <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="ltr" required
-                            value="09123456789" placeholder=" "
-                            class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark text-left outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                          <label for="phone-number" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+                  <!-- Phone Number (with OTP verification) -->
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <div class="relative w-full">
+                        <input type="tel" id="phone-number" name="phone_number" inputmode="numeric" dir="ltr" required
+                          value="09123456789" placeholder=" "
+                          class="peer h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-xs text-dark text-left outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
+                        <label for="phone-number" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
                             transition-all duration-200
                             peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
                             peer-focus:text-sm
@@ -564,81 +565,107 @@
                             peer-not-placeholder-shown:top-0
                             peer-not-placeholder-shown:-translate-y-1/2
                             peer-not-placeholder-shown:text-sm">
-                            شماره موبایل *
-                          </label>
-                        </div>
-                        <button type="button" id="phone-verify-btn"
-                          class="shrink-0 cursor-pointer rounded-xl border border-primary px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                          تایید
-                        </button>
+                          شماره موبایل *
+                        </label>
                       </div>
-                      <!-- Verification state -->
-                      <div id="phone-verified-badge" class="mt-1.5 hidden items-center gap-1 text-xs text-emerald-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="2" class="size-4">
-                          <circle cx="12" cy="12" r="9" />
-                          <path d="m9 12 2 2 4-4" />
-                        </svg>
-                        <span>شماره موبایل تایید شده است</span>
-                      </div>
-                      <p id="phone-error" class="mt-1.5 hidden text-xs text-red-500"></p>
+                      <button type="button" id="phone-verify-btn"
+                        class="shrink-0 cursor-pointer rounded-xl border border-primary px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+                        تایید
+                      </button>
+                    </div>
+                    <!-- Verification state -->
+                    <div id="phone-verified-badge" class="mt-1.5 hidden items-center gap-1 text-xs text-emerald-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" class="size-4">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="m9 12 2 2 4-4" />
+                      </svg>
+                      <span>شماره موبایل تایید شده است</span>
+                    </div>
+                    <p id="phone-error" class="mt-1.5 hidden text-xs text-red-500"></p>
+                  </div>
+
+                  <!-- Birth Date -->
+                  <div class="relative">
+                    <label for="birth-date" class="sr-only">تاریخ تولد</label>
+                    <div class="relative">
+                      <input type="text" id="birth-date" name="birth_date" readonly placeholder=" " value="۱۳۷۵/۰۵/۱۵"
+                        data-jalali-picker="birth-date-picker" class="peer h-10 w-full cursor-pointer rounded-xl border border-gray-200 bg-white pl-10 pr-4
+                      text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary
+                      sm:text-sm" />
+
+                      <label for="birth-date" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
+        transition-all duration-200
+        peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
+        peer-focus:text-sm
+        peer-not-placeholder-shown:right-3
+        peer-not-placeholder-shown:top-0
+        peer-not-placeholder-shown:-translate-y-1/2
+        peer-not-placeholder-shown:text-sm">
+                        تاریخ تولد *
+                      </label>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8"
+                        class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400">
+                        <rect x="3" y="5" width="18" height="16" rx="2" />
+                        <path d="M16 3v4" />
+                        <path d="M8 3v4" />
+                        <path d="M3 11h18" />
+                      </svg>
                     </div>
 
-                    <!-- Birth Date -->
-                    <div>
-                      <label for="birth-date" class="sr-only">تاریخ تولد</label>
-                      <div class="relative">
-                        <input type="text" id="birth-date" name="birth_date" readonly placeholder=" " value="۱۳۷۵/۰۵/۱۵"
-                          class="peer h-10 w-full cursor-pointer rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                        <label for="birth-date" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                          transition-all duration-200
-                          peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                          peer-focus:text-sm
-                          peer-not-placeholder-shown:right-3
-                          peer-not-placeholder-shown:top-0
-                          peer-not-placeholder-shown:-translate-y-1/2
-                          peer-not-placeholder-shown:text-sm">
-                          تاریخ تولد *
-                        </label>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="1.8"
-                          class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400">
-                          <rect x="3" y="5" width="18" height="16" rx="2" />
-                          <path d="M16 3v4" />
-                          <path d="M8 3v4" />
-                          <path d="M3 11h18" />
-                        </svg>
+                    <!-- Jalali date picker panel -->
+                    <div id="birth-date-picker" data-jalali-picker-panel
+                      class="absolute left-0 right-0 top-full z-30 mt-2 hidden rounded-xl border border-border bg-white p-3 shadow-lg">
+
+                      <!-- Header: prev / label / next -->
+                      <div class="flex items-center justify-between gap-2">
+                        <button type="button" data-picker-nav="prev"
+                          class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
+                          aria-label="قبلی">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" class="size-4">
+                            <path d="m9 6 6 6-6 6" />
+                          </svg>
+                        </button>
+
+                        <button type="button" data-picker-label
+                          class="flex-1 rounded-md px-2 py-1 text-xs font-bold text-dark transition-colors hover:text-primary"
+                          aria-label="انتخاب ماه و سال"></button>
+
+                        <button type="button" data-picker-nav="next"
+                          class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
+                          aria-label="بعدی">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" class="size-4">
+                            <path d="m15 6-6 6 6 6" />
+                          </svg>
+                        </button>
                       </div>
-                      <!-- Jalali date picker panel -->
-                      <div id="birth-date-picker"
-                        class="mt-2 hidden rounded-xl border border-border bg-white p-3 shadow-lg">
-                        <div class="flex items-center justify-between gap-2">
-                          <button type="button" data-picker-nav="prev"
-                            class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
-                            aria-label="ماه قبل">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                              stroke="currentColor" stroke-width="2" class="size-4">
-                              <path d="m9 6 6 6-6 6" />
-                            </svg>
-                          </button>
-                          <span id="picker-label" class="text-xs font-bold text-dark"></span>
-                          <button type="button" data-picker-nav="next"
-                            class="flex size-7 cursor-pointer items-center justify-center rounded-lg border border-border text-dark transition-colors hover:border-primary hover:text-primary"
-                            aria-label="ماه بعد">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                              stroke="currentColor" stroke-width="2" class="size-4">
-                              <path d="m15 6-6 6 6 6" />
-                            </svg>
-                          </button>
+
+                      <!-- Days view -->
+                      <div data-picker-days class="mt-3">
+                        <div data-picker-grid
+                          class="grid grid-cols-7 gap-1 text-center text-[10px] text-body sm:text-xs"></div>
+                      </div>
+
+                      <!-- Months view -->
+                      <div data-picker-months class="mt-3 hidden">
+                        <div data-picker-months-grid class="grid grid-cols-3 gap-1 text-center"></div>
+                      </div>
+
+                      <!-- Years view — a select dropdown -->
+                      <div data-picker-years class="mt-3 hidden">
+                        <div data-picker-years-grid
+                          class="grid max-h-52 grid-cols-4 gap-1 overflow-y-auto text-center text-xs">
                         </div>
-                        <div id="picker-grid"
-                          class="mt-3 grid grid-cols-7 gap-1 text-center text-[10px] text-body sm:text-xs"></div>
                       </div>
                     </div>
                   </div>
 
                   <!-- Gender -->
-                  <div class="mt-5">
+                  <div>
                     <span class="text-xs font-medium text-dark sm:text-sm">جنسیت *</span>
                     <div class="mt-2.5 flex flex-wrap items-center gap-5">
                       <label class="flex cursor-pointer items-center gap-2">
@@ -683,617 +710,224 @@
 
                 <!-- Form feedback -->
                 <p id="form-message" class="hidden text-center text-xs sm:text-sm"></p>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
-      </section>
-      <!-- endregion -->
+      </div>
+    </section>
+    <!-- endregion -->
 
-      <!-- #region PHONE OTP MODAL -->
-      <div id="otp-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div id="otp-modal-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <!-- #region PHONE OTP MODAL -->
+    <div id="otp-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+      <!-- Backdrop -->
+      <div id="otp-modal-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-        <!-- Modal Card -->
-        <div class="relative w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:p-8">
-          <button type="button" id="otp-modal-close"
-            class="absolute left-4 top-4 rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100"
-            aria-label="بستن">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" class="size-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+      <!-- Modal Card -->
+      <div class="relative w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:p-8">
+        <button type="button" id="otp-modal-close"
+          class="absolute left-4 top-4 rounded-lg cursor-pointer p-1 text-gray-500 hover:bg-gray-100" aria-label="بستن">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
 
-          <h2 class="mb-2 text-lg font-bold text-dark sm:text-xl">تایید شماره موبایل</h2>
-          <p class="mb-6 text-xs leading-relaxed text-body sm:text-sm">
-            کد ۶ رقمی پیامک‌شده به شماره
-            <span id="otp-display-phone" class="font-semibold text-dark" dir="ltr"></span>
-            را وارد کنید.
+        <h2 class="mb-2 text-lg font-bold text-dark sm:text-xl">تایید شماره موبایل</h2>
+        <p class="mb-6 text-xs leading-relaxed text-body sm:text-sm">
+          کد ۶ رقمی پیامک‌شده به شماره
+          <span id="otp-display-phone" class="font-semibold text-dark" dir="ltr"></span>
+          را وارد کنید.
+        </p>
+
+        <form id="otp-form" class="space-y-4">
+          <!-- OTP Inputs (LTR for digits) -->
+          <div class="flex items-center justify-center gap-2" dir="ltr">
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+            <input type="text" inputmode="numeric" maxlength="1" data-otp
+              class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
+          </div>
+
+          <!-- Countdown Timer -->
+          <p class="text-center text-xs text-body sm:text-sm">
+            زمان باقی‌مانده تا ارسال مجدد:
+            <span id="otp-timer" class="font-semibold text-primary">۰۲:۰۰</span>
           </p>
 
-          <form id="otp-form" class="space-y-4">
-            <!-- OTP Inputs (LTR for digits) -->
-            <div class="flex items-center justify-center gap-2" dir="ltr">
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-              <input type="text" inputmode="numeric" maxlength="1" data-otp
-                class="otp-input h-11 w-10 rounded-xl border border-gray-200 bg-white text-center text-sm font-semibold text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary sm:h-12 sm:w-11 sm:text-base" />
-            </div>
+          <p id="otp-error" class="hidden text-center text-xs text-red-500 sm:text-sm"></p>
 
-            <!-- Countdown Timer -->
-            <p class="text-center text-xs text-body sm:text-sm">
-              زمان باقی‌مانده تا ارسال مجدد:
-              <span id="otp-timer" class="font-semibold text-primary">۰۲:۰۰</span>
-            </p>
+          <!-- Submit -->
+          <button type="submit"
+            class="w-full cursor-pointer rounded-full bg-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
+            تایید کد
+          </button>
 
-            <p id="otp-error" class="hidden text-center text-xs text-red-500 sm:text-sm"></p>
-
-            <!-- Submit -->
-            <button type="submit"
-              class="w-full cursor-pointer rounded-full bg-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
-              تایید کد
+          <!-- Resend + Cancel -->
+          <div class="flex items-center justify-between pt-1">
+            <button type="button" id="otp-resend" class="cursor-not-allowed text-xs font-medium text-dark/40" disabled>
+              ارسال مجدد کد
             </button>
-
-            <!-- Resend + Cancel -->
-            <div class="flex items-center justify-between pt-1">
-              <button type="button" id="otp-resend" class="cursor-not-allowed text-xs font-medium text-dark/40"
-                disabled>
-                ارسال مجدد کد
-              </button>
-              <button type="button" id="otp-cancel"
-                class="cursor-pointer text-xs font-medium text-dark/70 underline transition-colors hover:text-primary hover:no-underline">
-                انصراف
-              </button>
-            </div>
-          </form>
-        </div>
+            <button type="button" id="otp-cancel"
+              class="cursor-pointer text-xs font-medium text-dark/70 underline transition-colors hover:text-primary hover:no-underline">
+              انصراف
+            </button>
+          </div>
+        </form>
       </div>
-      <!-- endregion -->
-    </main>
+    </div>
+    <!-- endregion -->
+  </main>
 
-    <!-- #region FOOTER -->
-    <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
-      <div class="container-whyland">
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
-          <!-- Column 1: Brand Info -->
-          <div class="lg:col-span-4">
-            <a href="#" class="inline-block">
-              <img src="assets/images/logo.png" alt="لوگوی وایلند" class="h-8 w-auto object-contain" />
-            </a>
-            <p class="mt-4 max-w-sm text-xs leading-relaxed text-body sm:text-sm">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-              استفاده از طراحان گرافیک است.
-            </p>
-          </div>
-
-          <!-- Column 2: Help Links -->
-          <div class="lg:col-span-2">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              راهنما
-            </h4>
-            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  تماس با ما
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  آخرین مقالات
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  سوالات متداول
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Program Links -->
-          <div class="lg:col-span-3">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              برنامه‌های آموزشی
-            </h4>
-            <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  هنر و طراحی
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  کسب و کار
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  فناوری اطلاعات و نرم‌افزار
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  زبان‌های خارجی
-                </a>
-              </li>
-              <li>
-                <a href="#" class="transition-colors duration-300 hover:text-primary">
-                  برنامه‌نویسی
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Contact & Social Info -->
-          <div class="lg:col-span-3">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
-              ارتباط با ما
-            </h4>
-            <div class="mt-4 space-y-2 text-xs leading-relaxed sm:text-sm">
-              <p>
-                <span class="font-medium text-dark">آدرس:</span> تهران، خیابان
-                آزادی، پلاک ۱۲۳
-              </p>
-              <p>
-                <span class="font-medium text-dark">تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸
-              </p>
-              <p>
-                <span class="font-medium text-dark">ایمیل:</span>
-                supportlms@gmail.com
-              </p>
-            </div>
-          </div>
+  <!-- #region FOOTER -->
+  <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
+    <div class="container-whyland">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
+        <!-- Column 1: Brand Info -->
+        <div class="lg:col-span-4">
+          <a href="#" class="inline-block">
+            <img src="assets/images/logo.png" alt="لوگوی وایلند" class="h-8 w-auto object-contain" />
+          </a>
+          <p class="mt-4 max-w-sm text-xs leading-relaxed text-body sm:text-sm">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است.
+          </p>
         </div>
 
-        <!-- Bottom Footer & Copyright -->
-        <div class="relative mt-12 border-t border-gray-200/80 pt-6">
-          <div class="flex items-center justify-between">
-            <p class="w-full text-center text-xs text-body sm:text-sm">
-              توسعه یافته توسط استاد بزرگ محمدمهدی زنگنه(راشد)
-            </p>
+        <!-- Column 2: Help Links -->
+        <div class="lg:col-span-2">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+            راهنما
+          </h4>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                تماس با ما
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                آخرین مقالات
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                سوالات متداول
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <button id="scroll-to-top"
-              class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 hover:scale-110 active:scale-95 active:bg-primary/90 sm:size-10"
-              aria-label="بازگشت به بالا">
-              <img src="assets/icons/arrow-up.svg" alt="" />
-            </button>
+        <!-- Column 3: Program Links -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+            برنامه‌های آموزشی
+          </h4>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                هنر و طراحی
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                کسب و کار
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                فناوری اطلاعات و نرم‌افزار
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                زبان‌های خارجی
+              </a>
+            </li>
+            <li>
+              <a href="#" class="transition-colors duration-300 hover:text-primary">
+                برنامه‌نویسی
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Social Info -->
+        <div class="lg:col-span-3">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-dark">
+            ارتباط با ما
+          </h4>
+          <div class="mt-4 space-y-2 text-xs leading-relaxed sm:text-sm">
+            <p>
+              <span class="font-medium text-dark">آدرس:</span> تهران، خیابان
+              آزادی، پلاک ۱۲۳
+            </p>
+            <p>
+              <span class="font-medium text-dark">تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸
+            </p>
+            <p>
+              <span class="font-medium text-dark">ایمیل:</span>
+              supportlms@gmail.com
+            </p>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- endregion -->
 
-    <!-- #region Entry JavaScript Module -->
-    <script type="module" src="src/js/main.js"></script>
-    <!-- endregion -->
+      <!-- Bottom Footer & Copyright -->
+      <div class="relative mt-12 border-t border-gray-200/80 pt-6">
+        <div class="flex items-center justify-between">
+          <p class="w-full text-center text-xs text-body sm:text-sm">
+            توسعه یافته توسط استاد بزرگ محمدمهدی زنگنه(راشد)
+          </p>
 
-    <!-- #region Edit Profile Page Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        /* ---- Persian digits helpers ---- */
-        var PERSIAN = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-        function toPersian(str) {
-          return String(str).replace(/\d/g, function (d) { return PERSIAN[d]; });
-        }
-        function toEnglishDigits(str) {
-          return String(str)
-            .replace(/[۰-۹]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); })
-            .replace(/[٠-٩]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); });
-        }
+          <button id="scroll-to-top"
+            class="flex size-9 shrink-0 items-center justify-center rounded-full bg-black text-white shadow-md transition-transform duration-300 hover:scale-110 active:scale-95 active:bg-primary/90 sm:size-10"
+            aria-label="بازگشت به بالا">
+            <img src="assets/icons/arrow-up.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- endregion -->
 
-        /* ---- Joined date (Jalali via Intl, same as dashboard) ---- */
-        var joinedEls = document.querySelectorAll('#profile-joined-date');
-        if (joinedEls.length) {
-          try {
-            var formatted = new Intl.DateTimeFormat('fa-IR', {
-              year: 'numeric', month: 'long', day: 'numeric',
-            }).format(new Date('2026-09-01'));
-            joinedEls.forEach(function (el) { el.textContent = formatted; });
-          } catch (e) { /* keep static fallback */ }
-        }
+  <!-- #region Entry JavaScript Module -->
+  <script type="module" src="src/js/main.js"></script>
+  <!-- endregion -->
 
-        /* ---- Avatar upload ---- */
-        var avatarInput = document.getElementById('avatar-input');
-        var avatarPreview = document.getElementById('avatar-preview');
-        var avatarSelectBtn = document.getElementById('avatar-select-btn');
-        var avatarRemoveBtn = document.getElementById('avatar-remove-btn');
-        var avatarError = document.getElementById('avatar-error');
-        var avatarObjectUrl = null;
+  <!-- #region Jalali Date Formatter -->
+  <script src="src/js/jalali-date.js" defer></script>
+  <!-- #endregion -->
 
-        avatarSelectBtn.addEventListener('click', function () { avatarInput.click(); });
+  <!-- #region Jalali Date Picker -->
+  <script src="src/js/jalali-date-picker.js" defer></script>
+  <!-- #endregion -->
 
-        avatarInput.addEventListener('change', function () {
-          avatarError.classList.add('hidden');
-          var file = avatarInput.files && avatarInput.files[0];
-          if (!file) return;
+  <!-- #region Avatar Upload -->
+  <script src="src/js/edit-profile/avatar-upload.js" defer></script>
+  <!-- #endregion -->
 
-          var allowed = ['image/jpeg', 'image/png'];
-          if (allowed.indexOf(file.type) === -1) {
-            avatarError.textContent = 'فرمت تصویر باید JPG یا PNG باشد.';
-            avatarError.classList.remove('hidden');
-            avatarInput.value = '';
-            return;
-          }
-          if (file.size > 2 * 1024 * 1024) {
-            avatarError.textContent = 'حجم تصویر نباید بیشتر از ۲ مگابایت باشد.';
-            avatarError.classList.remove('hidden');
-            avatarInput.value = '';
-            return;
-          }
+  <!-- #region Phone OTP Verification -->
+  <script src="src/js/edit-profile/phone-otp-verify.js" defer></script>
+  <!-- #endregion -->
 
-          if (avatarObjectUrl) URL.revokeObjectURL(avatarObjectUrl);
-          avatarObjectUrl = URL.createObjectURL(file);
-          avatarPreview.src = avatarObjectUrl;
-          avatarRemoveBtn.classList.remove('hidden');
-        });
+  <!-- #region Edit Profile Page Script -->
+  <script src="src/js/edit-profile/edit-profile.js" defer></script>
+  <!-- #endregion -->
 
-        avatarRemoveBtn.addEventListener('click', function () {
-          if (avatarObjectUrl) {
-            URL.revokeObjectURL(avatarObjectUrl);
-            avatarObjectUrl = null;
-          }
-          avatarInput.value = '';
-          avatarPreview.src = 'assets/images/instrauctor.png';
-          avatarRemoveBtn.classList.add('hidden');
-        });
-
-        /* ---- Phone OTP verification ---- */
-        var phoneInput = document.getElementById('phone-number');
-        var phoneVerifyBtn = document.getElementById('phone-verify-btn');
-        var phoneError = document.getElementById('phone-error');
-        var phoneVerifiedBadge = document.getElementById('phone-verified-badge');
-        var otpModal = document.getElementById('otp-modal');
-        var otpModalBackdrop = document.getElementById('otp-modal-backdrop');
-        var otpModalClose = document.getElementById('otp-modal-close');
-        var otpDisplayPhone = document.getElementById('otp-display-phone');
-        var otpForm = document.getElementById('otp-form');
-        var otpInputs = document.querySelectorAll('[data-otp]');
-        var otpError = document.getElementById('otp-error');
-        var otpTimerEl = document.getElementById('otp-timer');
-        var otpResendBtn = document.getElementById('otp-resend');
-        var otpCancelBtn = document.getElementById('otp-cancel');
-        var phoneVerified = false;
-        var otpTimerInterval = null;
-        var otpRemaining = 0;
-
-        function isValidPhone(value) {
-          return /^09\d{9}$/.test(toEnglishDigits(value).trim());
-        }
-
-        function openOtpModal() {
-          otpDisplayPhone.textContent = toPersian(toEnglishDigits(phoneInput.value).trim());
-          otpError.classList.add('hidden');
-          otpModal.classList.remove('hidden');
-          otpModal.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-          otpInputs.forEach(function (i) { i.value = ''; });
-          otpInputs[0].focus();
-          startOtpTimer();
-        }
-
-        function closeOtpModal() {
-          otpModal.classList.add('hidden');
-          otpModal.classList.remove('flex');
-          document.body.style.overflow = '';
-          clearInterval(otpTimerInterval);
-        }
-
-        function startOtpTimer() {
-          otpRemaining = 120;
-          otpTimerEl.textContent = toPersian('02:00');
-          otpResendBtn.disabled = true;
-          otpResendBtn.classList.add('text-dark/40', 'cursor-not-allowed');
-          otpResendBtn.classList.remove('text-primary', 'cursor-pointer', 'hover:underline');
-
-          clearInterval(otpTimerInterval);
-          otpTimerInterval = setInterval(function () {
-            otpRemaining--;
-            if (otpRemaining <= 0) {
-              clearInterval(otpTimerInterval);
-              otpTimerEl.textContent = toPersian('00:00');
-              otpResendBtn.disabled = false;
-              otpResendBtn.classList.remove('text-dark/40', 'cursor-not-allowed');
-              otpResendBtn.classList.add('text-primary', 'cursor-pointer', 'hover:underline');
-            } else {
-              var m = Math.floor(otpRemaining / 60).toString().padStart(2, '0');
-              var s = (otpRemaining % 60).toString().padStart(2, '0');
-              otpTimerEl.textContent = toPersian(m + ':' + s);
-            }
-          }, 1000);
-        }
-
-        phoneVerifyBtn.addEventListener('click', function () {
-          phoneError.classList.add('hidden');
-          phoneVerifiedBadge.classList.add('hidden');
-          phoneVerifiedBadge.classList.remove('flex');
-
-          if (!isValidPhone(phoneInput.value)) {
-            phoneError.textContent = 'شماره موبایل معتبر نیست. (مثال: 09123456789)';
-            phoneError.classList.remove('hidden');
-            return;
-          }
-          openOtpModal();
-        });
-
-        otpModalClose.addEventListener('click', closeOtpModal);
-        otpModalBackdrop.addEventListener('click', closeOtpModal);
-        otpCancelBtn.addEventListener('click', closeOtpModal);
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && !otpModal.classList.contains('hidden')) closeOtpModal();
-        });
-
-        otpInputs.forEach(function (input, idx) {
-          input.addEventListener('input', function (e) {
-            e.target.value = e.target.value.replace(/[^0-9]/g, '');
-            if (e.target.value && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
-          });
-          input.addEventListener('keydown', function (e) {
-            if (e.key === 'Backspace' && !e.target.value && idx > 0) otpInputs[idx - 1].focus();
-          });
-        });
-
-        otpResendBtn.addEventListener('click', function () {
-          if (otpResendBtn.disabled) return;
-          otpInputs.forEach(function (i) { i.value = ''; });
-          otpInputs[0].focus();
-          startOtpTimer();
-        });
-
-        otpForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          otpError.classList.add('hidden');
-
-          var code = Array.prototype.map.call(otpInputs, function (i) { return i.value; }).join('');
-          if (code.length !== 6) {
-            otpError.textContent = 'کد ۶ رقمی را کامل وارد کنید.';
-            otpError.classList.remove('hidden');
-            return;
-          }
-
-          // Mock verification: any 6-digit code is accepted.
-          phoneVerified = true;
-          closeOtpModal();
-          phoneError.classList.add('hidden');
-          phoneVerifiedBadge.classList.remove('hidden');
-          phoneVerifiedBadge.classList.add('flex');
-          phoneInput.readOnly = true;
-          phoneVerifyBtn.textContent = 'تایید شده';
-          phoneVerifyBtn.disabled = true;
-          phoneVerifyBtn.classList.remove('hover:bg-primary', 'hover:text-white');
-          phoneVerifyBtn.classList.add('cursor-not-allowed', 'border-emerald-500', 'text-emerald-500');
-        });
-
-        /* ---- Jalali date picker (data-driven, no external lib) ---- */
-        var birthInput = document.getElementById('birth-date');
-        var pickerPanel = document.getElementById('birth-date-picker');
-        var pickerGrid = document.getElementById('picker-grid');
-        var pickerLabel = document.getElementById('picker-label');
-
-        var J_MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
-          'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
-        var J_WEEK = ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'];
-
-        // Standard Jalali <-> Gregorian conversion (Borkowski algorithm, as used by jalaali-js)
-        function div(a, b) { return ~~(a / b); }
-        function mod(a, b) { return a - ~~(a / b) * b; }
-
-        function jalCal(jy) {
-          var breaks = [-61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210,
-            1635, 2060, 2097, 2192, 2262, 2324, 2394, 2456, 3178];
-          var bl = breaks.length, gy = jy + 621, leapJ = -14, jp = breaks[0],
-            jm, jump = 0, leap, n, i;
-
-          for (i = 1; i < bl; i += 1) {
-            jm = breaks[i];
-            jump = jm - jp;
-            if (jy < jm) break;
-            leapJ = leapJ + div(jump, 33) * 8 + div(mod(jump, 33), 4);
-            jp = jm;
-          }
-          n = jy - jp;
-
-          leapJ = leapJ + div(n, 33) * 8 + div(mod(n, 33) + 3, 4);
-          if (mod(jump, 33) === 4 && jump - n === 4) leapJ += 1;
-
-          var leapG = div(gy, 4) - div((div(gy, 100) + 1) * 3, 4) - 150;
-          var march = 20 + leapJ - leapG;
-
-          if (jump - n < 6) n = n - jump + div(jump + 4, 33) * 33;
-          leap = mod(mod(n + 1, 33) - 1, 4);
-          if (leap === -1) leap = 4;
-
-          return { leap: leap, gy: gy, march: march };
-        }
-
-        // Gregorian (y, m, d) -> Julian Day Number
-        function g2d(gy, gm, gd) {
-          var d = div((gy + div(gm - 8, 6) + 100100) * 1461, 4)
-            + div(153 * mod(gm + 9, 12) + 2, 5)
-            + gd - 34840408;
-          d = d - div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752;
-          return d;
-        }
-
-        // Julian Day Number -> Gregorian { gy, gm, gd }
-        function d2g(jdn) {
-          var j, i, gd, gm, gy;
-          j = 4 * jdn + 139361631;
-          j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908;
-          i = div(mod(j, 1461), 4) * 5 + 308;
-          gd = div(mod(i, 153), 5) + 1;
-          gm = mod(div(i, 153), 12) + 1;
-          gy = div(j, 1461) - 100100 + div(8 - gm, 6);
-          return { gy: gy, gm: gm, gd: gd };
-        }
-
-        function jIsLeap(jy) {
-          return jalCal(jy).leap === 0;
-        }
-
-        function jMonthLen(jy, jm) {
-          if (jm <= 6) return 31;
-          if (jm <= 11) return 30;
-          return jIsLeap(jy) ? 30 : 29;
-        }
-
-        // Jalali (y, m, d) -> Julian Day Number
-        function j2jdn(jy, jm, jd) {
-          var r = jalCal(jy);
-          return g2d(r.gy, 3, r.march) + (jm - 1) * 31 - div(jm, 7) * (jm - 7) + jd - 1;
-        }
-
-        // Julian Day Number -> Jalali [y, m, d]
-        function jdn2j(jdn) {
-          var gy = d2g(jdn).gy, jy = gy - 621, r = jalCal(jy),
-            jdn1f = g2d(gy, 3, r.march), jd, jm, k;
-
-          k = jdn - jdn1f;
-          if (k >= 0) {
-            if (k <= 185) {
-              jm = 1 + div(k, 31);
-              jd = mod(k, 31) + 1;
-              return [jy, jm, jd];
-            }
-            k -= 186;
-          } else {
-            jy -= 1;
-            k += 179;
-            if (r.leap === 1) k += 1;
-          }
-          jm = 7 + div(k, 30);
-          jd = mod(k, 30) + 1;
-          return [jy, jm, jd];
-        }
-
-        var picked = null; // [jy, jm, jd]
-        var view = null;   // [jy, jm] shown in grid
-
-        function pad2(n) { return String(n).padStart(2, '0'); }
-
-        function parseInitialDate() {
-          var m = toEnglishDigits(birthInput.value).match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
-          return m ? [parseInt(m[1], 10), parseInt(m[2], 10), parseInt(m[3], 10)] : [1375, 5, 15];
-        }
-
-        function renderPicker() {
-          if (!view) return;
-          var jy = view[0], jm = view[1];
-          pickerLabel.textContent = J_MONTHS[jm - 1] + ' ' + toPersian(jy);
-
-          var firstJdn = j2jdn(jy, jm, 1);
-          // Jalali week starts Saturday: JDN mod 7 == 5 is Saturday (JDN 0 = Monday)
-          var startCol = (firstJdn % 7 + 2) % 7;
-
-          pickerGrid.innerHTML = '';
-          J_WEEK.forEach(function (w) {
-            var head = document.createElement('span');
-            head.className = 'py-1 font-semibold text-gray-400';
-            head.textContent = w;
-            pickerGrid.appendChild(head);
-          });
-
-          var i, empty = document.createElement('span');
-          for (i = 0; i < startCol; i++) pickerGrid.appendChild(empty.cloneNode());
-
-          var len = jMonthLen(jy, jm);
-          for (var d = 1; d <= len; d++) {
-            (function (day) {
-              var btn = document.createElement('button');
-              btn.type = 'button';
-              btn.textContent = toPersian(day);
-              var isSelected = picked && picked[0] === jy && picked[1] === jm && picked[2] === day;
-              btn.className = 'flex size-7 cursor-pointer items-center justify-center rounded-lg transition-colors sm:size-8 ' +
-                (isSelected
-                  ? 'bg-primary font-bold text-white'
-                  : 'text-dark hover:bg-[#fff4ef] hover:text-primary');
-              btn.addEventListener('click', function () {
-                picked = [jy, jm, day];
-                birthInput.value = toPersian(jy) + '/' + toPersian(pad2(jm)) + '/' + toPersian(pad2(day));
-                pickerPanel.classList.add('hidden');
-                renderPicker();
-              });
-              pickerGrid.appendChild(btn);
-            })(d);
-          }
-        }
-
-        pickerPanel.querySelectorAll('[data-picker-nav]').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            if (!view) return;
-            var jy = view[0], jm = view[1];
-            if (btn.getAttribute('data-picker-nav') === 'next') {
-              jm++; if (jm > 12) { jm = 1; jy++; }
-            } else {
-              jm--; if (jm < 1) { jm = 12; jy--; }
-            }
-            view = [jy, jm];
-            renderPicker();
-          });
-        });
-
-        birthInput.addEventListener('click', function () {
-          if (!pickerPanel.classList.contains('hidden')) {
-            pickerPanel.classList.add('hidden');
-            return;
-          }
-          picked = parseInitialDate();
-          view = [picked[0], picked[1]];
-          renderPicker();
-          pickerPanel.classList.remove('hidden');
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!pickerPanel.classList.contains('hidden') &&
-            !pickerPanel.contains(e.target) && e.target !== birthInput) {
-            pickerPanel.classList.add('hidden');
-          }
-        });
-
-        /* ---- Form submit (mock) ---- */
-        var editForm = document.getElementById('edit-profile-form');
-        var formMessage = document.getElementById('form-message');
-
-        function showFormMessage(text, ok) {
-          formMessage.textContent = text;
-          formMessage.classList.remove('hidden', 'text-red-500', 'text-emerald-500');
-          formMessage.classList.add(ok ? 'text-emerald-500' : 'text-red-500');
-        }
-
-        editForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-
-          if (!isValidPhone(phoneInput.value)) {
-            showFormMessage('شماره موبایل معتبر نیست.', false);
-            return;
-          }
-          if (!phoneVerified) {
-            showFormMessage('لطفاً ابتدا شماره موبایل را با کد تایید کنید.', false);
-            return;
-          }
-
-          showFormMessage('تغییرات با موفقیت ذخیره شد.', true);
-        });
-      });
-    </script>
-    <!-- endregion -->
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-      <symbol id="checkbox-30" viewBox="0 0 22 22">
-        <path fill="none" stroke="primary"
-          d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
-      </symbol>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="checkbox-30" viewBox="0 0 22 22">
+      <path fill="none" stroke="primary"
+        d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
+    </symbol>
+  </svg>
 </body>
 
 </html>
