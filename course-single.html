@@ -19,6 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
   <!-- endregion -->
+
+  <link rel="stylesheet" href="src/css/plyr.css">
 </head>
 
 <body class="bg-white text-dark antialiased font-['Vazirmatn']">
@@ -383,7 +385,7 @@
           <div>
             <!-- Video Tag -->
             <div class="mb-8 overflow-hidden rounded-2xl border border-border bg-black">
-              <video id="course-video" class="w-full aspect-video" controls preload="metadata"
+              <video id="course-video" class="w-full aspect-video" preload="metadata"
                 poster="assets/images/course-cover.jpg">
                 <source id="course-video-source" src="assets/videos/course-video-02.mp4" type="video/mp4" />
               </video>
@@ -1694,6 +1696,8 @@
   <script src="src/js/main.js"></script>
   <!-- endregion -->
 
+  <script src="src/js/plyr.js"></script>
+
   <script>
     const wishlistBtn = document.getElementById('wishlist-button');
     if (wishlistBtn) {
@@ -1705,78 +1709,275 @@
         svg.setAttribute('fill', !isActive ? 'currentColor' : 'none');
       });
     }
+    (function () {
+      'use strict';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.getElementById('course-video');
-      const videoSource = document.getElementById('course-video-source');
-      const previewBtns = document.querySelectorAll('.episode-play');
-      const lessonTitles = document.querySelectorAll('.lesson-title');
+      // مقداردهی اولیه Plyr روی ویدیوی course-video
+      const player = new Plyr('#course-video', {
+        // کنترل‌های نمایش داده شده در نوار پایین
+        controls: [
+          'play-large',
+          'play',
+          'current-time',
+          'progress',
+          'duration',
+          'mute',
+          'volume',
+          'captions',
+          'settings',
+          'pip',
+          'airplay',
+          'fullscreen'
+        ],
 
-      const DEFAULT_SRC = 'assets/videos/course-video-01.mp4';
-      const STORAGE_KEY = 'activeLessonSrc';
+        i18n: {
+          restart: 'شروع دوباره',
+          rewind: 'عقب بردن {seektime} ثانیه',
+          play: 'پخش',
+          pause: 'توقف',
+          fastForward: 'جلو بردن {seektime} ثانیه',
+          seek: 'جستجو',
+          played: 'پخش شده',
+          buffered: 'بارگذاری شده',
+          currentTime: 'زمان فعلی',
+          duration: 'مدت زمان',
+          volume: 'صدا',
+          mute: 'بی‌صدا',
+          unmute: 'باصدا',
+          enableCaptions: 'فعال‌سازی زیرنویس',
+          disableCaptions: 'غیرفعال‌سازی زیرنویس',
+          enterFullscreen: 'ورود به حالت تمام‌صفحه',
+          pip: 'تصویر در تصویر',
+          exitFullscreen: 'خروج از حالت تمام‌صفحه',
+          frameTitle: 'پلیر برای {title}',
+          captions: 'زیرنویس',
+          settings: 'تنظیمات',
+          speed: 'سرعت',
+          normal: 'عادی',
+          quality: 'کیفیت',
+          loop: 'تکرار',
+          start: 'شروع',
+          end: 'پایان',
+          all: 'همه',
+          reset: 'بازنشانی',
+          disabled: 'غیرفعال',
+          enabled: 'فعال',
+          advertisement: 'تبلیغ'
+        },
 
-      function clearHighlight() {
-        lessonTitles.forEach((t) => {
-          t.classList.remove('text-primary');
-          t.classList.add('text-dark');
-        });
-      }
+        // آیتم‌های منوی تنظیمات
+        settings: ['captions', 'quality', 'speed', 'loop'],
 
-      function highlightBySrc(src) {
-        clearHighlight();
-        if (!src) return;
+        // میان‌برهای صفحه‌کلید
+        keyboard: {
+          focused: true,
+          global: false
+        },
 
-        const fileName = src.split('/').pop();
+        // Tooltipها
+        tooltips: {
+          controls: true,
+          seek: true
+        },
 
-        let activeBtn = null;
-        previewBtns.forEach((btn) => {
-          if (btn.dataset.video && btn.dataset.video.split('/').pop() === fileName) {
-            activeBtn = btn;
-          }
-        });
-        if (!activeBtn) return;
+        // تنظیمات زیرنویس
+        captions: {
+          active: false,
+          language: 'auto',
+          update: false
+        },
 
-        const title = activeBtn.closest('li').querySelector('.lesson-title');
-        if (title) {
-          title.classList.remove('text-dark');
-          title.classList.add('text-primary');
-        }
-      }
+        // سرعت‌های پخش
+        speed: {
+          selected: 1,
+          options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+        },
 
-      function activateLesson(src, { autoplay = true } = {}) {
-        if (!src) return;
+        // نسبت تصویر
+        ratio: '16:9',
 
-        if (!videoSource.src.endsWith(src)) {
-          videoSource.src = src;
-          video.load();
-          if (autoplay) video.play().catch(() => { });
-        }
+        // ذخیره تنظیمات کاربر در localStorage
+        storage: {
+          enabled: true,
+          key: 'plyr'
+        },
 
-        highlightBySrc(src);
-        localStorage.setItem(STORAGE_KEY, src);
-      }
+        // تنظیمات تمام‌صفحه
+        fullscreen: {
+          enabled: true,
+          fallback: true,
+          iosNative: false
+        },
 
-      const savedSrc = localStorage.getItem(STORAGE_KEY) || DEFAULT_SRC;
-      activateLesson(savedSrc, { autoplay: false });
-
-      previewBtns.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          const newSrc = btn.dataset.video;
-          if (!newSrc) return;
-
-          activateLesson(newSrc, { autoplay: true });
-          video.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
+        // رفتار پخش
+        autoplay: false,
+        autopause: true,
+        clickToPlay: true,
+        hideControls: true,
+        resetOnEnd: false,
+        seekTime: 10,
+        volume: 1,
+        muted: false,
+        invertTime: true,
+        toggleInvert: true,
+        displayDuration: true,
+        disableContextMenu: true
       });
 
-      window.addEventListener('storage', (e) => {
-        if (e.key === STORAGE_KEY && e.newValue) {
-          activateLesson(e.newValue, { autoplay: false });
-        }
+      // ====== رویدادها ======
+
+      player.on('ready', function (event) {
+        console.log('✅ Plyr آماده است');
       });
-    });
+
+      player.on('play', function () {
+        console.log('▶️ پخش شروع شد');
+      });
+
+      player.on('pause', function () {
+        console.log('⏸️ پخش متوقف شد');
+      });
+
+      player.on('ended', function () {
+        console.log('⏹️ پخش تمام شد');
+      });
+
+      player.on('timeupdate', function () {
+        // این رویداد خیلی زیاد صدا زده می‌شود، فقط برای نمونه
+        // console.log('⏱️ زمان:', player.currentTime);
+      });
+
+      player.on('enterfullscreen', function () {
+        console.log('🖥️ ورود به تمام‌صفحه');
+      });
+
+      player.on('exitfullscreen', function () {
+        console.log('🖥️ خروج از تمام‌صفحه');
+      });
+
+      player.on('captionsenabled', function () {
+        console.log('💬 زیرنویس فعال شد');
+      });
+
+      player.on('captionsdisabled', function () {
+        console.log('💬 زیرنویس غیرفعال شد');
+      });
+
+      player.on('error', function (event) {
+        console.error('❌ خطا در پلیر:', event.detail);
+      });
+
+      // ====== دسترسی سراسری (اختیاری) ======
+      // اگر خواستید از بیرون به پلیر دسترسی داشته باشید
+      window.coursePlayer = player;
+
+      // ====== تغییر منبع ویدیو به صورت داینامیک ======
+      // نمونه تابع برای تغییر ویدیو بدون رفرش صفحه
+      window.changeCourseVideo = function (newSrc, newPoster) {
+        player.source = {
+          type: 'video',
+          title: 'ویدیوی جدید',
+          sources: [
+            {
+              src: newSrc,
+              type: 'video/mp4'
+            }
+          ],
+          poster: newPoster || ''
+        };
+        player.play();
+      };
+
+      // ====== کنترل‌های برنامه‌نویسی‌شده (اختیاری) ======
+      // می‌تونید از هر کدوم از این‌ها در کنسول یا کد خودتون استفاده کنید
+      window.coursePlayerAPI = {
+        play: function () { player.play(); },
+        pause: function () { player.pause(); },
+        stop: function () { player.stop(); },
+        restart: function () { player.restart(); },
+        forward: function (s) { player.forward(s || 10); },
+        rewind: function (s) { player.rewind(s || 10); },
+        toggleMute: function () { player.muted = !player.muted; },
+        toggleFullscreen: function () { player.fullscreen.toggle(); },
+        setVolume: function (v) { player.volume = v; },
+        getCurrentTime: function () { return player.currentTime; },
+        seekTo: function (t) { player.currentTime = t; },
+        destroy: function () { player.destroy(); }
+      };
+
+    })();
+
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   const video = document.getElementById('course-video');
+    //   const videoSource = document.getElementById('course-video-source');
+    //   const previewBtns = document.querySelectorAll('.episode-play');
+    //   const lessonTitles = document.querySelectorAll('.lesson-title');
+
+    //   const DEFAULT_SRC = 'assets/videos/course-video-01.mp4';
+    //   const STORAGE_KEY = 'activeLessonSrc';
+
+    //   function clearHighlight() {
+    //     lessonTitles.forEach((t) => {
+    //       t.classList.remove('text-primary');
+    //       t.classList.add('text-dark');
+    //     });
+    //   }
+
+    //   function highlightBySrc(src) {
+    //     clearHighlight();
+    //     if (!src) return;
+
+    //     const fileName = src.split('/').pop();
+
+    //     let activeBtn = null;
+    //     previewBtns.forEach((btn) => {
+    //       if (btn.dataset.video && btn.dataset.video.split('/').pop() === fileName) {
+    //         activeBtn = btn;
+    //       }
+    //     });
+    //     if (!activeBtn) return;
+
+    //     const title = activeBtn.closest('li').querySelector('.lesson-title');
+    //     if (title) {
+    //       title.classList.remove('text-dark');
+    //       title.classList.add('text-primary');
+    //     }
+    //   }
+
+    //   function activateLesson(src, { autoplay = true } = {}) {
+    //     if (!src) return;
+
+    //     if (!videoSource.src.endsWith(src)) {
+    //       videoSource.src = src;
+    //       video.load();
+    //       if (autoplay) video.play().catch(() => { });
+    //     }
+
+    //     highlightBySrc(src);
+    //     localStorage.setItem(STORAGE_KEY, src);
+    //   }
+
+    //   const savedSrc = localStorage.getItem(STORAGE_KEY) || DEFAULT_SRC;
+    //   activateLesson(savedSrc, { autoplay: false });
+
+    //   previewBtns.forEach((btn) => {
+    //     btn.addEventListener('click', (e) => {
+    //       e.preventDefault();
+
+    //       const newSrc = btn.dataset.video;
+    //       if (!newSrc) return;
+
+    //       activateLesson(newSrc, { autoplay: true });
+    //       video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    //     });
+    //   });
+
+    //   window.addEventListener('storage', (e) => {
+    //     if (e.key === STORAGE_KEY && e.newValue) {
+    //       activateLesson(e.newValue, { autoplay: false });
+    //     }
+    //   });
+    // });
   </script>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none">

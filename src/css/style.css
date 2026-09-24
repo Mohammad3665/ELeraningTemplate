@@ -1,5 +1,13 @@
 @import "../tailwind/output.css";
 
+:root {
+  --plyr-color-main: var(--color-primary);
+}
+
+.plyr__time--duration::before {
+  display: none !important;
+}
+
 mark {
   background-color: color-mix(in srgb, #ff5a1f 20%, #ffcc00 10%, transparent);
   color: inherit;
