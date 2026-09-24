@@ -1,5 +1,12 @@
 @import "../tailwind/output.css";
 
+mark {
+  background-color: color-mix(in srgb, #ff5a1f 20%, #ffcc00 10%, transparent);
+  color: inherit;
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
 .swiper-pagination-bullet-active {
   background-color: var(--color-primary) !important;
 }
