@@ -212,7 +212,8 @@
             <div class="overflow-hidden items-center">
               <div class="flex flex-col gap-2 pr-4">
                 <a href="login.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود / ثبت‌نام</a>
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ورود
+                  / ثبت‌نام</a>
 
                 <a href="forgot-password.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فراموشی
@@ -466,16 +467,18 @@
                   <!-- Lesson list for chapter 1 (closed - hidden) -->
                   <div class="curriculum-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                     <ul class="divide-y divide-border border-t border-border">
-                      <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
-                        <span class="lesson-title flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: معرفی پنل مدیریت
+                      <li data-video="assets/videos/course-video-01.mp4"
+                        class="episode-play group flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5 cursor-pointer transition-colors hover:bg-gray-50 active:bg-gray-100">
+                        <span
+                          class="lesson-title flex items-center gap-2 text-xs text-dark group-hover:text-primary sm:text-sm">
+                          <img class="size-4 object-contain" src="assets/icons/video.svg" alt="">
+                          معرفی پنل مدیریت
+                          <span
+                            class="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-200 sm:text-xs">
+                            رایگان
+                          </span>
                         </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button" data-video="assets/videos/course-video-01.mp4"
-                            class="preview-btn cursor-pointer rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
+                        <span class="flex items-center justify-items-end gap-1 sm:gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۲۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-emerald-500">
@@ -484,30 +487,30 @@
                           </svg>
                         </span>
                       </li>
-                      <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
-                        <span class="lesson-title flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: آشنایی با ساختار منوها
-                        </span>
-                        <span class="grid grid-cols-[auto_40px_20px] items-center justify-items-end gap-3 shrink-0">
-                          <button type="button" data-video="assets/videos/course-video-02.mp4"
-                            class="preview-btn cursor-pointer rounded-lg px-3 py-1.5 text-xs font-semibold text-white duration-300 bg-blue-500 transition-colors hover:bg-blue-500/90 active:bg-blue-500/90 active:scale-95 hover:text-white">
-                            پیش‌نمایش
-                          </button>
-                          <span class="text-xs text-gray-400">۱۲:۱۵</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" class="size-4 text-emerald-500">
-                            <rect x="4" y="4" width="16" height="16" rx="3" />
-                            <path d="m8 12 3 3 5-6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </span>
+                      <li
+                        class="group flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 hover:bg-gray-50 active:bg-gray-100 sm:px-5">
+                        <a href="assets/attachments/mew.txt" download
+                          class="lesson-title flex items-center gap-2 text-xs text-dark sm:text-sm cursor-pointer w-full transition-colors group-hover:text-primary">
+                          <img class="size-4 object-contain" src="assets/icons/file.svg" alt="" aria-hidden="true">
+                          آشنایی با ساختار منوها
+                          <span
+                            class="shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-200 sm:text-xs">
+                            رایگان
+                          </span>
+                        </a>
                       </li>
-                      <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
-                        <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: تنظیمات عمومی پنل
+                      <li data-video="assets/videos/course-video-02.mp4"
+                        class="episode-play group flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5 cursor-pointer transition-colors hover:bg-gray-50 active:bg-gray-100">
+                        <span
+                          class="lesson-title flex items-center gap-2 text-xs text-dark group-hover:text-primary sm:text-sm">
+                          <img class="size-4 object-contain" src="assets/icons/video.svg" alt="">
+                          تنظیمات عمومی پنل
+                          <span
+                            class="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-200 sm:text-xs">
+                            رایگان
+                          </span>
                         </span>
-                        <span class="flex items-center justify-items-end gap-3 shrink-0">
+                        <span class="flex items-center justify-items-end gap-1 sm:gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۴۰</span>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" class="size-4 text-emerald-500">
@@ -518,8 +521,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: مدیریت محتوا در پنل
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          مدیریت محتوا در پنل
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۵۵</span>
@@ -532,8 +535,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: ابزارهای پیشرفته پنل
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          ابزارهای پیشرفته پنل
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۴:۳۰</span>
@@ -545,8 +548,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: امنیت و پشتیبان‌گیری
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          امنیت و پشتیبان‌گیری
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۲:۲۰</span>
@@ -583,8 +586,8 @@
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: دانلود و نصب افزونه
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          دانلود و نصب افزونه
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۲۰</span>
@@ -596,8 +599,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: تنظیمات اولیه و فعال‌سازی
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          تنظیمات اولیه و فعال‌سازی
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۱:۴۵</span>
@@ -609,8 +612,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: آشنایی با محیط افزونه
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          آشنایی با محیط افزونه
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۶:۳۰</span>
@@ -622,8 +625,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: عیب‌یابی مشکلات نصب
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          عیب‌یابی مشکلات نصب
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۲۵</span>
@@ -636,8 +639,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: به‌روزرسانی افزونه
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          به‌روزرسانی افزونه
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۷:۰۰</span>
@@ -674,8 +677,8 @@
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: ایجاد دوره جدید
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          ایجاد دوره جدید
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۱:۰۰</span>
@@ -687,8 +690,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: افزودن بخش‌ها و درس‌ها
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          افزودن بخش‌ها و درس‌ها
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۳:۲۰</span>
@@ -700,8 +703,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: تنظیمات پیشرفته دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          تنظیمات پیشرفته دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۴۵</span>
@@ -714,8 +717,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: مدیریت دانشجویان دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          مدیریت دانشجویان دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۷:۳۰</span>
@@ -728,8 +731,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: ابزارهای تعاملی دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          ابزارهای تعاملی دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۳:۲۵</span>
@@ -742,8 +745,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: وضعیت‌ها و پیشرفت دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          وضعیت‌ها و پیشرفت دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۶:۴۰</span>
@@ -756,8 +759,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: حذف و آرشیو دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          حذف و آرشیو دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۲۰</span>
@@ -793,8 +796,8 @@
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: آشنایی با آزمون‌ها
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          آشنایی با آزمون‌ها
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۰۰</span>
@@ -806,8 +809,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: طراحی سوالات تشریحی
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          طراحی سوالات تشریحی
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۳۰</span>
@@ -819,8 +822,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: طراحی سوالات تستی
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          طراحی سوالات تستی
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۴۵</span>
@@ -833,8 +836,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: زمان‌بندی و نمره‌دهی
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          زمان‌بندی و نمره‌دهی
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۶:۲۰</span>
@@ -847,8 +850,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: گزارشات و تحلیل نتایج
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          گزارشات و تحلیل نتایج
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۵:۲۵</span>
@@ -861,8 +864,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: آزمون‌های ترکیبی و جامع
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          آزمون‌های ترکیبی و جامع
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۰۰</span>
@@ -899,8 +902,8 @@
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: تنظیمات فروش دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          تنظیمات فروش دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۲:۱۰</span>
@@ -912,8 +915,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: اتصال به درگاه پرداخت
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          اتصال به درگاه پرداخت
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۵:۰۰</span>
@@ -925,8 +928,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: کوپن‌ها و تخفیف‌ها
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          کوپن‌ها و تخفیف‌ها
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۳۰</span>
@@ -939,8 +942,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: انتشار دوره در سایت
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          انتشار دوره در سایت
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۵:۴۰</span>
@@ -953,8 +956,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: بازاریابی و فروش بیشتر
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          بازاریابی و فروش بیشتر
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۳:۴۰</span>
@@ -990,8 +993,8 @@
                     <ul class="divide-y divide-border border-t border-border">
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: مدیریت دانشجویان
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          مدیریت دانشجویان
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۴:۰۰</span>
@@ -1003,8 +1006,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: گزارشات پیشرفت دانشجویان
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          گزارشات پیشرفت دانشجویان
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۱۰:۱۵</span>
@@ -1017,8 +1020,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: صدور گواهی پایان دوره
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          صدور گواهی پایان دوره
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۸:۴۵</span>
@@ -1031,8 +1034,8 @@
                       </li>
                       <li class="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
                         <span class="flex items-center gap-2 text-xs text-dark sm:text-sm">
-                          <img src="assets/icons/lessons.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
-                          درس ویدیویی: تحلیل آمار و عملکرد
+                          <img src="assets/icons/video.svg" alt="" aria-hidden="true" class="size-4 object-contain" />
+                          تحلیل آمار و عملکرد
                         </span>
                         <span class="flex items-center justify-items-end gap-3 shrink-0">
                           <span class="text-xs text-gray-400">۰۹:۰۰</span>
@@ -1705,7 +1708,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const video = document.getElementById('course-video');
       const videoSource = document.getElementById('course-video-source');
-      const previewBtns = document.querySelectorAll('.preview-btn');
+      const previewBtns = document.querySelectorAll('.episode-play');
       const lessonTitles = document.querySelectorAll('.lesson-title');
 
       const DEFAULT_SRC = 'assets/videos/course-video-01.mp4';
