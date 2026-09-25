@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وایلند | جزئیات فاکتور</title>
+  <title>وایلند | سبد خرید</title>
 
   <!-- #region FavIcon -->
   <link rel="icon" type="image/png" href="assets/images/fav-icon.png">
@@ -12,10 +12,6 @@
 
   <!-- #region Stylesheets -->
   <link rel="stylesheet" href="src/css/style.css" />
-  <!-- endregion -->
-
-  <!-- #region Invoices DataTable (status badge styles) -->
-  <link rel="stylesheet" href="src/css/invoices-datatable.css">
   <!-- endregion -->
 
   <!-- #region Google Fonts (Vazirmatn for Persian) -->
@@ -27,7 +23,7 @@
 
 <body class="bg-white text-dark antialiased font-['Vazirmatn']">
   <!-- #region HEADER -->
-  <header id="site-header" class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm print:hidden">
+  <header id="site-header" class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm">
     <div class="container-whyland px-4">
       <div class="flex min-h-16 items-center justify-between sm:min-h-20">
         <!-- Site Logo -->
@@ -101,12 +97,12 @@
                   فاکتورها
                 </a>
                 <a href="invoice-detail.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                  جزئیات فاکتور
+                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                    جزئیات فاکتور
                 </a>
                 <a href="cart.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    سبد خرید
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  سبد خرید
                 </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -184,13 +180,13 @@
 
   <!-- #region Backdrop Overlay -->
   <div id="menu-overlay"
-    class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden print:hidden">
+    class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden">
   </div>
   <!-- endregion -->
 
   <!-- #region Mobile Navigation Sidebar (From Left) -->
   <aside id="mobile-menu"
-    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden print:hidden">
+    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden">
     <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
       <!-- Header inside drawer -->
       <div class="flex items-center justify-between border-b border-border pb-4">
@@ -259,11 +255,10 @@
                 <a href="invoices.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فاکتورها</a>
                 <a href="invoice-detail.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">جزئیات
-                  فاکتور</a>
+                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark transition-colors hover:text-primary">جزئیات فاکتور</a>
                 <a href="cart.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark transition-colors hover:text-primary">سبد
-                    خرید</a>
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">سبد
+                  خرید</a>
                 <a href="faq.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
                   متداول</a>
@@ -304,7 +299,7 @@
 
   <main id="main-content">
     <!-- #region BREADCRUMB -->
-    <div class="border-b border-border bg-[#f8f9fa] print:hidden">
+    <div class="border-b border-border bg-[#f8f9fa]">
       <div class="container-whyland px-4 py-4">
         <nav aria-label="مسیر صفحه">
           <ol class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm">
@@ -313,369 +308,294 @@
             </li>
             <li aria-hidden="true" class="text-gray-300">/</li>
             <li>
-              <a href="dashboard.html" class="transition-colors hover:text-primary">حساب کاربری</a>
+              <a href="course-listing.html" class="transition-colors hover:text-primary">دوره‌ها</a>
             </li>
             <li aria-hidden="true" class="text-gray-300">/</li>
-            <li>
-              <a href="invoices.html" class="transition-colors hover:text-primary">فاکتورها</a>
-            </li>
-            <li aria-hidden="true" class="text-gray-300">/</li>
-            <li class="font-medium text-dark" aria-current="page">جزئیات فاکتور</li>
+            <li class="font-medium text-dark" aria-current="page">سبد خرید</li>
           </ol>
         </nav>
       </div>
     </div>
     <!-- endregion -->
 
-    <!-- #region INVOICE DETAIL -->
+    <!-- #region CART -->
     <section class="py-10 sm:py-14">
       <div class="container-whyland px-4">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[290px_1fr] lg:gap-10">
+        <!-- Page Heading -->
+        <div class="mb-8">
+          <h1 class="text-xl font-bold text-dark sm:text-2xl">سبد خرید</h1>
+          <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+            دوره‌های انتخابی شما؛ قبل از ادامه فرآیند خرید می‌توانید اقلام را بررسی یا حذف کنید.
+          </p>
+        </div>
 
-          <!-- ==================== PROFILE SIDEBAR ==================== -->
-          <aside class="lg:sticky lg:top-24 self-start print:hidden">
-            <div class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-              <!-- User Summary (card) -->
-              <div class="border-b border-border px-5 pb-5 pt-8 text-center">
-                <!-- Avatar -->
-                <div
-                  class="mx-auto flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-primary/20 bg-[#f8f9fa]">
-                  <img src="assets/images/instrauctor.png" alt="تصویر پروفایل کاربر"
-                    class="h-full w-full object-cover" />
+        <!-- ==================== CART CONTENT ==================== -->
+        <div id="cart-list" class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_340px] lg:gap-10">
+
+          <!-- ==================== CART ITEMS ==================== -->
+          <div class="flex flex-col space-y-6">
+
+            <!-- Cart Item 1 -->
+            <article
+              class="group flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl">
+              <a href="course-single.html"
+                class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70">
+                <img src="assets/images/course-01.png" alt="ایجاد وب‌سایت LMS با لرن‌پرس"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <span
+                  class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">عکاسی</span>
+              </a>
+              <div class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between">
+                <div class="pb-2">
+                  <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                    توسط
+                    <span class="font-bold text-gray-700">توماس پورتاس</span>
+                  </p>
+                  <h3 class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg">
+                    <a href="course-single.html" class="transition-colors hover:text-primary">ایجاد وب‌سایت LMS با
+                      لرن‌پرس</a>
+                  </h3>
+                  <div class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body">
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/times.svg" alt="" aria-hidden="true" class="size-4 object-contain" /><span>۲
+                        هفته</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/students.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۱۵۶ دانشجو</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/levels.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>همه سطوح</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/lessons.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۲۰ درس</span>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- Name -->
-                <h2 class="mt-3 text-sm font-bold text-dark sm:text-base">
-                  محمد مهدی زنگنه
-                </h2>
-                <p class="mt-1 text-xs text-body" dir="ltr">
-                  ۰۹۱۲۳۴۵۶۷۸۹
-                </p>
-
-                <!-- Membership Date -->
-                <div class="mt-3 flex items-center justify-center gap-1.5 text-xs text-body">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8" class="size-4 text-gray-400">
-                    <rect x="3" y="5" width="18" height="16" rx="2" />
-                    <path d="M16 3v4" />
-                    <path d="M8 3v4" />
-                    <path d="M3 11h18" />
-                  </svg>
-                  <span>
-                    عضو وایلند از
-                    <span data-jalali-date="2026-09-01"></span>
-                  </span>
+                <div class="mt-4 py-2 flex flex-wrap items-center gap-3 border-t border-border justify-between">
+                  <!-- Price (matches course-listing: strikethrough only when discounted) -->
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1" data-unit-price="29000"
+                    data-discount="0">
+                    <span class="final-price text-sm font-bold text-gray-900">۲۹,۰۰۰ تومان</span>
+                  </div>
+                  <div class="flex items-center gap-3 sm:ml-5">
+                    <button type="button" aria-label="حذف از سبد خرید"
+                      class="remove-cart-item cursor-pointer flex items-center justify-center size-7 rounded-lg border border-red-500 bg-transparent text-red-500 transition-colors hover:bg-red-50 hover:text-red-600 sm:size-8">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                        <path d="M10 11v6" />
+                        <path d="M14 11v6" />
+                        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                      </svg>
+                      <span class="sr-only">حذف از سبد خرید</span>
+                    </button>
+                  </div>
                 </div>
               </div>
+            </article>
 
-              <!-- Sidebar Links -->
-              <nav class="p-3" aria-label="منوی پروفایل">
-                <ul class="flex flex-col gap-1">
-                  <li>
-                    <a href="dashboard.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
+            <!-- Cart Item 2 (discounted) -->
+            <article
+              class="group flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl">
+              <a href="course-single.html"
+                class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70">
+                <img src="assets/images/course-03.png" alt="جاوااسکریپت مدرن از صفر"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <span
+                  class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">برنامه‌نویسی</span>
+              </a>
+              <div class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between">
+                <div class="pb-2">
+                  <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                    توسط
+                    <span class="font-bold text-gray-700">توماس پورتاس</span>
+                  </p>
+                  <h3 class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg">
+                    <a href="course-single.html" class="transition-colors hover:text-primary">جاوااسکریپت مدرن از
+                      صفر</a>
+                  </h3>
+                  <div class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body">
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/times.svg" alt="" aria-hidden="true" class="size-4 object-contain" /><span>۶
+                        هفته</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/students.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۹۸ دانشجو</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/levels.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>همه سطوح</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/lessons.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۴۲ درس</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 py-2 flex flex-wrap items-center gap-3 border-t border-border justify-between">
+                  <!-- Price (matches course-listing: strikethrough only when discounted) -->
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1" data-unit-price="29000"
+                    data-discount="9000">
+                    <span class="text-sm text-gray-400 line-through">۲۹,۰۰۰ تومان</span>
+                    <span class="final-price text-sm font-bold text-red-500">۲۰,۰۰۰ تومان</span>
+                  </div>
+                  <div class="flex items-center gap-3 sm:ml-5">
+                    <button type="button" aria-label="حذف از سبد خرید"
+                      class="remove-cart-item cursor-pointer flex items-center justify-center size-7 rounded-lg border border-red-500 bg-transparent text-red-500 transition-colors hover:bg-red-50 hover:text-red-600 sm:size-8">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <circle cx="12" cy="8" r="3.5" />
-                        <path d="M4.5 20c1.6-3.7 4.3-5.3 7.5-5.3s5.9 1.6 7.5 5.3" />
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                        <path d="M10 11v6" />
+                        <path d="M14 11v6" />
+                        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
                       </svg>
-                      <span class="flex-1">اطلاعات کاربری</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="edit-profile.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17z" />
-                        <path d="M13.5 6.5l3 3" />
-                      </svg>
-                      <span class="flex-1">ویرایش اطلاعات</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="change-password.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <rect x="5" y="11" width="14" height="9" rx="2" />
-                        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                      </svg>
-                      <span class="flex-1">تغییر رمز عبور</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="my-courses.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15z" />
-                        <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" />
-                      </svg>
-                      <span class="flex-1">دوره‌های خریداری شده</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="payment-history.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <rect x="2" y="5" width="20" height="14" rx="2" />
-                        <path d="M2 10h20" />
-                      </svg>
-                      <span class="flex-1">تاریخچه پرداخت‌ها</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="invoices.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <path d="M15 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
-                        <path d="M15 3v4h4" />
-                        <path d="M9 13h6" />
-                        <path d="M9 17h6" />
-                      </svg>
-                      <span class="flex-1">فاکتورها</span>
-                    </a>
-                  </li>
-                  <li class="my-2 border-t border-border"></li>
-                  <li>
-  <a href="cart.html"
-    class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-      <circle cx="8" cy="21" r="1" />
-      <circle cx="19" cy="21" r="1" />
-      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-    </svg>
-    <span class="flex-1">سبد خرید</span>
-  </a>
-</li>
-<li>
-                    <a href="login.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-red-500 transition-colors hover:bg-red-50 sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0">
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                        <path d="m16 17 5-5-5-5" />
-                        <path d="M21 12H9" />
-                      </svg>
-                      <span class="flex-1">خروج</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                      <span class="sr-only">حذف از سبد خرید</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-              <!-- Sidebar Footer -->
-              <div class="border-t border-border p-3">
-                <a href="course-listing.html"
-                  class="flex w-full items-center justify-center gap-2 rounded-full border border-primary py-2.5 text-center text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+            <!-- Cart Item 3 -->
+            <article
+              class="group flex flex-col sm:gap-5 sm:flex-row border border-border overflow-hidden rounded-2xl">
+              <a href="course-single.html"
+                class="relative block h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:self-stretch sm:w-70">
+                <img src="assets/images/course-04.png" alt="آموزش پایتون برای تحلیل داده"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <span
+                  class="absolute right-3 top-3 rounded-lg bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">علم
+                  داده</span>
+              </a>
+              <div class="px-4 pt-4 sm:px-0 sm:pt-5 flex flex-1 flex-col justify-between">
+                <div class="pb-2">
+                  <p class="mb-1.5 text-xs text-gray-400 sm:text-sm">
+                    توسط
+                    <span class="font-bold text-gray-700">توماس پورتاس</span>
+                  </p>
+                  <h3 class="line-clamp-1 text-base font-semibold leading-6 text-dark sm:text-lg">
+                    <a href="course-single.html" class="transition-colors hover:text-primary">آموزش پایتون برای
+                      تحلیل داده</a>
+                  </h3>
+                  <div class="mt-3 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-body">
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/times.svg" alt="" aria-hidden="true" class="size-4 object-contain" /><span>۴
+                        هفته</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/students.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۱۲۰ دانشجو</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/levels.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>پیشرفته</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <img src="assets/icons/lessons.svg" alt="" aria-hidden="true"
+                        class="size-4 object-contain" /><span>۳۰ درس</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 py-2 flex flex-wrap items-center gap-3 border-t border-border justify-between">
+                  <!-- Price (matches course-listing: strikethrough only when discounted) -->
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1" data-unit-price="35000"
+                    data-discount="0">
+                    <span class="final-price text-sm font-bold text-gray-900">۳۵,۰۰۰ تومان</span>
+                  </div>
+                  <div class="flex items-center gap-3 sm:ml-5">
+                    <button type="button" aria-label="حذف از سبد خرید"
+                      class="remove-cart-item cursor-pointer flex items-center justify-center size-7 rounded-lg border border-red-500 bg-transparent text-red-500 transition-colors hover:bg-red-50 hover:text-red-600 sm:size-8">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                        <path d="M10 11v6" />
+                        <path d="M14 11v6" />
+                        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                      </svg>
+                      <span class="sr-only">حذف از سبد خرید</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- endregion -->
+
+          <!-- ==================== SIDEBAR: ORDER SUMMARY ==================== -->
+          <aside class="self-start">
+            <div class="flex flex-col gap-6 lg:sticky lg:top-24">
+
+              <!-- #region ORDER SUMMARY -->
+              <div id="order-summary" class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
+                <h2 class="text-sm font-bold text-dark sm:text-base">خلاصه سفارش</h2>
+
+                <dl class="mt-4 space-y-3 text-xs sm:text-sm">
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">جمع کل (Subtotal)</dt>
+                    <dd id="summary-subtotal" class="font-medium text-dark">۹۳,۰۰۰ تومان</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">تخفیف دوره‌ها</dt>
+                    <dd id="summary-course-discount" class="font-medium text-red-500">−۹,۰۰۰ تومان</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">تخفیف کد تخفیف</dt>
+                    <dd id="summary-coupon-discount" class="font-medium text-red-500">۰ تومان</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3 border-t border-border pt-3">
+                    <dt class="text-sm font-bold text-dark sm:text-base">مبلغ قابل پرداخت</dt>
+                    <dd id="summary-total" class="text-sm font-bold text-gray-900 sm:text-base">۸۴,۰۰۰ تومان</dd>
+                  </div>
+                </dl>
+
+                <a href="#"
+                  class="mt-5 flex w-full items-center justify-center gap-2 rounded-full button-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
+                  ادامه فرآیند خرید
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="1.8" class="size-4">
-                    <path d="M4 9 5.5 4h13L20 9" />
-                    <path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9z" />
-                    <path d="M9 20v-5h6v5" />
+                    stroke-width="2" class="size-4">
+                    <path d="m15 18-6-6 6-6" />
                   </svg>
-                  ورود به فروشگاه
+                </a>
+
+                <a href="course-listing.html"
+                  class="mt-2.5 flex w-full items-center justify-center rounded-full border border-border py-2.5 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                  بازگشت به فروشگاه
                 </a>
               </div>
+              <!-- endregion -->
             </div>
           </aside>
           <!-- endregion -->
-
-          <!-- ==================== MAIN CONTENT ==================== -->
-          <div>
-            <!-- Page Heading -->
-            <div
-              class="mb-6 flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-right">
-              <div>
-                <h1 class="text-xl font-bold text-dark sm:text-2xl">
-                  جزئیات فاکتور
-                </h1>
-
-                <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                  مشاهده و چاپ فاکتور صادرشده برای سفارش شما.
-                </p>
-              </div>
-
-              <button type="button" id="print-invoice"
-                class="inline-flex cursor-pointer items-center gap-2 rounded-full button-primary px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:text-sm print:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4">
-                  <polyline points="6 9 6 2 18 2 18 9" />
-                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-                  <rect x="6" y="14" width="12" height="8" />
-                </svg>
-
-                چاپ فاکتور
-              </button>
-            </div>
-
-            <!-- ==================== INVOICE DOCUMENT ==================== -->
-            <div id="invoice-document"
-              class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm print:border-0 print:shadow-none">
-
-              <!-- Document Header -->
-              <div
-                class="flex flex-col items-center gap-4 border-b border-border p-5 text-center sm:flex-row sm:items-center sm:justify-between sm:p-6 sm:text-right">
-                <!-- Invoice Identity -->
-                <div class="flex min-w-0 items-center gap-3">
-                  <img src="assets/images/logo.png" alt="لوگوی وایلند" class="h-8 w-auto shrink-0 object-contain" />
-                  <div class="h-8 w-px shrink-0 bg-border"></div>
-                  <div class="min-w-0">
-                    <h2 class="text-sm font-bold text-dark sm:text-base">
-                      فاکتور فروش دوره
-                    </h2>
-                    <p class="mt-0.5 text-xs text-body" dir="ltr">
-                      INV-1404-0104
-                    </p>
-                  </div>
-                </div>
-                <!-- Invoice Status -->
-                <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-end">
-                  <span class="payment-status payment-status-success">
-                    پرداخت شده
-                  </span>
-
-                  <p class="text-xs text-body">
-                    تاریخ صدور: ۱۲ شهریور ۱۴۰۴
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Customer & Order Info -->
-            <div class="grid grid-cols-1 gap-4 border-b border-border p-5 sm:grid-cols-2 sm:p-6">
-              <!-- Customer Info -->
-              <div class="rounded-xl border border-border p-4">
-                <h3 class="mb-3 text-xs font-bold text-dark sm:text-sm">اطلاعات مشتری</h3>
-                <dl class="space-y-2 text-xs sm:text-sm">
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">نام و نام خانوادگی</dt>
-                    <dd class="font-medium text-dark">محمد مهدی زنگنه</dd>
-                  </div>
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">شماره تماس</dt>
-                    <dd class="font-medium text-dark" dir="ltr">۰۹۱۲۳۴۵۶۷۸۹</dd>
-                  </div>
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">ایمیل</dt>
-                    <dd class="font-medium text-dark" dir="ltr">supportlms@gmail.com</dd>
-                  </div>
-                </dl>
-              </div>
-
-              <!-- Order Info -->
-              <div class="rounded-xl border border-border p-4">
-                <h3 class="mb-3 text-xs font-bold text-dark sm:text-sm">اطلاعات سفارش</h3>
-                <dl class="space-y-2 text-xs sm:text-sm">
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">شماره سفارش</dt>
-                    <dd class="font-medium text-dark" dir="ltr">WHY-1404-0214</dd>
-                  </div>
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">روش پرداخت</dt>
-                    <dd class="font-medium text-dark">درگاه بانکی</dd>
-                  </div>
-                  <div class="flex items-center justify-between gap-3">
-                    <dt class="text-body">شماره پیگیری</dt>
-                    <dd class="font-medium text-dark" dir="ltr">۸۳۴۵۲۱۹۷</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-
-            <!-- Invoice Items -->
-            <div class="border-b border-border p-5 sm:p-6">
-              <h3 class="mb-4 text-xs font-bold text-dark sm:text-sm">آیتم‌های فاکتور</h3>
-
-              <div class="invoice-items-wrapper rounded-xl border border-border">
-                <table class="invoice-items w-full text-right text-xs sm:text-sm">
-                  <thead>
-                    <tr class="bg-[#f8f9fa] text-xs text-body">
-                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">نام دوره</th>
-                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">تعداد</th>
-                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">قیمت واحد</th>
-                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">تخفیف</th>
-                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">قیمت کل</th>
-                    </tr>
-                  </thead>
-
-                  <tbody class="divide-y divide-border">
-                    <tr>
-                      <td data-label="نام دوره" class="px-4 py-4 font-medium text-dark">
-                        ایجاد وب‌سایت LMS با لرن‌پرس
-                      </td>
-
-                      <td data-label="تعداد" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۱
-                      </td>
-
-                      <td data-label="قیمت واحد" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۲۹,۰۰۰ تومان
-                      </td>
-
-                      <td data-label="تخفیف" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۰ تومان
-                      </td>
-
-                      <td data-label="قیمت کل" class="whitespace-nowrap px-4 py-4 font-bold text-gray-900">
-                        ۲۹,۰۰۰ تومان
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td data-label="نام دوره" class="px-4 py-4 font-medium text-dark">
-                        آموزش پایتون برای تحلیل داده
-                      </td>
-
-                      <td data-label="تعداد" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۱
-                      </td>
-
-                      <td data-label="قیمت واحد" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۳۵,۰۰۰ تومان
-                      </td>
-
-                      <td data-label="تخفیف" class="whitespace-nowrap px-4 py-4 text-body">
-                        ۵,۰۰۰ تومان
-                      </td>
-
-                      <td data-label="قیمت کل" class="whitespace-nowrap px-4 py-4 font-bold text-gray-900">
-                        ۳۰,۰۰۰ تومان
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!-- Totals -->
-            <div class="p-5 sm:p-6">
-              <dl class="ml-auto max-w-sm space-y-2.5 text-xs sm:text-sm">
-                <div class="flex items-center justify-between gap-3">
-                  <dt class="text-body">جمع کل دوره‌ها</dt>
-                  <dd class="font-medium text-dark">۶۴,۰۰۰ تومان</dd>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <dt class="text-body">
-                    کد تخفیف
-                    <span class="mr-1 rounded-md bg-[#fff4ef] px-1.5 py-0.5 text-[0.65rem] font-bold text-primary"
-                      dir="ltr">WHY-1404</span>
-                  </dt>
-                  <dd class="font-medium text-red-500">−۵,۰۰۰ تومان</dd>
-                </div>
-                <div class="flex items-center justify-between gap-3 border-t border-border pt-3">
-                  <dt class="text-sm font-bold text-dark sm:text-base">مبلغ نهایی</dt>
-                  <dd class="text-sm font-bold text-gray-900 sm:text-base">۵۹,۰۰۰ تومان</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-          <!-- endregion -->
         </div>
-        <!-- endregion -->
+
+        <!-- ==================== EMPTY STATE (shown when cart is empty) ==================== -->
+        <div id="cart-empty" class="hidden">
+          <div class="rounded-2xl border border-dashed border-border bg-white px-6 py-12 text-center sm:py-16">
+            <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-[#fff4ef] text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-9">
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg>
+            </div>
+            <h2 class="mt-5 text-base font-bold text-dark sm:text-lg">سبد خرید شما خالی است!</h2>
+            <p class="mx-auto mt-2 max-w-sm text-xs leading-relaxed text-body sm:text-sm">
+              هنوز دوره‌ای به سبد خرید اضافه نکرده‌اید؛ از فروشگاه دیدن کنید و اولین دوره خود را انتخاب کنید.
+            </p>
+            <a href="course-listing.html"
+              class="mt-6 inline-block rounded-full button-primary px-6 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:text-sm">
+              بازگشت به فروشگاه
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <!-- endregion -->
@@ -683,7 +603,7 @@
   <!-- endregion -->
 
   <!-- #region FOOTER -->
-  <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body print:hidden">
+  <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
     <div class="container-whyland">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
         <!-- Column 1: Brand Info -->
@@ -798,12 +718,12 @@
   <script type="module" src="src/js/main.js"></script>
   <!-- endregion -->
 
-  <!-- #region Jalali Date Utility -->
-  <script src="src/js/jalali-date.js" defer></script>
+  <!-- #region Empty State Utility -->
+  <script src="src/js/empty-state.js" defer></script>
   <!-- #endregion -->
 
-  <!-- #region Invoice Detail Page Script -->
-  <script src="src/js/invoice-detail.js"></script>
+  <!-- #region Cart Page Script -->
+  <script src="src/js/cart.js"></script>
   <!-- endregion -->
 </body>
 

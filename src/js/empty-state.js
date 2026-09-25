@@ -59,6 +59,7 @@
             { list: 'orders-list', empty: 'orders-empty' },
             { list: 'payments-list', empty: 'payments-empty' },
             { list: 'invoices-list', empty: 'invoices-empty' },
+            { list: 'cart-list', empty: 'cart-empty' },
         ];
 
         for (var i = 0; i < pairs.length; i++) {
