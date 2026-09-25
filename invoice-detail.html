@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وایلند | تغییر رمز عبور</title>
+  <title>وایلند | جزئیات فاکتور</title>
 
   <!-- #region FavIcon -->
   <link rel="icon" type="image/png" href="assets/images/fav-icon.png">
@@ -12,6 +12,10 @@
 
   <!-- #region Stylesheets -->
   <link rel="stylesheet" href="src/css/style.css" />
+  <!-- endregion -->
+
+  <!-- #region Invoices DataTable (status badge styles) -->
+  <link rel="stylesheet" href="src/css/invoices-datatable.css">
   <!-- endregion -->
 
   <!-- #region Google Fonts (Vazirmatn for Persian) -->
@@ -23,7 +27,7 @@
 
 <body class="bg-white text-dark antialiased font-['Vazirmatn']">
   <!-- #region HEADER -->
-  <header id="site-header" class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm">
+  <header id="site-header" class="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur-sm print:hidden">
     <div class="container-whyland px-4">
       <div class="flex min-h-16 items-center justify-between sm:min-h-20">
         <!-- Site Logo -->
@@ -77,7 +81,7 @@
                   ویرایش پروفایل
                 </a>
                 <a href="change-password.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   تغییر رمز عبور
                 </a>
                 <a href="my-courses.html"
@@ -88,18 +92,18 @@
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   دوره‌های مورد علاقه
                 </a>
-                  <a href="payment-history.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    تاریخچه پرداخت‌ها
-                  </a>
-                  <a href="invoice-detail.html"
-                      class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                      جزئیات فاکتور
-                  </a>
-                  <a href="invoices.html"
-                      class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                      فاکتورها
-                  </a>
+                <a href="payment-history.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  تاریخچه پرداخت‌ها
+                </a>
+                <a href="invoices.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  فاکتورها
+                </a>
+                <a href="invoice-detail.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  جزئیات فاکتور
+                </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   سوالات متداول
@@ -108,13 +112,13 @@
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   صفحه دوره
                 </a>
-                <a href="blog-listing.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                  لیست مقالات
-                </a>
                 <a href="course-listing.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   صفحه دوره‌ها
+                </a>
+                <a href="blog-listing.html"
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  لیست مقالات
                 </a>
                 <a href="blog-single.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -123,6 +127,8 @@
               </div>
             </div>
           </div>
+          <!-- endregion -->
+
           <a href="#" class="text-xs font-medium text-dark transition-colors hover:text-primary lg:text-sm">
             افزونه‌های لرن‌پرس
           </a>
@@ -174,13 +180,13 @@
 
   <!-- #region Backdrop Overlay -->
   <div id="menu-overlay"
-    class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden">
+    class="pointer-events-none fixed inset-0 z-50 bg-black/50 opacity-0 backdrop-blur-sm transition-opacity duration-300 lg:hidden print:hidden">
   </div>
   <!-- endregion -->
 
   <!-- #region Mobile Navigation Sidebar (From Left) -->
   <aside id="mobile-menu"
-    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden">
+    class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col justify-between bg-white p-6 shadow-2xl transition-transform duration-300 ease-in-out dir-ltr lg:hidden print:hidden">
     <div class="flex flex-1 flex-col overflow-y-auto min-h-0 pl-3">
       <!-- Header inside drawer -->
       <div class="flex items-center justify-between border-b border-border pb-4">
@@ -235,7 +241,7 @@
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">ویرایش
                   پروفایل</a>
                 <a href="change-password.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">تغییر
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تغییر
                   رمز عبور</a>
                 <a href="my-courses.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
@@ -243,15 +249,14 @@
                 <a href="favorites.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">دوره‌های
                   مورد علاقه</a>
-                  <a href="payment-history.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تاریخچه
-                    پرداخت‌ها</a>
-                  <a href="invoice-detail.html"
-                      class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">جزئیات
-                      فاکتور</a>
-                  <a href="invoices.html"
-                      class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فاکتورها
-                      </a>
+                <a href="payment-history.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تاریخچه
+                  پرداخت‌ها</a>
+                <a href="invoices.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">فاکتورها</a>
+                <a href="invoice-detail.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">جزئیات
+                  فاکتور</a>
                 <a href="faq.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
                   متداول</a>
@@ -292,7 +297,7 @@
 
   <main id="main-content">
     <!-- #region BREADCRUMB -->
-    <div class="border-b border-border bg-[#f8f9fa]">
+    <div class="border-b border-border bg-[#f8f9fa] print:hidden">
       <div class="container-whyland px-4 py-4">
         <nav aria-label="مسیر صفحه">
           <ol class="flex flex-wrap items-center gap-2 text-xs text-body sm:text-sm">
@@ -304,20 +309,24 @@
               <a href="dashboard.html" class="transition-colors hover:text-primary">حساب کاربری</a>
             </li>
             <li aria-hidden="true" class="text-gray-300">/</li>
-            <li class="font-medium text-dark" aria-current="page">تغییر رمز عبور</li>
+            <li>
+              <a href="invoices.html" class="transition-colors hover:text-primary">فاکتورها</a>
+            </li>
+            <li aria-hidden="true" class="text-gray-300">/</li>
+            <li class="font-medium text-dark" aria-current="page">جزئیات فاکتور</li>
           </ol>
         </nav>
       </div>
     </div>
     <!-- endregion -->
 
-    <!-- #region CHANGE PASSWORD -->
+    <!-- #region INVOICE DETAIL -->
     <section class="py-10 sm:py-14">
       <div class="container-whyland px-4">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-[290px_1fr] lg:gap-10">
 
           <!-- ==================== PROFILE SIDEBAR ==================== -->
-          <aside class="lg:sticky lg:top-24 self-start">
+          <aside class="lg:sticky lg:top-24 self-start print:hidden">
             <div class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
               <!-- User Summary (card) -->
               <div class="border-b border-border px-5 pb-5 pt-8 text-center">
@@ -377,13 +386,11 @@
                       <span class="flex-1">ویرایش اطلاعات</span>
                     </a>
                   </li>
-                  <!-- Active item -->
                   <li>
                     <a href="change-password.html"
-                      class="flex items-center gap-3 rounded-xl bg-[#fff4ef] px-3.5 py-3 text-xs font-bold text-primary transition-colors sm:text-sm"
-                      aria-current="page">
+                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0">
+                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
                         <rect x="5" y="11" width="14" height="9" rx="2" />
                         <path d="M8 11V8a4 4 0 0 1 8 0v3" />
                       </svg>
@@ -399,17 +406,6 @@
                         <path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" />
                       </svg>
                       <span class="flex-1">دوره‌های خریداری شده</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="favorites.html"
-                      class="flex items-center gap-3 rounded-xl px-3.5 py-3 text-xs font-medium text-dark transition-colors hover:bg-[#f8f9fa] hover:text-primary sm:text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" class="size-5 shrink-0 text-gray-500">
-                        <path
-                          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
-                      </svg>
-                      <span class="flex-1">دوره‌های مورد علاقه</span>
                     </a>
                   </li>
                   <li>
@@ -472,157 +468,204 @@
           <!-- ==================== MAIN CONTENT ==================== -->
           <div>
             <!-- Page Heading -->
-            <div class="mb-6 text-center sm:text-right">
-              <h1 class="text-xl font-bold text-dark sm:text-2xl">تغییر رمز عبور</h1>
-              <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-                برای امنیت بیشتر حساب خود، به‌صورت دوره‌ای رمز عبور را تغییر دهید.
-              </p>
+            <div
+              class="mb-6 flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-right">
+              <div>
+                <h1 class="text-xl font-bold text-dark sm:text-2xl">
+                  جزئیات فاکتور
+                </h1>
+
+                <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                  مشاهده و چاپ فاکتور صادرشده برای سفارش شما.
+                </p>
+              </div>
+
+              <button type="button" id="print-invoice"
+                class="inline-flex cursor-pointer items-center gap-2 rounded-full button-primary px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 sm:text-sm print:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                  <polyline points="6 9 6 2 18 2 18 9" />
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                  <rect x="6" y="14" width="12" height="8" />
+                </svg>
+
+                چاپ فاکتور
+              </button>
             </div>
 
-            <!-- ==================== CHANGE PASSWORD FORM ==================== -->
-            <div id="change-password-card" class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-8">
-              <form id="change-password-form" action="#" method="POST" class="space-y-4" novalidate>
-                <!-- Current Password -->
-                <div>
-                  <div class="password-wrapper relative">
-                    <input type="password" id="current-password" name="current_password" required placeholder=" "
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="current-password" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                      transition-all duration-200
-                      peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                      peer-focus:text-sm
-                      peer-not-placeholder-shown:right-3
-                      peer-not-placeholder-shown:top-0
-                      peer-not-placeholder-shown:-translate-y-1/2
-                      peer-not-placeholder-shown:text-sm">
-                      رمز عبور فعلی *
-                    </label>
-                    <button type="button"
-                      class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
-                      aria-label="نمایش/مخفی‌سازی رمز عبور">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                        stroke="currentColor" class="eye-animated size-4 sm:size-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
-                      </svg>
-                    </button>
-                  </div>
-                  <p id="current-password-error" class="mt-1.5 hidden text-xs text-red-500"></p>
-                </div>
+            <!-- ==================== INVOICE DOCUMENT ==================== -->
+            <div id="invoice-document"
+              class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm print:border-0 print:shadow-none">
 
-                <!-- New Password -->
-                <div>
-                  <div class="password-wrapper relative">
-                    <input type="password" id="new-password" name="new_password" required placeholder=" "
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="new-password" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                      transition-all duration-200
-                      peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                      peer-focus:text-sm
-                      peer-not-placeholder-shown:right-3
-                      peer-not-placeholder-shown:top-0
-                      peer-not-placeholder-shown:-translate-y-1/2
-                      peer-not-placeholder-shown:text-sm">
-                      رمز عبور جدید *
-                    </label>
-                    <button type="button"
-                      class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
-                      aria-label="نمایش/مخفی‌سازی رمز عبور">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                        stroke="currentColor" class="eye-animated size-4 sm:size-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
-                      </svg>
-                    </button>
+              <!-- Document Header -->
+              <div
+                class="flex flex-col items-center gap-4 border-b border-border p-5 text-center sm:flex-row sm:items-center sm:justify-between sm:p-6 sm:text-right">
+                <!-- Invoice Identity -->
+                <div class="flex min-w-0 items-center gap-3">
+                  <img src="assets/images/logo.png" alt="لوگوی وایلند" class="h-8 w-auto shrink-0 object-contain" />
+                  <div class="h-8 w-px shrink-0 bg-border"></div>
+                  <div class="min-w-0">
+                    <h2 class="text-sm font-bold text-dark sm:text-base">
+                      فاکتور فروش دوره
+                    </h2>
+                    <p class="mt-0.5 text-xs text-body" dir="ltr">
+                      INV-1404-0104
+                    </p>
                   </div>
-                  <p id="new-password-error" class="mt-1.5 hidden text-xs text-red-500"></p>
-                  <p class="mt-1.5 text-xs text-gray-400">
-                    رمز عبور باید حداقل ۸ کاراکتر و شامل حروف و اعداد باشد.
+                </div>
+                <!-- Invoice Status -->
+                <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-end">
+                  <span class="payment-status payment-status-success">
+                    پرداخت شده
+                  </span>
+
+                  <p class="text-xs text-body">
+                    تاریخ صدور: ۱۲ شهریور ۱۴۰۴
                   </p>
                 </div>
-
-                <!-- Confirm New Password -->
-                <div>
-                  <div class="password-wrapper relative">
-                    <input type="password" id="confirm-password" name="confirm_password" required placeholder=" "
-                      class="peer h-10 w-full rounded-xl border border-gray-200 bg-white pl-10 pr-4 text-xs text-dark outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm" />
-                    <label for="confirm-password" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 bg-white px-1 text-sm text-gray-400
-                      transition-all duration-200
-                      peer-focus:right-3 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-primary
-                      peer-focus:text-sm
-                      peer-not-placeholder-shown:right-3
-                      peer-not-placeholder-shown:top-0
-                      peer-not-placeholder-shown:-translate-y-1/2
-                      peer-not-placeholder-shown:text-sm">
-                      تکرار رمز عبور جدید *
-                    </label>
-                    <button type="button"
-                      class="toggle-password absolute left-3 cursor-pointer top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-dark flex items-center justify-center"
-                      aria-label="نمایش/مخفی‌سازی رمز عبور">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                        stroke="currentColor" class="eye-animated size-4 sm:size-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path class="eye-slash" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18" />
-                      </svg>
-                    </button>
-                  </div>
-                  <p id="confirm-password-error" class="mt-1.5 hidden text-xs text-red-500"></p>
-                </div>
-
-                <!-- Actions -->
-                <div class="flex flex-col-reverse items-center gap-3 pt-2 sm:flex-row sm:justify-end">
-                  <a href="dashboard.html"
-                    class="w-full rounded-full border border-border px-8 py-3 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:w-auto">
-                    انصراف
-                  </a>
-                  <button type="submit" id="change-password-submit"
-                    class="w-full cursor-pointer rounded-full px-8 py-3 text-center text-xs sm:w-auto button-primary">
-                    تغییر رمز عبور
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
-            <!-- endregion -->
 
-            <!-- ==================== SUCCESS STATE ==================== -->
-            <div id="change-password-success"
-              class="hidden rounded-2xl border border-border bg-white p-8 text-center shadow-sm sm:p-10">
-              <div class="mx-auto flex size-14 items-center justify-center rounded-full bg-green-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                  stroke="currentColor" class="size-7 text-green-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
+            <!-- Customer & Order Info -->
+            <div class="grid grid-cols-1 gap-4 border-b border-border p-5 sm:grid-cols-2 sm:p-6">
+              <!-- Customer Info -->
+              <div class="rounded-xl border border-border p-4">
+                <h3 class="mb-3 text-xs font-bold text-dark sm:text-sm">اطلاعات مشتری</h3>
+                <dl class="space-y-2 text-xs sm:text-sm">
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">نام و نام خانوادگی</dt>
+                    <dd class="font-medium text-dark">محمد مهدی زنگنه</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">شماره تماس</dt>
+                    <dd class="font-medium text-dark" dir="ltr">۰۹۱۲۳۴۵۶۷۸۹</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">ایمیل</dt>
+                    <dd class="font-medium text-dark" dir="ltr">supportlms@gmail.com</dd>
+                  </div>
+                </dl>
               </div>
-              <h2 class="mt-4 text-lg font-bold text-dark sm:text-xl">رمز عبور با موفقیت تغییر کرد</h2>
-              <p class="mx-auto mt-2 max-w-sm text-xs leading-relaxed text-body sm:text-sm">
-                رمز عبور شما با موفقیت به‌روزرسانی شد. از این پس برای ورود به حساب کاربری از رمز جدید استفاده کنید.
-              </p>
-              <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <a href="dashboard.html"
-                  class="w-full rounded-full px-8 py-3 text-center text-xs sm:w-auto button-primary">
-                  بازگشت به حساب کاربری
-                </a>
-                <a href="login.html"
-                  class="w-full rounded-full border border-border px-8 py-3 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:w-auto">
-                  ورود با رمز جدید
-                </a>
+
+              <!-- Order Info -->
+              <div class="rounded-xl border border-border p-4">
+                <h3 class="mb-3 text-xs font-bold text-dark sm:text-sm">اطلاعات سفارش</h3>
+                <dl class="space-y-2 text-xs sm:text-sm">
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">شماره سفارش</dt>
+                    <dd class="font-medium text-dark" dir="ltr">WHY-1404-0214</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">روش پرداخت</dt>
+                    <dd class="font-medium text-dark">درگاه بانکی</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-3">
+                    <dt class="text-body">شماره پیگیری</dt>
+                    <dd class="font-medium text-dark" dir="ltr">۸۳۴۵۲۱۹۷</dd>
+                  </div>
+                </dl>
               </div>
+            </div>
+
+            <!-- Invoice Items -->
+            <div class="border-b border-border p-5 sm:p-6">
+              <h3 class="mb-4 text-xs font-bold text-dark sm:text-sm">آیتم‌های فاکتور</h3>
+
+              <div class="invoice-items-wrapper rounded-xl border border-border">
+                <table class="invoice-items w-full text-right text-xs sm:text-sm">
+                  <thead>
+                    <tr class="bg-[#f8f9fa] text-xs text-body">
+                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">نام دوره</th>
+                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">تعداد</th>
+                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">قیمت واحد</th>
+                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">تخفیف</th>
+                      <th scope="col" class="whitespace-nowrap px-4 py-3.5 font-medium">قیمت کل</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="divide-y divide-border">
+                    <tr>
+                      <td data-label="نام دوره" class="px-4 py-4 font-medium text-dark">
+                        ایجاد وب‌سایت LMS با لرن‌پرس
+                      </td>
+
+                      <td data-label="تعداد" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۱
+                      </td>
+
+                      <td data-label="قیمت واحد" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۲۹,۰۰۰ تومان
+                      </td>
+
+                      <td data-label="تخفیف" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۰ تومان
+                      </td>
+
+                      <td data-label="قیمت کل" class="whitespace-nowrap px-4 py-4 font-bold text-gray-900">
+                        ۲۹,۰۰۰ تومان
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="نام دوره" class="px-4 py-4 font-medium text-dark">
+                        آموزش پایتون برای تحلیل داده
+                      </td>
+
+                      <td data-label="تعداد" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۱
+                      </td>
+
+                      <td data-label="قیمت واحد" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۳۵,۰۰۰ تومان
+                      </td>
+
+                      <td data-label="تخفیف" class="whitespace-nowrap px-4 py-4 text-body">
+                        ۵,۰۰۰ تومان
+                      </td>
+
+                      <td data-label="قیمت کل" class="whitespace-nowrap px-4 py-4 font-bold text-gray-900">
+                        ۳۰,۰۰۰ تومان
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Totals -->
+            <div class="p-5 sm:p-6">
+              <dl class="ml-auto max-w-sm space-y-2.5 text-xs sm:text-sm">
+                <div class="flex items-center justify-between gap-3">
+                  <dt class="text-body">جمع کل دوره‌ها</dt>
+                  <dd class="font-medium text-dark">۶۴,۰۰۰ تومان</dd>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <dt class="text-body">
+                    کد تخفیف
+                    <span class="mr-1 rounded-md bg-[#fff4ef] px-1.5 py-0.5 text-[0.65rem] font-bold text-primary"
+                      dir="ltr">WHY-1404</span>
+                  </dt>
+                  <dd class="font-medium text-red-500">−۵,۰۰۰ تومان</dd>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-t border-border pt-3">
+                  <dt class="text-sm font-bold text-dark sm:text-base">مبلغ نهایی</dt>
+                  <dd class="text-sm font-bold text-gray-900 sm:text-base">۵۹,۰۰۰ تومان</dd>
+                </div>
+              </dl>
             </div>
           </div>
+          <!-- endregion -->
         </div>
+        <!-- endregion -->
+      </div>
       </div>
     </section>
     <!-- endregion -->
   </main>
+  <!-- endregion -->
 
   <!-- #region FOOTER -->
-  <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body">
+  <footer class="bg-[#f8f9fa] pt-12 pb-8 text-body print:hidden">
     <div class="container-whyland">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
         <!-- Column 1: Brand Info -->
@@ -741,20 +784,9 @@
   <script src="src/js/jalali-date.js" defer></script>
   <!-- #endregion -->
 
-  <!-- #region Change Password Page Script -->
-  <script src="src/js/change-password.js" defer></script>
-  <!-- #endregion -->
-
-  <!-- #region Password Toggle -->
-  <script src="src/js/password-toggle.js" defer></script>
-  <!-- #endregion -->
-
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-    <symbol id="checkbox-30" viewBox="0 0 22 22">
-      <path fill="none" stroke="primary"
-        d="M5.5,11.3L9,14.8L20.2,3.3l0,0c-0.5-1-1.5-1.8-2.7-1.8h-13c-1.7,0-3,1.3-3,3v13c0,1.7,1.3,3,3,3h13 c1.7,0,3-1.3,3-3v-13c0-0.4-0.1-0.8-0.3-1.2" />
-    </symbol>
-  </svg>
+  <!-- #region Invoice Detail Page Script -->
+  <script src="src/js/invoice-detail.js"></script>
+  <!-- endregion -->
 </body>
 
 </html>
