@@ -985,6 +985,9 @@
   .border-border {
     border-color: var(--color-border);
   }
+  .border-emerald-200 {
+    border-color: var(--color-emerald-200);
+  }
   .border-emerald-500 {
     border-color: var(--color-emerald-500);
   }
