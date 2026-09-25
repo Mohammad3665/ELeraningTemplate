@@ -1,3 +1,7 @@
+/* =========================================================
+   MOBILE PAGINATION
+   ========================================================= */
+
 function updateMobilePagination() {
     const isMobile = window.innerWidth <= 640;
     const nav = document.querySelector(
@@ -17,7 +21,8 @@ function updateMobilePagination() {
     nav.innerHTML = "";
 
     let pages = [];
-    let showEllipsis = false;
+    let showLeftEllipsis = false;
+    let showRightEllipsis = false;
 
     if (totalPages <= 5) {
 
@@ -28,30 +33,36 @@ function updateMobilePagination() {
 
     } else if (currentPage <= 2) {
 
-        pages = [0, 1, 2, 3];
-        showEllipsis = true;
+        // Show first three pages
+        pages = [0, 1, 2];
+        showRightEllipsis = true;
 
-    } else if (currentPage >= totalPages - 4) {
+    } else if (currentPage >= totalPages - 3) {
 
+        // Show last four pages
         pages = [
-            totalPages - 5,
             totalPages - 4,
             totalPages - 3,
             totalPages - 2,
             totalPages - 1
         ];
 
+        showLeftEllipsis = true;
+
     } else {
 
+        // Show pages around current page
         pages = [
-            currentPage - 2,
             currentPage - 1,
             currentPage,
             currentPage + 1
         ];
 
-        showEllipsis = true;
+        showLeftEllipsis = true;
+        showRightEllipsis = true;
     }
+
+
 
     // Previous button
     const previous = document.createElement("button");
@@ -70,6 +81,16 @@ function updateMobilePagination() {
     });
 
     nav.appendChild(previous);
+
+    // Left ellipsis
+    if (showLeftEllipsis) {
+        const ellipsis = document.createElement("span");
+
+        ellipsis.className = "dt-paging-button disabled";
+        ellipsis.textContent = "...";
+
+        nav.appendChild(ellipsis);
+    }
 
     // Page buttons
     pages.forEach(page => {
@@ -92,21 +113,26 @@ function updateMobilePagination() {
         nav.appendChild(button);
     });
 
-    // Ellipsis + last page
-    if (showEllipsis) {
+    // Right ellipsis
+    if (showRightEllipsis) {
         const ellipsis = document.createElement("span");
 
         ellipsis.className = "dt-paging-button disabled";
         ellipsis.textContent = "...";
 
         nav.appendChild(ellipsis);
+    }
 
+    // Last page
+    const lastPageIndex = totalPages - 1;
+
+    if (pages[pages.length - 1] < lastPageIndex) {
         const lastPage = document.createElement("button");
 
         lastPage.type = "button";
         lastPage.className = "dt-paging-button";
 
-        if (currentPage === totalPages - 1) {
+        if (currentPage === lastPageIndex) {
             lastPage.classList.add("current");
             lastPage.setAttribute("aria-current", "page");
         }
@@ -114,7 +140,7 @@ function updateMobilePagination() {
         lastPage.textContent = totalPages;
 
         lastPage.addEventListener("click", () => {
-            table.page(totalPages - 1).draw("page");
+            table.page(lastPageIndex).draw("page");
         });
 
         nav.appendChild(lastPage);
@@ -138,7 +164,6 @@ function updateMobilePagination() {
 
     nav.appendChild(next);
 }
-
 
 const table = new DataTable("#payments-table", {
     paging: true,
