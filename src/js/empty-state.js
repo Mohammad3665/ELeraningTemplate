@@ -60,6 +60,7 @@
             { list: 'payments-list', empty: 'payments-empty' },
             { list: 'invoices-list', empty: 'invoices-empty' },
             { list: 'cart-list', empty: 'cart-empty' },
+            { list: 'search-list', empty: 'search-empty' },
         ];
 
         for (var i = 0; i < pairs.length; i++) {
