@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وایلند | تسویه حساب - پرداخت</title>
+  <title>وایلند | نتیجه پرداخت</title>
 
   <!-- #region FavIcon -->
   <link rel="icon" type="image/png" href="assets/images/fav-icon.png">
@@ -105,16 +105,12 @@
                   تسویه حساب
                 </a>
                 <a href="checkout-payment.html"
-                  class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
+                  class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
                   مرحله پرداخت
                 </a>
-<a href="checkout-result.html"
-                    class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                    نتیجه پرداخت
-</a>
-                <a href="checkout-payment.html"
+                <a href="checkout-result.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
-                  مرحله پرداخت
+                  نتیجه پرداخت
                 </a>
                 <a href="faq.html"
                   class="rounded-lg px-3 py-2 text-xs font-medium text-dark transition-colors hover:bg-gray-50 hover:text-primary lg:text-sm">
@@ -273,12 +269,10 @@
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">تسویه
                   حساب</a>
                 <a href="checkout-payment.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">مرحله
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">مرحله
                   پرداخت</a>
-<a href="checkout-result.html"
-                    class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">نتیجه پرداخت</a>
-                <a href="checkout-payment.html"
-                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">مرحله
+                <a href="checkout-result.html"
+                  class="text-xs font-medium border-b pb-3 pt-1 border-border text-primary transition-colors hover:text-primary">نتیجه
                   پرداخت</a>
                 <a href="faq.html"
                   class="text-xs font-medium border-b pb-3 pt-1 border-border text-dark/80 transition-colors hover:text-primary">سوالات
@@ -332,135 +326,51 @@
               <a href="cart.html" class="transition-colors hover:text-primary">سبد خرید</a>
             </li>
             <li aria-hidden="true" class="text-gray-300">/</li>
-            <li>
-              <a href="checkout-information.html" class="transition-colors hover:text-primary">تسویه حساب</a>
-            </li>
-            <li aria-hidden="true" class="text-gray-300">/</li>
-            <li class="font-medium text-dark" aria-current="page">پرداخت</li>
+            <li class="font-medium text-dark" aria-current="page">نتیجه پرداخت</li>
           </ol>
         </nav>
       </div>
     </div>
     <!-- endregion -->
 
-    <!-- #region CHECKOUT PAYMENT -->
+    <!-- #region CHECKOUT RESULT -->
     <section class="py-10 sm:py-14">
       <div class="container-whyland px-4">
-        <!-- Page Heading -->
-        <div class="mb-8 text-center sm:text-right">
-          <h1 class="text-xl font-bold text-dark sm:text-2xl">پرداخت</h1>
-          <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
-            مرحله ۲ از ۳ — روش پرداخت خود را انتخاب کنید و سفارش را نهایی کنید.
-          </p>
-        </div>
+        <div class="mx-auto max-w-2xl">
 
-        <!-- ==================== CHECKOUT CONTENT ==================== -->
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_340px] lg:gap-10">
+          <!-- ==================== SUCCESS STATE (default) ==================== -->
+          <div id="result-success" class="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <div class="px-6 pb-6 pt-10 text-center sm:px-10">
+              <!-- Success icon -->
+              <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-9">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
 
-          <!-- ==================== PAYMENT METHODS ==================== -->
-          <form id="checkout-payment-form" action="#" method="POST" novalidate
-            class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6 self-start">
-            <h2 class="text-sm font-bold text-dark sm:text-base">انتخاب روش پرداخت</h2>
-            <p class="mt-1.5 text-xs leading-relaxed text-body">
-              یکی از روش‌های پرداخت زیر را انتخاب کنید.
-            </p>
-
-            <div class="mt-5 flex flex-col gap-3" role="radiogroup" aria-label="روش پرداخت">
-
-              <!-- Bank Gateway -->
-              <label
-                class="payment-method-card group flex cursor-pointer items-center justify-between gap-4 rounded-xl border border-gray-200 p-4 transition-colors hover:border-primary has-checked:border-primary has-checked:bg-[#fff4ef]">
-                <span class="flex items-center gap-3">
-                  <input type="radio" name="payment_method" value="bank-gateway" class="sr-only" checked />
-                  <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f9fa] text-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
-                      <rect x="2" y="5" width="20" height="14" rx="2" />
-                      <path d="M2 10h20" />
-                    </svg>
-                  </span>
-                  <span>
-                    <span class="block text-xs font-bold text-dark sm:text-sm">درگاه بانکی</span>
-                    <span class="mt-0.5 block text-xs text-body">پرداخت امن با کارت‌های عضو شتاب</span>
-                  </span>
-                </span>
-                <span
-                  class="flex size-5 shrink-0 items-center justify-center rounded-full border border-gray-300 group-has-checked:border-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                    class="size-3 text-primary opacity-0 transition-opacity group-has-checked:opacity-100">
-                    <path d="m5 13 4 4L19 7" />
-                  </svg>
-                </span>
-              </label>
-
-              <!-- ZarinPal -->
-              <label
-                class="payment-method-card group flex cursor-pointer items-center justify-between gap-4 rounded-xl border border-gray-200 p-4 transition-colors hover:border-primary has-checked:border-primary has-checked:bg-[#fff4ef]">
-                <span class="flex items-center gap-3">
-                  <input type="radio" name="payment_method" value="zarinpal" class="sr-only" />
-                  <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f9fa] text-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M8.5 9.5h7M8.5 12.5h7M10 9.5v7M14 9.5v7" />
-                    </svg>
-                  </span>
-                  <span>
-                    <span class="block text-xs font-bold text-dark sm:text-sm">زرین‌پال</span>
-                    <span class="mt-0.5 block text-xs text-body">پرداخت با کیف پول زرین‌پال</span>
-                  </span>
-                </span>
-                <span
-                  class="flex size-5 shrink-0 items-center justify-center rounded-full border border-gray-300 group-has-checked:border-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                    class="size-3 text-primary opacity-0 transition-opacity group-has-checked:opacity-100">
-                    <path d="m5 13 4 4L19 7" />
-                  </svg>
-                </span>
-              </label>
-
-              <!-- SnappPay -->
-              <label
-                class="payment-method-card group flex cursor-pointer items-center justify-between gap-4 rounded-xl border border-gray-200 p-4 transition-colors hover:border-primary has-checked:border-primary has-checked:bg-[#fff4ef]">
-                <span class="flex items-center gap-3">
-                  <input type="radio" name="payment_method" value="snapp-pay" class="sr-only" />
-                  <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#f8f9fa] text-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
-                      <path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" />
-                    </svg>
-                  </span>
-                  <span>
-                    <span class="block text-xs font-bold text-dark sm:text-sm">اسنپ‌پی</span>
-                    <span class="mt-0.5 block text-xs text-body">پرداخت اعتباری، الان بخر بعداً بپرداز</span>
-                  </span>
-                </span>
-                <span
-                  class="flex size-5 shrink-0 items-center justify-center rounded-full border border-gray-300 group-has-checked:border-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                    class="size-3 text-primary opacity-0 transition-opacity group-has-checked:opacity-100">
-                    <path d="m5 13 4 4L19 7" />
-                  </svg>
-                </span>
-              </label>
+              <h1 class="mt-5 text-xl font-bold text-dark sm:text-2xl">پرداخت با موفقیت انجام شد</h1>
+              <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                دوره‌های انتخابی شما فعال شدند؛ می‌توانید از پنل کاربری به آن‌ها دسترسی داشته باشید.
+              </p>
             </div>
 
-            <p id="payment-error" class="mt-4 hidden text-xs text-red-500">
-              لطفاً یک روش پرداخت انتخاب کنید.
-            </p>
-          </form>
-          <!-- endregion -->
+            <!-- Order + tracking numbers -->
+            <div class="grid grid-cols-1 gap-4 border-y border-border bg-[#f8f9fa] p-5 sm:grid-cols-2 sm:p-6">
+              <div class="flex items-center justify-between gap-3 rounded-xl border border-border bg-white px-4 py-3">
+                <span class="text-xs text-body">شماره سفارش</span>
+                <span class="text-xs font-bold text-dark" dir="ltr">WHY-1404-0214</span>
+              </div>
+              <div class="flex items-center justify-between gap-3 rounded-xl border border-border bg-white px-4 py-3">
+                <span class="text-xs text-body">شماره پیگیری</span>
+                <span class="text-xs font-bold text-dark" dir="ltr">۸۳۴۵۲۱۹۷</span>
+              </div>
+            </div>
 
-          <!-- ==================== ORDER SUMMARY ==================== -->
-          <aside class="self-start">
-            <div id="order-summary"
-              class="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6 lg:sticky lg:top-24">
+            <!-- Order summary -->
+            <div class="p-5 sm:p-6">
               <h2 class="text-sm font-bold text-dark sm:text-base">خلاصه سفارش</h2>
 
-              <!-- Courses list -->
               <ul id="summary-courses" class="mt-4 space-y-3 border-b border-border pb-4 text-xs sm:text-sm">
                 <li class="flex items-center justify-between gap-3">
                   <span class="line-clamp-1 text-body">ایجاد وب‌سایت LMS با لرن‌پرس</span>
@@ -479,11 +389,11 @@
               <dl class="mt-4 space-y-3 text-xs sm:text-sm">
                 <div class="flex items-center justify-between gap-3">
                   <dt class="text-body">جمع کل (Subtotal)</dt>
-                  <dd id="summary-subtotal" class="font-medium text-dark">۹۳,۰۰۰ تومان</dd>
+                  <dd class="font-medium text-dark">۹۳,۰۰۰ تومان</dd>
                 </div>
                 <div class="flex items-center justify-between gap-3">
                   <dt class="text-body">تخفیف دوره‌ها</dt>
-                  <dd id="summary-course-discount" class="font-medium text-red-500">−۹,۰۰۰ تومان</dd>
+                  <dd class="font-medium text-red-500">−۹,۰۰۰ تومان</dd>
                 </div>
                 <div class="flex items-center justify-between gap-3">
                   <dt class="text-body">
@@ -491,30 +401,81 @@
                     <span class="mr-1 rounded-md bg-[#fff4ef] px-1.5 py-0.5 text-[0.65rem] font-bold text-primary"
                       dir="ltr">WHY-1404</span>
                   </dt>
-                  <dd id="summary-coupon-discount" class="font-medium text-red-500">−۵,۰۰۰ تومان</dd>
+                  <dd class="font-medium text-red-500">−۵,۰۰۰ تومان</dd>
                 </div>
                 <div class="flex items-center justify-between gap-3 border-t border-border pt-3">
-                  <dt class="text-sm font-bold text-dark sm:text-base">مبلغ قابل پرداخت</dt>
-                  <dd id="summary-total" class="text-sm font-bold text-gray-900 sm:text-base">۷۹,۰۰۰ تومان</dd>
+                  <dt class="text-sm font-bold text-dark sm:text-base">مبلغ پرداخت شده</dt>
+                  <dd class="text-sm font-bold text-gray-900 sm:text-base">۷۹,۰۰۰ تومان</dd>
                 </div>
               </dl>
 
-              <button type="submit" form="checkout-payment-form"
-                class="mt-5 flex w-full items-center justify-center gap-2 rounded-full button-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
-                پرداخت
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" class="size-4">
-                  <path d="m15 18-6-6 6-6" />
-                </svg>
-              </button>
+              <!-- Actions -->
+              <div class="mt-6 flex flex-col gap-2.5 sm:flex-row">
+                <a href="my-courses.html"
+                  class="flex w-full items-center justify-center gap-2 rounded-full button-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
+                  مشاهده دوره‌ها
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" class="size-4">
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                </a>
+                <a href="invoice-detail.html"
+                  class="flex w-full items-center justify-center gap-2 rounded-full border border-border py-2.5 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                  دانلود فاکتور
+                </a>
+              </div>
+            </div>
+          </div>
 
-              <a href="checkout-information.html"
-                class="mt-2.5 flex w-full items-center justify-center rounded-full border border-border py-2.5 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
-                بازگشت به مرحله قبل
+          <!-- ==================== FAILED STATE (?status=failed) ==================== -->
+          <div id="result-failed" class="hidden overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <div class="px-6 pb-6 pt-10 text-center sm:px-10">
+              <!-- Error icon -->
+              <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-red-50 text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-9">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M15 9l-6 6" />
+                  <path d="M9 9l6 6" />
+                </svg>
+              </div>
+
+              <h1 class="mt-5 text-xl font-bold text-dark sm:text-2xl">پرداخت ناموفق بود</h1>
+              <p class="mt-2 text-xs leading-relaxed text-body sm:text-sm">
+                متأسفانه پرداخت انجام نشد؛ دوره‌ای به حساب شما اضافه نشده است.
+              </p>
+
+              <!-- Error reason -->
+              <div
+                class="mt-5 flex items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-right">
+                <span class="text-xs font-medium text-red-500">دلیل خطا</span>
+                <span class="text-xs font-bold text-dark" dir="rtl">موجودی حساب کافی نیست</span>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col gap-2.5 border-t border-border p-5 sm:flex-row sm:p-6">
+              <a href="checkout-payment.html"
+                class="flex w-full items-center justify-center gap-2 rounded-full button-primary py-2.5 text-center text-xs font-semibold text-white transition-all active:scale-[0.98] hover:bg-primary/90 sm:text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                  <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+                  <path d="M21 3v6h-6" />
+                </svg>
+                تلاش مجدد
+              </a>
+              <a href="cart.html"
+                class="flex w-full items-center justify-center rounded-full border border-border py-2.5 text-center text-xs font-semibold text-dark transition-colors hover:border-primary hover:text-primary sm:text-sm">
+                بازگشت به سبد خرید
               </a>
             </div>
-          </aside>
-          <!-- endregion -->
+          </div>
         </div>
       </div>
     </section>
@@ -638,8 +599,8 @@
   <script type="module" src="src/js/main.js"></script>
   <!-- endregion -->
 
-  <!-- #region Checkout Payment Page Script -->
-  <script src="src/js/checkout-payment.js"></script>
+  <!-- #region Checkout Result Page Script -->
+  <script src="src/js/checkout-result.js"></script>
   <!-- endregion -->
 </body>
 
